@@ -26,7 +26,11 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 G
 ## INSTRUCTION
 
 - No library, Pure CSS/SASS, Pure JAVASCRIPT
+<<<<<<< Updated upstream
 - [Figma ressources](https://www.figma.com/file/B7NKBDvSI18uoMLJgpnh48/UI-Design-GameOn-FR?node-id=106%3A630)
+=======
+- [Figma ressources](https://www.figma.com/file/Q3yNeD7WTK9QHDldg9vaRl/UI-Design-FishEye-FR?type=design&node-id=0-1&mode=design)
+>>>>>>> Stashed changes
 - OpenClassCourse 100% completed
 
 ## EXPLAIN THE PROJECT
