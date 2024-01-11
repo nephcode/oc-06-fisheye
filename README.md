@@ -27,8 +27,8 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 G
 
 | TEMPS | CATEGORIES          | URL                                                                                                                     |
 | ----- | ------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 10H   | ` DEV``JAVACRIPT `  | [Design Patterns](https://openclassrooms.com/fr/courses/7133336-utilisez-des-design-patterns-en-javascript)             |
-| 12H   | ` DEV``JAVASCRIPT ` | [Dynamique JS & API HTTP](https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript) |
+| 10H   | `DEV` `JAVACRIPT `  | [Design Patterns](https://openclassrooms.com/fr/courses/7133336-utilisez-des-design-patterns-en-javascript)             |
+| 12H   | `DEV` `JAVASCRIPT ` | [Dynamique JS & API HTTP](https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript) |
 | 6H    | `HTML` `CSS`        | [Coder Web Accessible](https://openclassrooms.com/fr/courses/6691451-codez-un-site-web-accessible-avec-html-css)        |
 | 6H    | `DESIGN`            | [Design Web Accesible ](https://openclassrooms.com/fr/courses/6691346-concevez-un-contenu-web-accessible)               |
 | 10H   | `DEV`               | [Degoguer JS & API](https://openclassrooms.com/fr/courses/7159296-deboguez-l-interface-de-votre-site-internet)          |
