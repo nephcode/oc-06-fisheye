@@ -8,20 +8,21 @@
 
 A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 GAME ON
 
-| -       | URL                                                                                          |
-| ------- | -------------------------------------------------------------------------------------------- |
-| DEMO    | [https://oc06.youcodeuse.com](https://oc06.youcodeuse.com)                                   |
-| REPO    | [https://github.com/nephcode/oc-06-fisheye](https://github.com/nephcode/oc-06-fisheye)       |
-| PROJECT | [https://github.com/users/nephcode/projects/4](https://github.com/users/nephcode/projects/4) |
+| -       | URL                                                                                                   |
+| ------- | ----------------------------------------------------------------------------------------------------- |
+| DEMO    | [https://oc06.youcodeuse.com](https://oc06.youcodeuse.com)                                            |
+| REPO    | [https://github.com/nephcode/oc-06-fisheye](https://github.com/nephcode/oc-06-fisheye)                |
+| PROJECT | [https://github.com/users/nephcode/projects/4](https://github.com/users/nephcode/projects/4)          |
+| OC      | [Projet openclassrooms 06 - Fisheye](https://openclassrooms.com/fr/paths/516/projects/808/assignment) |
 
 ## INFORMATION
 
-| RESSOURCES  | TYPE                              |
-| ----------- | --------------------------------- |
-| CODE        | `SASS(SCSS)` `HTML` `JAVACRIPT`   |
-| AGILE       | `GITHUB PROJECT`                  |
-| STORAGE BIS | `SUPABASE`                        |
-| CI/CD       | `GITHUB PAGES` > `RELEASE` |
+| RESSOURCES  | TYPE                            |
+| ----------- | ------------------------------- |
+| CODE        | `SASS(SCSS)` `HTML` `JAVACRIPT` |
+| AGILE       | `GITHUB PROJECT`                |
+| STORAGE BIS | `SUPABASE`                      |
+| CI/CD       | `GITHUB PAGES` > `RELEASE`      |
 
 ## COURS OC
 
@@ -35,38 +36,36 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 G
 
 ## INSTRUCTION
 
-- JAVASCRIPT, API FETCH, JSON, CSS > SASS,  
+- JAVASCRIPT, API FETCH, JSON, CSS > SASS,
 - [Figma ressources](https://www.figma.com/file/Q3yNeD7WTK9QHDldg9vaRl/UI-Design-FishEye-FR?type=design&node-id=0-1&mode=design)
 - Step 1 (5%) > website, elements, code
-    - Code console.log and debug elements
-    - Commit optimized assets
+  - Code console.log and debug elements
+  - Commit optimized assets
 - Step 2 (10%) > imports dataset
-    - Json Dataset
-    - Fetch on getPhotographers 
-    - Display Datas, Send ID 
-    - Native Fetch API
+  - Json Dataset
+  - Fetch on getPhotographers
+  - Display Datas, Send ID
+  - Native Fetch API
 - Step 3 (20%) > Web Accessibility SASS HTML JS
-    - Code photographerCard (Class)
-    - DOM generator
-    - Flexbox and Grid
-    - Aria-label & alt
+  - Code photographerCard (Class)
+  - DOM generator
+  - Flexbox and Grid
+  - Aria-label & alt
 - Step 4 (35%) > Home finished
-    - Achecker 
-    - Documentation [searchParams](https://developer.mozilla.org/fr/docs/Web/API/URL/searchParams)       
+  - Achecker
+  - Documentation [searchParams](https://developer.mozilla.org/fr/docs/Web/API/URL/searchParams)
 - Step 5 (45%)
-    - diplay static content
-    - Use PhotographerCard (Class)
-    - Factory media and Assets
-    - Need spec for media image|video
-    - *do not manage like here*
+  - diplay static content
+  - Use PhotographerCard (Class)
+  - Factory media and Assets
+  - Need spec for media image|video
+  - _do not manage like here_
 - Step 6 (55%) Contact Modal
-    - fix the code
-    - Sass the style please (For Nephelim)
-    - Console.log(data) 
-    - manage `focus` on page, aria-label...
+  - fix the code
+  - Sass the style please (For Nephelim)
+  - Console.log(data)
+  - manage `focus` on page, aria-label...
 - Step 7 (65%) lightbox media
-
-     
 
 ## EXPLAIN THE PROJECT
 
