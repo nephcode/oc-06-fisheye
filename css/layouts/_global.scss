@@ -1,0 +1,16 @@
+//============================================= OC-06 FiS!!EyE =======//
+// _GLOBAL ===========================================================//
+//==================================== By Neah =================2024==//
+@use "../base/colors";
+@use "../base/typo";
+
+body {
+    font-family: typo.$fontDefault;
+    margin: 0;
+    background: colors.$backgroundSite;
+}
+
+h1 {
+    color: colors.$colorMain;
+    margin-right: 100px;
+}
