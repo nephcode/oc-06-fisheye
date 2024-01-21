@@ -4,6 +4,9 @@ try {
     const photographer = await response.json();
     // Utilisez l'objet photographer ici
     console.log(photographer);
+
+
+    
 } catch (error) {
     // Gérez les erreurs
     console.error(error);
