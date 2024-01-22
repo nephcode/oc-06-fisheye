@@ -119,12 +119,11 @@ form input {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: "DM Sans";
   margin: 0;
   min-height: 100vh;
   background: #ffffff;
-  flex: 1;
 }
 
 h1 {
@@ -160,7 +159,7 @@ header {
 .contact_button {
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: #fff;
   padding: 11px;
   width: 170px;
   height: 70px;
@@ -168,4 +167,17 @@ header {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  color: #fff;
+  background-color: #901C1C;
+  height: 40px;
+  bottom: 0;
+  position: sticky;
 }/*# sourceMappingURL=artist.css.map */

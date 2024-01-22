@@ -1,5 +1,5 @@
 //============================================= OC-06 FiS!!EyE =======//
-// GLOBAL APP ========================================================//
+// INDEX APP =========================================================//
 //==================================== By Neah =================2024==//
 
 const url = await fetch("/data/photographers.json");
@@ -14,7 +14,7 @@ function artistIndex(artist) {
   for (let i = 0; i < photographers.length; i++) {
     const artist = photographers[i];
     article_artist += `<article class="article_artist">
-    <a href="/pages/photographer.html?id=${artist.id}">
+    <a href="/photographer.html?id=${artist.id}">
         <img src="/assets/photographers/${artist.portrait}" alt="Portrait de ${artist.name}">
         <h2>${artist.name}</h2>
     </a>
