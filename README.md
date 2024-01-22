@@ -6,7 +6,7 @@
 
 # FISH EYE
 
-A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 GAME ON
+A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 FISHEYE
 
 | -       | URL                                                                                                   |
 | ------- | ----------------------------------------------------------------------------------------------------- |
