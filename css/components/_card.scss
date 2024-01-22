@@ -1,0 +1,74 @@
+//============================================= OC-06 FiS!!EyE =======//
+// _CARD =============================================================//
+//==================================== By Neah =================2024==//
+@use "../base/colors";
+
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
+
+  article {
+    justify-self: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.15);
+    margin: 0 10px;
+    padding: 15px;
+
+    p {
+      justify-self: center;
+    }
+
+    a {
+      justify-self: center;
+      text-decoration: none;
+
+      h2 {
+        justify-self: center;
+        justify-content: center;
+        text-align: center;
+        color: colors.$colorSecondary;
+        font-size: 36px;
+        font-weight: lighter;
+        margin: 0px ;
+      }
+
+      img {
+        display: block;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        padding: 2px;
+        box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.15);
+      }
+    }
+  }
+}
+
+
+.artist {
+  &--city {
+    margin: 0px ;
+    justify-self: center;
+    color: colors.$colorMain;
+    font-size: 13px;
+  }
+  &--tagline {
+    justify-self: center;
+    color: colors.$colorTypoBlack;
+    font-size: 10px;
+  }
+  &--price {
+    margin: 0px;
+    justify-self: center;
+    color: colors.$colorTypoGrey;
+    font-size: 9px;
+  }
+  
+}

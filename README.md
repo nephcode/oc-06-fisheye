@@ -55,7 +55,7 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 F
   - Achecker
   - Documentation [searchParams](https://developer.mozilla.org/fr/docs/Web/API/URL/searchParams)
 - Step 5 (45%)
-  - diplay static content
+  - display static content
   - Use PhotographerCard (Class)
   - Factory media and Assets
   - Need spec for media image|video
@@ -70,6 +70,10 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 F
 ## EXPLAIN THE PROJECT
 
 Once upon a time, a dev girl took a new project ...6 fisheye with my best duck face xoxo
+
+- `SUPPR` CSS and replace with `SASS``
+- `SASS` system 5-1 by NEPHA (not import only use)
+
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
 Since Pyramids from future road to final temple
