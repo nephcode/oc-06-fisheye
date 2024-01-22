@@ -73,6 +73,8 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 
 - `SUPPR` CSS and replace with `SASS``
 - `SASS` system 5-1 by NEPHA (not import only use)
+- Update `HEADER` & `FOOTER` Personal Design
+- CARD homePage OK
 
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)

@@ -1,19 +1,19 @@
 //============================================= OC-06 FiS!!EyE =======//
-// _HEADER ===========================================================//
+// _FOOTER ===========================================================//
 //==================================== By Neah =================2024==//
+
 @use "../base/colors";
 
-header {
+footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 90px;
-    background-color: colors.$colorMain;    
-}
+    color: colors.$colorTypoWhite;
+    background-color: colors.$colorMain;  
+    height: 40px;
+    bottom: 0;
+    position: sticky;
 
-.logo {
-    height: 50px;
-    margin-left: 100px;
-    color: #fff;
 }

@@ -6,25 +6,34 @@
 .photographer_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
-  margin-top: 100px;
+  gap: 5%;
+  margin-top: 50px;
+  align-items: stretch;
+  justify-content: center;
+
 
   article {
     justify-self: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    justify-items: stretch;
     align-items: center;
     flex-direction: column;
     border-radius: 25px;
     box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.15);
     margin: 0 10px;
     padding: 15px;
+    min-width:  270px;
 
     p {
       justify-self: center;
     }
 
     a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-self: center;
       text-decoration: none;
 
@@ -46,6 +55,7 @@
         object-fit: cover;
         padding: 2px;
         box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.15);
+        
       }
     }
   }
