@@ -16,7 +16,7 @@ const id_GET_ARTIST = idCapture(url);
 console.log(id_GET_ARTIST);  
 
 
-const response = await fetch("/data/Photographers.json");
+const response = await fetch("/data/photographers.json");
 const data = await response.json();
 const artist = data.photographers;
 const medias = data.media;
