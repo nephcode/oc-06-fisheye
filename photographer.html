@@ -15,9 +15,10 @@
     <main id="main">
       <section id="profil" aria-label="Profil de l'artiste">
         <div>
-          <h1 id="ArtistName" aria-label="Nom"></h1>
-          <p id="ArtistCity" aria-label="Localisation"></p>
-          <p id="ArtistTagline" aria-label="Signature"></p>
+          <h1 id="ArtistName" class="artist--" aria-label="Nom"></h1>
+          <p id="ArtistCity" class="artist--city " aria-label="Localisation"></p>
+          <p id="ArtistTagline" class="artist--tagline" aria-label="Signature"></p>
+       
         </div>
         <div>
           <button class="contact_button" aria-label="Formulaire de contact">Contactez-moi</button>
@@ -28,7 +29,11 @@
           
         
       </section>
-      <section id="carroussel" aria-label="Carroussel des médias"></section>
+      <section id="carrousel" aria-label="Carroussel des médias"></section>
+      <section id="info" aria-label="information">
+        <p id="likeCount"></p>
+        <p id="ArtistPrice" class="artist--price" aria-label="Tarif"></p>
+      </section>
     </main>
     <footer>
       <p>© 2024 Fisheye — OC 06 - JS</p>

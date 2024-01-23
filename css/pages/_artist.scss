@@ -4,32 +4,47 @@
 @use "../base/colors";
 
 
+main {
+    align-items: self-start;
+    flex-grow: 1;
+}
+
+
 // SECTION PROFIL ====================================================//
 
 #profil {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     background-color: colors.$colorGreyBackground;
-    height: 300px;
-    margin: 0 100px;
+    height: 200px;
+    margin: 0 ;
+    padding: 10px 70px;
+    z-index: 10;
+    
+    &:first-child  {
+        display: flex;
+        align-items: center;
+    }
 
-   
+    img {
+        display: block;
+        height: 270px;
+        width: 270px;
+        border-radius: 50%;
+        border: 3px solid colors.$colorGreyBackground ;
+        object-fit: cover;
+        box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.35);
+    }
 }
 
-.ArtistName {
+#ArtistName {
     color: colors.$colorSecondary;
-    font-size: 36px;
+    font-size: 3.0rem;
     font-weight: lighter;
     margin: 0px ;
 
 }
-
-// SECTION PROFIL ====================================================//
-
-#contact_modal {
-    display: none;
-}
-
 
 
 .contact_button {
@@ -41,6 +56,49 @@
     height: 70px;
     border: none;
     background-color: colors.$colorMain;
-    border-radius: 15px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.35);
+    border-radius: 25px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
+
+// SECTION INFO ======================================================//
+
+#info {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 70px;
+    padding: 10px 70px;
+    background-color: colors.$colorTernary;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    right: -40px;
+
+    .artist--price{
+        color: colors.$colorTypoBlack;
+        font-size: 1.0rem;
+        font-weight: normal;
+        margin: 0px ;
+    }
+
+}
+
+
+// SECTION  MODAL ====================================================//
+
+#contact_modal {
+    display: none;
+}
+
+
+
