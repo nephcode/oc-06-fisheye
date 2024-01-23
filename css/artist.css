@@ -20,6 +20,10 @@
   margin: 0 10px;
   padding: 15px;
   min-width: 270px;
+  transition: all 0.3s ease-in-out;
+}
+.photographer_section article:hover {
+  transform: scale(1.05);
 }
 .photographer_section article p {
   justify-self: center;
@@ -126,11 +130,6 @@ body {
   background: #ffffff;
 }
 
-h1 {
-  color: #fff;
-  margin-right: 100px;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -146,14 +145,23 @@ header {
   color: #fff;
 }
 
-#contact_modal {
-  display: none;
-}
-
-.photograph-header {
+#profil {
+  display: flex;
+  flex-direction: row;
   background-color: #FAFAFA;
   height: 300px;
   margin: 0 100px;
+}
+
+.ArtistName {
+  color: #D3573C;
+  font-size: 36px;
+  font-weight: lighter;
+  margin: 0px;
+}
+
+#contact_modal {
+  display: none;
 }
 
 .contact_button {
@@ -165,7 +173,7 @@ header {
   height: 70px;
   border: none;
   background-color: #901C1C;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
 }
 

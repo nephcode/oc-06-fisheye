@@ -5,17 +5,30 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <title>Fisheye - photographe</title>
-    <script src="/js/pages/photographer.js" defer></script>
-    <script src="/js/utils/formfiller.js" defer></script>
+    <script type="module" src="/js/pages/photographer.js" defer></script>
+    <script type="module" src="/js/utils/tools.js" defer></script>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.svg" class="logo" />
+      <a href="/" aria-label="Retour Accueil"><img src="assets/images/logo.svg" class="logo" alt="fisheye logo" /></a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button">Contactez-moi</button>
-      </div>
+      <section id="profil" aria-label="Profil de l'artiste">
+        <div>
+          <h1 id="ArtistName" aria-label="Nom"></h1>
+          <p id="ArtistCity" aria-label="Localisation"></p>
+          <p id="ArtistTagline" aria-label="Signature"></p>
+        </div>
+        <div>
+          <button class="contact_button" aria-label="Formulaire de contact">Contactez-moi</button>
+        </div>
+        <div>
+          <img id="ArtistPortrait" aria-label=""/>
+        </div>  
+          
+        
+      </section>
+      <section id="carroussel" aria-label="Carroussel des médias"></section>
     </main>
     <footer>
       <p>© 2024 Fisheye — OC 06 - JS</p>

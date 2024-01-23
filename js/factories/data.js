@@ -2,7 +2,7 @@
 // DATA CLASS ========================================================//
 //==================================== By Neah =================2024==//
 
-export default class dataAccess {
+export class dataAccess {
     async LoadData() {
       let url = "data/Photographers.json";
       let response = await fetch(url);

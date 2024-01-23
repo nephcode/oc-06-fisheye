@@ -3,15 +3,34 @@
 //==================================== By Neah =================2024==//
 @use "../base/colors";
 
+
+// SECTION PROFIL ====================================================//
+
+#profil {
+    display: flex;
+    flex-direction: row;
+    background-color: colors.$colorGreyBackground;
+    height: 300px;
+    margin: 0 100px;
+
+   
+}
+
+.ArtistName {
+    color: colors.$colorSecondary;
+    font-size: 36px;
+    font-weight: lighter;
+    margin: 0px ;
+
+}
+
+// SECTION PROFIL ====================================================//
+
 #contact_modal {
     display: none;
 }
 
-.photograph-header {
-    background-color: colors.$colorGreyBackground;
-    height: 300px;
-    margin: 0 100px;
-}
+
 
 .contact_button {
     font-size: 20px;
@@ -22,6 +41,6 @@
     height: 70px;
     border: none;
     background-color: colors.$colorMain;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
 }

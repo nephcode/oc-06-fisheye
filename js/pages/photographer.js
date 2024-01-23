@@ -1,14 +1,44 @@
 //============================================= OC-06 FiS!!EyE =======//
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
+//import { dataAccess } from "../factories/data.js";
+import { idCapture } from "/js/utils/tools.js";
+
+// ID FROM URL GET ----------------------------------------------------//
+const url = window.location.href;
+const id_GET_ARTIST = idCapture(url);
+//console.log(id_GET_ARTIST);  
 
 
-let url = window.location.href; // Obtient l'URL de la page actuelle
+const response = await fetch("/data/Photographers.json");
+const data = await response.json();
+const artist = data.photographers;
+const medias = data.media;
 
-// Crée un objet URLSearchParams à partir de l'URL
-let params = new URLSearchParams(url.split('?')[1]);
+const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
+console.log(FetchIDartist);
 
-// Récupère la valeur de 'id'
-let id = params.get('id'); 
+const FetchIDmedia = medias.filter((media) => media.photographerId == id_GET_ARTIST);
+console.log(FetchIDmedia);
 
-console.log(id); // Affichera '1234'
+
+// DISPLAY ARTIST  ---------------------------------------------------//
+
+FetchIDartist.forEach(arrayArtist => {
+    const artistName = document.getElementById("ArtistName");
+    console.log(artistName);
+    artistName.innerHTML = arrayArtist.name;
+    
+    const artistCity = document.getElementById("ArtistCity");
+    artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
+    const artistTagline = document.getElementById("ArtistTagline");
+    artistTagline.innerHTML = arrayArtist.tagline;
+    const artistImage = document.getElementById("ArtistPortrait");
+    console.log(artistImage);
+    console.log(arrayArtist.portrait);
+    artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
+    
+});
+
+
+//==================================== By Nepha =================2024==//

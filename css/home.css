@@ -20,6 +20,10 @@
   margin: 0 10px;
   padding: 15px;
   min-width: 270px;
+  transition: all 0.3s ease-in-out;
+}
+.photographer_section article:hover {
+  transform: scale(1.05);
 }
 .photographer_section article p {
   justify-self: center;
@@ -78,11 +82,6 @@ body {
   background: #ffffff;
 }
 
-h1 {
-  color: #fff;
-  margin-right: 100px;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -96,6 +95,11 @@ header {
   height: 50px;
   margin-left: 100px;
   color: #fff;
+}
+
+h1 {
+  color: #fff;
+  margin-right: 100px;
 }
 
 main {
