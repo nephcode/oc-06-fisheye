@@ -71,24 +71,31 @@ main {
 #info {
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
-    min-width: 100px;
+    min-width: 215px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     margin: 0 70px;
-    padding: 10px 70px;
+    padding: 15px;
     background-color: colors.$colorTernary;
     z-index: 10;
     position: fixed;
     bottom: 0;
     right: -40px;
+    
 
+    p{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+    }
     .artist--price{
         color: colors.$colorTypoBlack;
         font-size: 1.0rem;
         font-weight: normal;
         margin: 0px ;
+        padding: 0px;
     }
 
 }

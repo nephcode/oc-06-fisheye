@@ -4,31 +4,45 @@
     <link href="css/artist.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Fisheye - photographe</title>
     <script type="module" src="/js/pages/photographer.js" defer></script>
     <script type="module" src="/js/utils/tools.js" defer></script>
   </head>
   <body>
     <header>
-      <a href="/" aria-label="Retour Accueil"><img src="assets/images/logo.svg" class="logo" alt="fisheye logo" /></a>
+      <a href="/" aria-label="Retour Accueil"
+        ><img src="assets/images/logo.svg" class="logo" alt="fisheye logo"
+      /></a>
     </header>
     <main id="main">
       <section id="profil" aria-label="Profil de l'artiste">
         <div>
           <h1 id="ArtistName" class="artist--" aria-label="Nom"></h1>
-          <p id="ArtistCity" class="artist--city " aria-label="Localisation"></p>
-          <p id="ArtistTagline" class="artist--tagline" aria-label="Signature"></p>
-       
+          <p id="ArtistCity" class="artist--city" aria-label="Localisation"></p>
+          <p
+            id="ArtistTagline"
+            class="artist--tagline"
+            aria-label="Signature"
+          ></p>
         </div>
         <div>
-          <button class="contact_button" aria-label="Formulaire de contact">Contactez-moi</button>
+          <button class="contact_button" aria-label="Formulaire de contact">
+            Contactez-moi
+          </button>
         </div>
         <div>
-          <img id="ArtistPortrait" aria-label=""/>
-        </div>  
-          
-        
+          <img id="ArtistPortrait" aria-label="" />
+        </div>
       </section>
+      <section id="filter" aria-label="Filtrez les médias" role="filter"></section>
+
       <section id="carrousel" aria-label="Carroussel des médias"></section>
       <section id="info" aria-label="information">
         <p id="likeCount"></p>
@@ -38,7 +52,7 @@
     <footer>
       <p>© 2024 Fisheye — OC 06 - JS</p>
     </footer>
-   <!-- <div id="contact_modal">
+    <!-- <div id="contact_modal">
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>

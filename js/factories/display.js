@@ -11,7 +11,7 @@ class MediaFetcher{
 }
 
 class MediaImage extends MediaFetcher {
-    //code
+    //code 
 }
 
 class MediaVideo extends MediaFetcher{
