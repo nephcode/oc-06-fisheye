@@ -1,7 +1,7 @@
 //============================================= OC-06 FiS!!EyE =======//
 // FORM ==============================================================//
 //==================================== By Neah =================2024==//
-
+@use "../base/colors";
 
 form {
     display: flex;
@@ -29,4 +29,46 @@ form {
     border: none;
     border-radius: 5px;
 }
+
+select{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: colors.$colorMain;
+    color: colors.$colorTypoWhite;
+
+    option{
+        &:nth-child(odd) {
+            background-color: #F0F0F0;
+        }
+
+        &:nth-child(even) {
+            background-color: #E0E0E0;
+        }
+    }
+
+}
+
+ textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+ button {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D87D4A;
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
 }

@@ -41,7 +41,16 @@
           <img id="ArtistPortrait" aria-label="" />
         </div>
       </section>
-      <section id="filter" aria-label="Filtrez les médias" role="filter"></section>
+      <section id="filter" aria-label="Filtrez les médias" role="filter">
+        <p>Triez par :</p>   
+        <form>
+          <select id="filterSelect" aria-label="Filtre">
+            <option value="popular">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+          </select>
+        </form>
+      </section>
 
       <section id="carrousel" aria-label="Carroussel des médias"></section>
       <section id="info" aria-label="information">

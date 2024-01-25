@@ -66,6 +66,38 @@ main {
     }
 }
 
+// SECTION FILTRE ====================================================//
+
+#filter{
+    display: flex;
+    flex-direction: row;
+    padding: 2px 20px;
+    align-items: baseline;
+
+    p  {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        font-weight: bold;
+    }
+}
+// SECTION CARROUSEL =================================================//
+#carrousel{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:  3vh 1vw;
+    margin-top: 50px;
+    align-items: stretch;
+    justify-content: center;
+    margin: 50px 10px 50px;
+    max-width: 1280px;
+    margin: 20px auto;
+    padding: 20px auto;
+
+  
+}
+
+
 // SECTION INFO ======================================================//
 
 #info {

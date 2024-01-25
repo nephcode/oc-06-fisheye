@@ -72,7 +72,7 @@ function mediaIndex(importMedia) {
     console.log("DATE: " + arrayMedia.date);
     console.log("LIKES: " + arrayMedia.likes);
     //---------------------//
-    article_media += `<article class="article_media">
+    article_media += `<article class="article_media" aria-label="photo">
       
       <figure><a href="#lightbox?id=${arrayMedia.id}" role="button" aria-label="Ouvrir l'image en grand">`;
     if (arrayMedia.image == null) {
