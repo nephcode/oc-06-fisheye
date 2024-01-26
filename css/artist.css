@@ -152,18 +152,21 @@ form input {
   border-radius: 5px;
 }
 form select {
-  width: 200px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
+  appearance: none;
   background-color: #901C1C;
-  color: #fff;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 300px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
 }
-form select option:nth-child(odd) {
-  background-color: #F0F0F0;
-}
-form select option:nth-child(even) {
-  background-color: #E0E0E0;
+form select option select::-ms-expand {
+  display: none;
+  background-color: green;
 }
 form textarea {
   width: 100%;
@@ -206,6 +209,12 @@ form button {
   font-size: 64px;
   font-weight: normal;
   text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {

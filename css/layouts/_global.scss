@@ -4,6 +4,14 @@
 @use "../base/colors";
 @use "../base/typo";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
 body {
     display: flex;
     flex-direction: column;
