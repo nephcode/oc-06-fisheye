@@ -135,7 +135,7 @@ form {
   align-items: flex-start;
 }
 form label {
-  color: #312E2E;
+  color: #312e2e;
   font-size: 36px;
 }
 form div {
@@ -152,21 +152,16 @@ form input {
   border-radius: 5px;
 }
 form select {
-  appearance: none;
   background-color: #901C1C;
+  color: #fff;
   border: none;
-  padding: 0 1em 0 0;
+  padding: 0.3rem;
   margin: 0;
   width: 300px;
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
-  outline: none;
-}
-form select option select::-ms-expand {
-  display: none;
-  background-color: green;
 }
 form textarea {
   width: 100%;
@@ -179,8 +174,8 @@ form button {
   height: 68px;
   border: none;
   border-radius: 5px;
-  background-color: #D87D4A;
-  color: #FFFFFF;
+  background-color: #d87d4a;
+  color: #ffffff;
   font-size: 36px;
   font-weight: bold;
   margin-top: 20px;
