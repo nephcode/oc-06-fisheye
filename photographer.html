@@ -14,6 +14,7 @@
     <title>Fisheye - photographe</title>
     <script type="module" src="/js/pages/photographer.js" defer></script>
     <script type="module" src="/js/utils/tools.js" defer></script>
+    <script type="module" src="/js/utils/modal.js" defer></script>
   </head>
   <body>
     <header>
@@ -33,7 +34,7 @@
           ></p>
         </div>
         <div>
-          <button class="contact_button" aria-label="Formulaire de contact">
+          <button id="contactButton" class="contact_button" aria-label="Formulaire de contact">
             Contactez-moi
           </button>
         </div>
@@ -61,12 +62,14 @@
     <footer>
       <p>© 2024 Fisheye — OC 06 - JS</p>
     </footer>
-    <!-- <div id="contact_modal">
+    <!-- DEBUT MODAL CONTACT  -->
+    <div id="contact_modal">
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
           <img src="/assets/icons/close.svg" />
         </header>
+        <span class="close"></span>
         <form>
           <div>
             <label>Prénom</label>
@@ -75,7 +78,8 @@
           <button class="contact_button">Envoyer</button>
         </form>
       </div>
-    </div> -->
+    </div>
+     <!-- FIN MODAL CONTACT  -->
     <section id="lightbox" aria-hidden="false">
       <h1>Your carousel</h1>
       <ul class="carousel" aria-label="Our selection of Recipes">

@@ -2,7 +2,7 @@
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
 //import { dataAccess } from "../factories/data.js";
-import { idCapture } from "/js/utils/tools.js";
+import { idCapture,  } from "/js/utils/tools.js";
 
 // ID FROM URL GET ----------------------------------------------------//
 console.log("====================================");
