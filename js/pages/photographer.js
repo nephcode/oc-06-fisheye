@@ -2,12 +2,15 @@
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
 //import { dataAccess } from "../factories/data.js";
-import { idCapture,  } from "/js/utils/tools.js";
+import { idCapture  } from "/js/utils/tools.js";
+//import "/js/utils/form.js";
+
+
 
 // ID FROM URL GET ----------------------------------------------------//
-console.log("====================================");
-console.log("=============== GET ================");
-console.log("====================================");
+//console.log("====================================");
+//console.log("=============== GET ================");
+//console.log("====================================");
 
 const url = window.location.href;
 const id_GET_ARTIST = idCapture(url);
@@ -20,21 +23,21 @@ const artist = data.photographers;
 const medias = data.media;
 
 const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
-console.log(FetchIDartist);
+//console.log(FetchIDartist);
 
 const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
 );
-console.log(FetchIDmedia);
+//console.log(FetchIDmedia);
 
 // DISPLAY ARTIST  ---------------------------------------------------//
-console.log("====================================");
-console.log("============== ARTIST ==============");
-console.log("====================================");
+//console.log("====================================");
+//console.log("============== ARTIST ==============");
+//console.log("====================================");
 
 FetchIDartist.forEach((arrayArtist) => {
   const artistName = document.getElementById("ArtistName");
-  console.log(artistName);
+  //console.log(artistName);
   artistName.innerHTML = arrayArtist.name;
 
   const artistCity = document.getElementById("ArtistCity");
@@ -42,8 +45,8 @@ FetchIDartist.forEach((arrayArtist) => {
   const artistTagline = document.getElementById("ArtistTagline");
   artistTagline.innerHTML = arrayArtist.tagline;
   const artistImage = document.getElementById("ArtistPortrait");
-  console.log(artistImage);
-  console.log(arrayArtist.portrait);
+  //console.log(artistImage);
+  //console.log(arrayArtist.portrait);
   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
   const artistPrice = document.getElementById("ArtistPrice");
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
@@ -54,23 +57,23 @@ FetchIDartist.forEach((arrayArtist) => {
 
 
 // DISPLAY MEDIA -----------------------------------------------------//
-console.log("====================================");
-console.log("============== MEDIA ===============");
-console.log("====================================");
+//console.log("====================================");
+//console.log("============== MEDIA ===============");
+//console.log("====================================");
 
 function mediaIndex(importMedia) {
   //let article_media = `<section id="artistSection" class="photographer_section">`;
   let article_media = "";
   //---------------------//
   importMedia.forEach((arrayMedia) => {
-    //console.log(mediaImage);
-    console.log("ID: " + arrayMedia.id);
-    console.log("PRICE: " + arrayMedia.price);
-    console.log("IMAGE: " + arrayMedia.image);
-    console.log("VIDEO: " + arrayMedia.video);
-    console.log("TITLE: " + arrayMedia.title);
-    console.log("DATE: " + arrayMedia.date);
-    console.log("LIKES: " + arrayMedia.likes);
+   //console.log(mediaImage);
+   // console.log("ID: " + arrayMedia.id);
+   // console.log("PRICE: " + arrayMedia.price);
+   // console.log("IMAGE: " + arrayMedia.image);
+   // console.log("VIDEO: " + arrayMedia.video);
+   // console.log("TITLE: " + arrayMedia.title);
+   // console.log("DATE: " + arrayMedia.date);
+   // console.log("LIKES: " + arrayMedia.likes);
     //---------------------//
     article_media += `<article class="article_media" aria-label="photo">
       
@@ -93,58 +96,50 @@ function mediaIndex(importMedia) {
 mediaIndex(FetchIDmedia);
 
 // DISPLAY LIKE COUNTER ----------------------------------------//
-console.log("====================================");
-console.log("============== COUNT ===============");
-console.log("====================================");
+//console.log("====================================");
+//console.log("============== COUNT ===============");
+//console.log("====================================");
 
 function CounterLike(importMedia) {
   let likeCounterOut = 0;
   //---------------------//
   importMedia.forEach((arrayMedia) => {
-    console.log("ID: " + arrayMedia.id);
-    console.log("LIKES: " + arrayMedia.likes);
+    //console.log("ID: " + arrayMedia.id);
+    //console.log("LIKES: " + arrayMedia.likes);
 
     likeCounterOut += parseInt(arrayMedia.likes);
   });
-  console.log(likeCounterOut);
+  //console.log(likeCounterOut);
   //---------------------//
   const artistLikeCount = document.getElementById("likeCount");
-  console.log(artistLikeCount.textContent);
+  //console.log(artistLikeCount.textContent);
   const likeCounterDisplay = `<span class="heart-btn">${likeCounterOut}
         <i class="fas fa-heart icone__Coeur"></i></span>`;
   artistLikeCount.innerHTML = likeCounterDisplay;
 
-  console.log(likeCounterDisplay);
+  //console.log(likeCounterDisplay);
 }
 CounterLike(FetchIDmedia);
 
-/*
-FetchIDmedia.forEach(arrayMedia => {
-    //const mediaImage = document.getElementById("MediaImage");
-    
-    //console.log(mediaImage);
-    console.log(arrayMedia.id);
-    console.log(arrayMedia.price);
-    console.log(arrayMedia.image);
-    console.log(arrayMedia.video);
-    console.log(arrayMedia.title);
-    console.log(arrayMedia.date);
-    console.log(arrayMedia.likes);    
-    
-    mediaImage.src = `/assets/${arrayMedia.image}`;
-    const mediaVideo = document.getElementById("MediaVideo");
-    
-    /*
-    mediaVideo.src = `/assets/${arrayMedia.video}`;
-    const mediaTitle = document.getElementById("MediaTitle");
-    mediaTitle.innerHTML = arrayMedia.title;
-    const mediaDate = document.getElementById("MediaDate");
-    mediaDate.innerHTML = arrayMedia.date;
-    const mediaLikes = document.getElementById("MediaLikes");
-    mediaLikes.innerHTML = arrayMedia.likes;
-    const mediaPrice = document.getElementById("MediaPrice");
-    mediaPrice.innerHTML = arrayMedia.price + "€";
-    const mediaDescription = document.getElementById("MediaDescription");
-    mediaDescription.innerHTML = arrayMedia.description;*/
+
+
+// LOADIND MODAL ================== Je ne comprends rien ======
+// ============================================= 2024 =========
+const modalContact = document.getElementById("modalContact");
+
+function launchModal() {
+  contactForm.reset();
+  contactForm.innerHTML = contactForm;
+  modal.style.display = "block";
+  console.log("Ouverture Contact Modal");
+
+}
+
+modalContact() => {
+  contactButton.addEventListener("click", launchModal);
+});
+
+// ================================= NEAH GAME ================
+
 
 //==================================== By Nepha =================2024==//
