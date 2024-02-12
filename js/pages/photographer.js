@@ -3,7 +3,7 @@
 //==================================== By Neah =================2024==//
 //import { dataAccess } from "../factories/data.js";
 import { idCapture  } from "/js/utils/tools.js";
-//import "/js/utils/form.js";
+import { contactForm, finishForm } from "/js/utils/form.js";
 
 
 
@@ -123,21 +123,21 @@ CounterLike(FetchIDmedia);
 
 
 
-// LOADIND MODAL ================== Je ne comprends rien ======
-// ============================================= 2024 =========
-const modalContact = document.getElementById("modalContact");
+// LOAD CONTACT MODAL ============= Je ne comprends rien ======
+// =============== SAD NEAH :'( ================ 2024 =========
+const clickContact = document.getElementById("contactButton");
+const modalContact = document.getElementById("contact_modal");
 
 function launchModal() {
+  modalContact.innerHTML = contactForm;
   contactForm.reset();
-  contactForm.innerHTML = contactForm;
-  modal.style.display = "block";
+  modalContact.style.display = "block";
   console.log("Ouverture Contact Modal");
 
 }
 
-modalContact() => {
-  contactButton.addEventListener("click", launchModal);
-});
+
+clickContact.addEventListener("click", launchModal);
 
 // ================================= NEAH GAME ================
 

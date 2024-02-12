@@ -4,7 +4,7 @@
 let txtBtn = "Fermer";
 let classChg = "btn-submit";
 let idButton = "BtnInscriptionClozer";
-export const formField = `<form
+export const contactForm = `<form
               name="reserve"
               action="/index.html"
               method="get" id="contactForm" novalidate>
@@ -66,7 +66,7 @@ export const formField = `<form
 // FORM FINISH ================================================
 // ============================================= 2024 =========
 
-export const formFinish = `<form 
+export const finishForm = `<form 
       name="reserve"
       action="/index.html"
       method="get" 
