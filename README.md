@@ -91,7 +91,7 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 - `CARD` homePage OK with transition/Animation
 - Fetch Data `Photographer`
 
-LOADING ‰‰‰‰‰‰‰‰ 35%
+LOADING ‰‰‰‰‰‰‰‰ 55%
 
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
