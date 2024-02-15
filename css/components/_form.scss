@@ -19,14 +19,14 @@ form {
     flex-direction: column;
     width: 100%;
     align-items: self-start;
-    margin-bottom: 26px;
+    margin: 0px 10px 15px;
   }
 
   input {
     width: 100%;
     height: 68px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
   }
 
   select {
@@ -42,20 +42,28 @@ form {
     line-height: inherit;
   }
 
+  input[type="text"],
+  input[type="email"],
   textarea {
-    width: 100%;
-    height: 200px;
+    width: 90%;
+    height: 68px;
     border: none;
     border-radius: 5px;
+    margin-bottom: 26px;
     background-color: colors.$colorTypoWhite;
   }
 
-  button, input[type="submit"] {
+  textarea {
+    height: 120px;
+  }
+
+  button,
+  input[type="submit"] {
     width: 150px;
     height: 68px;
     border: none;
     border-radius: 5px;
-    background-color: colors.$colorMain; ;
+    background-color: colors.$colorMain;
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: bold;

@@ -143,19 +143,11 @@ main {
 // SECTION  MODAL ====================================================//
 
 #contact_modal {
-    //display: none;
     background-color: colors.$colorTernary ;
     width: 670px ;
+    border: 0px;
+    border-radius: 5px;
 
-
-
-    input[type="text"], input[type="email"] {
-        width: 90%;
-        height: 68px;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: 26px;
-    }
 }
 
 

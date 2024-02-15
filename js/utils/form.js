@@ -74,13 +74,15 @@ export const contactForm = `
     J'ai lu et accepté les conditions d'utilisation.
     </label>
   </div>-->
+  <div>
   <button 
   id="FinalBtn" 
   class="btn-submit"
   type="submit"
   class="button"
   disabled>Envoyer</button>
-</form>`;
+  </div>
+  </form>`;
 
 // ================================= NEPHA CODE ===============
 // FORM FINISH ================================================
