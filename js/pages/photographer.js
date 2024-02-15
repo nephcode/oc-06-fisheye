@@ -130,7 +130,7 @@ const modalContact = document.getElementById("contact_modal");
 
 function launchModal() {
   modalContact.innerHTML = contactForm;
-  contactForm.reset();
+  //contactForm.reset();
   modalContact.style.display = "block";
   console.log("Ouverture Contact Modal");
 

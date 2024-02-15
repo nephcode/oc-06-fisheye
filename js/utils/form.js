@@ -4,7 +4,9 @@
 let txtBtn = "Fermer";
 let classChg = "btn-submit";
 let idButton = "BtnInscriptionClozer";
-export const contactForm = `<form
+export const contactForm = `<h2>Contactez-moi</h2>
+<span class="close"><img src="/assets/icons/close.svg" /></span>
+<form
               name="reserve"
               action="/index.html"
               method="get" id="contactForm" novalidate>
@@ -45,6 +47,18 @@ export const contactForm = `<form
                 ><br>
               </div>
               <div
+              class="formData" 
+              aria-invalid="false" 
+              data-error="Champ Message vide">
+              <label>Message</label><br>
+              <textaera
+                class="text-control"
+                type="message"
+                id="message"
+                rows="5" cols="33"
+                name="message"></textaera><br>
+            </div>
+              <div
                 class="formData" data-error="false">
                 <input
                   class="checkbox-input"
@@ -78,6 +92,5 @@ export const finishForm = `<form
         class="${classChg}"
         type="submit">${txtBtn}</bouton>
     </form>`;
-
 
 // ================================= NEAH GAME ================

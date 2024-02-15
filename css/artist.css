@@ -436,7 +436,15 @@ main {
 }
 
 #contact_modal {
-  display: none;
+  background-color: #DB8876;
+  max-width: 70%;
+}
+#contact_modal input[type=text], #contact_modal input[type=email], #contact_modal textarea {
+  width: 90%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 26px;
 }
 
 footer {

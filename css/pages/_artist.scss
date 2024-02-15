@@ -139,8 +139,21 @@ main {
     display: none;
 }
 
+
+// SECTION  MODAL ====================================================//
+
 #contact_modal {
-    display: none;
+    //display: none;
+    background-color: colors.$colorTernary ;
+    max-width: 70% ;
+
+    input[type="text"], input[type="email"], textarea {
+        width: 90%;
+        height: 68px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 26px;
+    }
 }
 
 
