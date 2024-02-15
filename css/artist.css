@@ -134,8 +134,8 @@ form {
   align-items: flex-start;
 }
 form label {
-  color: #312e2e;
-  font-size: 36px;
+  color: #312E2E;
+  font-size: 1.4rem;
 }
 form div {
   display: flex;
@@ -167,15 +167,16 @@ form textarea {
   height: 200px;
   border: none;
   border-radius: 5px;
+  background-color: #fff;
 }
-form button {
-  width: 100%;
+form button, form input[type=submit] {
+  width: 150px;
   height: 68px;
   border: none;
   border-radius: 5px;
-  background-color: #d87d4a;
+  background-color: #901C1C;
   color: #ffffff;
-  font-size: 36px;
+  font-size: 1.1rem;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -437,9 +438,9 @@ main {
 
 #contact_modal {
   background-color: #DB8876;
-  max-width: 70%;
+  width: 670px;
 }
-#contact_modal input[type=text], #contact_modal input[type=email], #contact_modal textarea {
+#contact_modal input[type=text], #contact_modal input[type=email] {
   width: 90%;
   height: 68px;
   border: none;

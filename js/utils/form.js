@@ -4,77 +4,83 @@
 let txtBtn = "Fermer";
 let classChg = "btn-submit";
 let idButton = "BtnInscriptionClozer";
-export const contactForm = `<h2>Contactez-moi</h2>
-<span class="close"><img src="/assets/icons/close.svg" /></span>
+let injectArtistName = null;
+export const contactForm = `
+  <h2>Contactez-moi ${injectArtistName} </h2>
+  <span class="close">
+    <img src="/assets/icons/close.svg">
+  </span>
 <form
-              name="reserve"
-              action="/index.html"
-              method="get" id="contactForm" novalidate>
-              <div
-                class="formData"
-                aria-invalid="false" 
-                data-error="Champ Prénom invalide">                
-                <label>Prénom</label><br>
-                <input
-                  class="text-control"
-                  type="text"
-                  id="first"
-                  name="first"
-                ><br>
-              </div>
-              <div
-                class="formData"
-                aria-invalid="false" 
-                data-error="Champ Nom invalide">
-                <label>Nom</label><br>
-                <input
-                  class="text-control"
-                  type="text"
-                  id="last"
-                  name="last"
-                ><br>
-              </div>
-              <div
-                class="formData" 
-                aria-invalid="false" 
-                data-error="Champ Email invalide">
-                <label>E-mail</label><br>
-                <input
-                  class="text-control"
-                  type="email"
-                  id="email"
-                  name="email"
-                ><br>
-              </div>
-              <div
-              class="formData" 
-              aria-invalid="false" 
-              data-error="Champ Message vide">
-              <label>Message</label><br>
-              <textaera
-                class="text-control"
-                type="message"
-                id="message"
-                rows="5" cols="33"
-                name="message"></textaera><br>
-            </div>
-              <div
-                class="formData" data-error="false">
-                <input
-                  class="checkbox-input"
-                  type="checkbox"
-                  id="checkboxcgu" 
-                  required>
-                <label class="checkbox2-label" for="checkboxcgu">
-                  <span class="checkbox-icon"></span>
-                  J'ai lu et accepté les conditions d'utilisation.
-                </label>
-              
-              </div>
-              <button id="FinalBtn" class="btn-submit"
-              type="submit"
-              class="button" disabled>Envoyer</button>
-            </form>`;
+  name="reserve"
+  action="/index.html"
+  method="get" id="contactForm" novalidate>
+  <div
+    class="formData"
+    aria-invalid="false" 
+    aria-errormessage="Champ Prénom invalide">                
+      <label>Prénom</label>
+      <input
+        class="text-control"
+        type="text"
+        id="first"
+        name="first"
+        required>
+  </div>
+  <div
+  class="formData"
+  aria-invalid="false" 
+  aria-errormessage="Champ Nom invalide">
+    <label>Nom</label>
+    <input
+    class="text-control"
+    type="text"
+    id="last"
+    name="last"
+    required>
+  </div>
+  <div
+  class="formData" 
+  aria-invalid="false" 
+  aria-errormessage="Champ Email invalide">
+    <label>E-mail</label>
+    <input
+    class="text-control"
+    type="email"
+    id="email"
+    name="email"
+    required>
+  </div>
+  <div
+  class="formData" 
+  aria-invalid="false" 
+  aria-errormessage="Champ Message vide">
+    <label>Votre message</label>
+    <textarea
+    id="message"
+    name="message" 
+    placeholder="Votre message ici"
+    required></textarea>
+  </div>
+  <!--<div
+  class="formData" 
+  aria-errormessage="false">
+    <input
+    class="checkbox-input"
+    type="checkbox"
+    id="checkboxcgu" 
+    required>
+    <label class="checkbox2-label" for="checkboxcgu">
+    <span class="checkbox-icon"></span>
+    J'ai lu et accepté les conditions d'utilisation.
+    </label>
+  </div>-->
+  <button 
+  id="FinalBtn" 
+  class="btn-submit"
+  type="submit"
+  class="button"
+  disabled>Envoyer</button>
+</form>`;
 
 // ================================= NEPHA CODE ===============
 // FORM FINISH ================================================

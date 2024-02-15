@@ -10,8 +10,8 @@ form {
   align-items: flex-start;
 
   label {
-    color: #312e2e;
-    font-size: 36px;
+    color: colors.$colorTypoGreyBis;
+    font-size: 1.4rem;
   }
 
   div {
@@ -47,16 +47,17 @@ form {
     height: 200px;
     border: none;
     border-radius: 5px;
+    background-color: colors.$colorTypoWhite;
   }
 
-  button {
-    width: 100%;
+  button, input[type="submit"] {
+    width: 150px;
     height: 68px;
     border: none;
     border-radius: 5px;
-    background-color: #d87d4a;
+    background-color: colors.$colorMain; ;
     color: #ffffff;
-    font-size: 36px;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;

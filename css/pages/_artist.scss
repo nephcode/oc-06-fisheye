@@ -145,9 +145,11 @@ main {
 #contact_modal {
     //display: none;
     background-color: colors.$colorTernary ;
-    max-width: 70% ;
+    width: 670px ;
 
-    input[type="text"], input[type="email"], textarea {
+
+
+    input[type="text"], input[type="email"] {
         width: 90%;
         height: 68px;
         border: none;

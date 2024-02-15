@@ -39,6 +39,7 @@ FetchIDartist.forEach((arrayArtist) => {
   const artistName = document.getElementById("ArtistName");
   //console.log(artistName);
   artistName.innerHTML = arrayArtist.name;
+  let injectArtistName = arrayArtist.name;
 
   const artistCity = document.getElementById("ArtistCity");
   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
@@ -138,6 +139,7 @@ function launchModal() {
 
 
 clickContact.addEventListener("click", launchModal);
+closeContact.addEventListener("togglepopover", closeModal);
 
 // ================================= NEAH GAME ================
 
