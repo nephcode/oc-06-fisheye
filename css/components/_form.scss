@@ -3,30 +3,36 @@
 //==================================== By Neah =================2024==//
 @use "../base/colors";
 
+
 form {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-
-  label {
-    color: colors.$colorTypoGreyBis;
-    font-size: 1.4rem;
+  
+ 
+  h2 {
+      color: colors.$colorTypoGreyBis;
+      font-size: 2.5rem;
+      font-weight: lighter;
+      margin: 0px;
+      padding: 0px;
   }
+  .close {
+      display: inline-flex;
+  }  
 
   div {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     align-items: self-start;
-    margin: 0px 10px 15px;
+    margin: 0px auto 15px;
   }
 
-  input {
-    width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 7px;
+  label {
+    color: colors.$colorTypoGreyBis;
+    font-size: 1.4rem;
   }
 
   select {
@@ -45,7 +51,7 @@ form {
   input[type="text"],
   input[type="email"],
   textarea {
-    width: 90%;
+    width: 100%;
     height: 68px;
     border: none;
     border-radius: 5px;

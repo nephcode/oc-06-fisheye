@@ -133,13 +133,28 @@ function launchModal() {
   modalContact.innerHTML = contactForm;
   //contactForm.reset();
   modalContact.style.display = "block";
+  modalContact.showPopover();
   console.log("Ouverture Contact Modal");
 
 }
 
+// ============================================================
+// CLOSE CROIX ================================================
+// ============================================================
+const close = document.querySelector(".close");
+const closer = close.addEventListener("click", () => {
+  modal.style.display = "none";
+  //modalContact.hidePopover();
+  document.getElementById("contactForm").reset();
+  //contactForm.innerHTML = formField;
+  console.log("Fermeture Croix et Clean modale");
+});
+
+
 
 clickContact.addEventListener("click", launchModal);
-closeContact.addEventListener("togglepopover", closeModal);
+
+//closeContact.addEventListener("togglepopover", closeModal);
 
 // ================================= NEAH GAME ================
 

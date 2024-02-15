@@ -143,10 +143,42 @@ main {
 // SECTION  MODAL ====================================================//
 
 #contact_modal {
+    display: none;
     background-color: colors.$colorTernary ;
     width: 670px ;
     border: 0px;
     border-radius: 5px;
+
+    &:popover-open {
+       z-index: 100;
+     
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0px auto ;
+        background-color: colors.$colorTernary;
+
+        h2 {
+            color: colors.$colorTypoGreyBis;
+            font-size: 2.5rem;
+            font-weight: lighter;
+            margin: 0px;
+            padding: 0px;
+        }
+        .close {
+            display: inline-flex;
+        }   
+
+
+
+      }
+
+
+
 
 }
 

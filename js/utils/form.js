@@ -6,10 +6,10 @@ let classChg = "btn-submit";
 let idButton = "BtnInscriptionClozer";
 let injectArtistName = null;
 export const contactForm = `
+<header>  
   <h2>Contactez-moi ${injectArtistName} </h2>
-  <span class="close">
-    <img src="/assets/icons/close.svg">
-  </span>
+  <img src="/assets/icons/close.svg" alt="fermer la fenetre" id="close" class="close">
+</header>
 <form
   name="reserve"
   action="/index.html"
