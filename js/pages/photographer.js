@@ -124,39 +124,46 @@ CounterLike(FetchIDmedia);
 
 
 
-// LOAD CONTACT MODAL ============= Je ne comprends rien ======
-// =============== SAD NEAH :'( ================ 2024 =========
+// CONTACT MODAL ==============================================
+// =============== NEAH GAME =================== 2024 =========
+// ============================================================
 const clickContact = document.getElementById("contactButton");
 const modalContact = document.getElementById("contact_modal");
+const close = document.querySelector(".close");
 
+// OUVRIR =====================================================
 function launchModal() {
   modalContact.innerHTML = contactForm;
   //contactForm.reset();
-  modalContact.style.display = "block";
+  //modalContact.style.display = "block";
   modalContact.showPopover();
   console.log("Ouverture Contact Modal");
-
 }
-
-// ============================================================
-// CLOSE CROIX ================================================
-// ============================================================
-const close = document.querySelector(".close");
-const closer = close.addEventListener("click", () => {
+// FERMER =====================================================
+console.log(close);
+close.addEventListener("click", () => {
   modal.style.display = "none";
-  //modalContact.hidePopover();
-  document.getElementById("contactForm").reset();
+  modalContact.hidePopover();
+  //document.getElementById("contactForm").reset();
   //contactForm.innerHTML = formField;
   console.log("Fermeture Croix et Clean modale");
 });
 
 
 
-clickContact.addEventListener("click", launchModal);
 
-//closeContact.addEventListener("togglepopover", closeModal);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    //modalContact.style.display = "none";
+    modalContact.togglePopover();
+    console.log("Fermeture ESC");
+  }
+});
 
+
+// ============================================================
 // ================================= NEAH GAME ================
-
+clickContact.addEventListener("click", launchModal);
 
 //==================================== By Nepha =================2024==//

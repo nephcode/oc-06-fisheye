@@ -133,16 +133,6 @@ form {
   flex-direction: column;
   align-items: flex-start;
 }
-form h2 {
-  color: #312E2E;
-  font-size: 2.5rem;
-  font-weight: lighter;
-  margin: 0px;
-  padding: 0px;
-}
-form .close {
-  display: inline-flex;
-}
 form div {
   display: flex;
   flex-direction: column;
@@ -448,7 +438,6 @@ main {
 }
 
 #contact_modal {
-  display: none;
   background-color: #DB8876;
   width: 670px;
   border: 0px;
