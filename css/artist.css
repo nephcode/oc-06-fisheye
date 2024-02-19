@@ -163,7 +163,7 @@ form textarea {
   height: 68px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 26px;
+  margin-bottom: 6px;
   background-color: #fff;
 }
 form textarea {
@@ -190,7 +190,7 @@ MAJ 2024 ARIA
 */
 .formData[aria-errormessage]::after {
   content: attr(aria-errormessage);
-  font-size: 0.4em;
+  font-size: 0.8rem;
   color: #e54858;
   display: block;
   margin-top: 7px;
@@ -198,7 +198,7 @@ MAJ 2024 ARIA
   text-align: right;
   line-height: 0.3;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .formData[aria-invalid=true]::after {
@@ -211,7 +211,7 @@ MAJ 2024 ARIA
 
 .formDataOK[aria-errormessage]::after {
   content: attr(aria-errormessage);
-  font-size: 0.4em;
+  font-size: 0.8rem;
   color: #279e7a;
   display: block;
   margin-top: 7px;
@@ -219,7 +219,7 @@ MAJ 2024 ARIA
   text-align: right;
   line-height: 0.3;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .formDataOK[aria-invalid=false]::after {

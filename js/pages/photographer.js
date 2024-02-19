@@ -30,6 +30,16 @@ const FetchIDmedia = medias.filter(
 );
 //console.log(FetchIDmedia);
 
+const formData = document.querySelectorAll(".formData");
+// VARIABLE PROGZ
+const cguDown = document.getElementById("checkboxcgu");
+const btnSub = document.getElementById("FinalBtn");
+const gameTournoi = 'input[name="location"]';
+// VARIABLE REGEX
+const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
+
+
 // DISPLAY ARTIST  ---------------------------------------------------//
 //console.log("====================================");
 //console.log("============== ARTIST ==============");
@@ -122,6 +132,49 @@ function CounterLike(importMedia) {
 }
 CounterLike(FetchIDmedia);
 
+// ============================================================
+// INPUT TEXT  =========================== NEPHA CODE =========
+// ============================================================
+/**
+ * @param {string} inputOnAir
+ * */
+const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
+  const targetAir = document.getElementById(inputOnAir);
+  //const targetCgu = document.getElementById(cguDown.id);
+  //const targetMit = document.getElementById(btnSub.id);
+  targetAir.addEventListener(listenerOnAir, (event) => {
+    const inputValue = event.target.value;
+    const fieldData = targetAir.parentElement;
+    if (inputValue && regRuleOnAir.test(inputValue)) {
+      //targetCgu.removeAttribute("disabled");
+
+      fieldData.classList.add("formDataOK");
+      fieldData.setAttribute("aria-invalid", "false");
+      fieldData.setAttribute(
+        "aria-errormessage",
+        `Votre saisie ${inputValue} est valide`
+      );
+      console.log(`L'input ${inputValue} est valide`);
+      //console.log("Active checkbox : " + cguDown.id);
+    } else {
+      fieldData.classList.remove("formDataOK");
+      fieldData.setAttribute("aria-invalid", "true");
+      fieldData.setAttribute(
+        "aria-errormessage",
+        `Votre saisie ${inputValue} n'est pas valide`
+      );
+      //targetMit.setAttribute("disabled", "");
+      //targetCgu.checked = false;
+      //targetCgu.setAttribute("disabled", "");
+      throw new Error(`L'élément ${inputValue} spécifié n'est pas valide`);
+
+      //const btnSuppr = document.getElementById("FinalBtn");
+      //const cguDown = document.getElementById("checkbokcgu");
+      //btnSuppr.setAttribute("disabled", "");
+      //const checkSuppr = document.getElementById("FinalBtn");
+    }
+  });
+};
 
 
 // CONTACT MODAL ==============================================
@@ -140,6 +193,22 @@ function launchModal() {
   modalContact.style.display = "block";
   modalContact.showPopover();
   console.log("Ouverture Contact Modal");
+
+  try {
+    onAirChange("first", "blur", stringRegEx);
+    onAirChange("last", "blur", stringRegEx);
+    onAirChange("email", "blur", emailRegEx);
+    //onAirChange("birthdate", "blur", dateRegEx);
+    //onAirChange("quantity", "blur", tourRegEx);
+    /////
+    //disamit(cguDown.id, btnSub.id, "change");
+    //rgpd("checkboxads", "change");
+    /////
+    //radioCheck(gameTournoi, "click");
+  } catch (Error) {
+    console.log("il y'a des erreurs" + Error.message);
+  }
+
 }
 // FERMER =====================================================
 console.log(close);
