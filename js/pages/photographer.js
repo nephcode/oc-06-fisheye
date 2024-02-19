@@ -39,7 +39,7 @@ FetchIDartist.forEach((arrayArtist) => {
   const artistName = document.getElementById("ArtistName");
   //console.log(artistName);
   artistName.innerHTML = arrayArtist.name;
-  let injectArtistName = arrayArtist.name;
+  
 
   const artistCity = document.getElementById("ArtistCity");
   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
@@ -54,7 +54,7 @@ FetchIDartist.forEach((arrayArtist) => {
 });
 // DISPLAY TRI -------------------------------------------------------//
 
-
+//export let injectArtistName = arrayArtist.name;
 
 
 // DISPLAY MEDIA -----------------------------------------------------//
@@ -129,20 +129,24 @@ CounterLike(FetchIDmedia);
 // ============================================================
 const clickContact = document.getElementById("contactButton");
 const modalContact = document.getElementById("contact_modal");
+const closer = document.getElementById("closecontact");
 const close = document.querySelector(".close");
 
 // OUVRIR =====================================================
 function launchModal() {
   modalContact.innerHTML = contactForm;
   //contactForm.reset();
-  //modalContact.style.display = "block";
+  modalContact.classList.add("modal-content");
+  modalContact.style.display = "block";
   modalContact.showPopover();
   console.log("Ouverture Contact Modal");
 }
 // FERMER =====================================================
 console.log(close);
-close.addEventListener("click", () => {
-  modal.style.display = "none";
+closer.addEventListener("click", () => {
+  preventDefault();
+  modalContact.style.display = "none";
+  
   modalContact.hidePopover();
   //document.getElementById("contactForm").reset();
   //contactForm.innerHTML = formField;
@@ -151,12 +155,13 @@ close.addEventListener("click", () => {
 
 
 
-
+// FERMER ESC ================================================
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     event.preventDefault();
-    //modalContact.style.display = "none";
+    modalContact.style.display = "none";
     modalContact.togglePopover();
+    console.log(modalContact);
     console.log("Fermeture ESC");
   }
 });

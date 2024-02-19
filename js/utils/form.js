@@ -1,11 +1,18 @@
+//import { injectArtistName } from '../pages/photographer.js';
 // =================================== FISH EYE ===============
 // FORM FIELD =================================================
 // ============================= NEPHA CODE ==== 2024 =========
+
+
 let txtBtn = "Fermer";
 let classChg = "btn-submit";
 let idButton = "BtnInscriptionClozer";
-let injectArtistName = null;
+
+
+let injectArtistName = "artistNames";
+
 export const contactForm = `
+<div class="modal">
 <header>  
   <h2>Contactez-moi ${injectArtistName} </h2>
   <img src="/assets/icons/close.svg" alt="fermer la fenetre" id="closecontact" class="close">
@@ -82,7 +89,8 @@ export const contactForm = `
   class="button"
   disabled>Envoyer</button>
   </div>
-  </form>`;
+  </form>
+  </div>`;
 
 // ================================= NEPHA CODE ===============
 // FORM FINISH ================================================

@@ -4,6 +4,7 @@
 @use "../base/colors";
 
 
+
 form {
   display: flex;
   width: 100%;
@@ -67,4 +68,49 @@ form {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+}
+
+/*
+MAJ 2024 ARIA 
+ aria-invalid="false" data-error-visible="false"
+  aria-errormessage="" > data-error="" 
+*/
+
+.formData[aria-errormessage]::after {
+  content: attr(aria-errormessage);
+  font-size: 0.4em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[aria-invalid="true"]::after {
+  opacity: 1;
+}
+.formData[aria-invalid="true"] .text-control {
+  border: 2px solid #e54858;
+}
+
+
+.formDataOK[aria-errormessage]::after {
+  content: attr(aria-errormessage);
+  font-size: 0.4em;
+  color: #279e7a;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formDataOK[aria-invalid="false"]::after {
+  opacity: 1;
+}
+.formDataOK[aria-invalid="false"] .text-control {
+  border: 2px solid #279e7a;
 }
