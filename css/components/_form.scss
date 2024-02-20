@@ -3,16 +3,11 @@
 //==================================== By Neah =================2024==//
 @use "../base/colors";
 
-
-
 form {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  
- 
-   
 
   div {
     display: flex;
@@ -94,7 +89,6 @@ MAJ 2024 ARIA
 .formData[aria-invalid="true"] .text-control {
   border: 2px solid #e54858;
 }
-
 
 .formDataOK[aria-errormessage]::after {
   content: attr(aria-errormessage);

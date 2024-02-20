@@ -38,7 +38,7 @@ const gameTournoi = 'input[name="location"]';
 // VARIABLE REGEX
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
-
+const messageRegEx = /^[\s\S]{30,400}$/;
 
 // DISPLAY ARTIST  ---------------------------------------------------//
 //console.log("====================================");
@@ -198,6 +198,7 @@ function launchModal() {
     onAirChange("first", "blur", stringRegEx);
     onAirChange("last", "blur", stringRegEx);
     onAirChange("email", "blur", emailRegEx);
+    onAirChange("message", "blur", messageRegEx);
     //onAirChange("birthdate", "blur", dateRegEx);
     //onAirChange("quantity", "blur", tourRegEx);
     /////
