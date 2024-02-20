@@ -183,6 +183,10 @@ form input[type=submit] {
   margin-bottom: 20px;
 }
 
+#FinalBtn[disabled] {
+  background-color: #c4c4c4;
+}
+
 /*
 MAJ 2024 ARIA 
  aria-invalid="false" data-error-visible="false"

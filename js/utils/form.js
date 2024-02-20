@@ -18,6 +18,7 @@ export const contactForm = `
   <img src="/assets/icons/close.svg" alt="fermer la fenetre" id="closecontact" class="close">
 </header>
 <form
+  id="ocform"
   name="reserve"
   action="/index.html"
   method="get" id="contactForm" novalidate>
