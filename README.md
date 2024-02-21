@@ -90,6 +90,9 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 - Update `HEADER` & `FOOTER` Personal Design
 - `CARD` homePage OK with transition/Animation
 - Fetch Data `Photographer`
+- Modal load with `POPOVER HTML API`
+- Function `OnAirChange` Update for project
+
 
 LOADING ‰‰‰‰‰‰‰‰ 55%
 

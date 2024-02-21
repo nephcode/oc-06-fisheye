@@ -5,8 +5,7 @@
 import { 
   idCapture,
   closeEsc, 
-  closeClick, popClick,
-
+  popClick,
   counterLike
 } from "/js/utils/tools.js";
 import { formInject, formFinish } from "/js/utils/form.js";
@@ -194,18 +193,7 @@ const closer = document.getElementById("closecontact");
 const close = document.querySelector(".close");
 
 // OUVRIR =====================================================
-function launchModal() {
-  //modalContact.innerHTML = formInject(FetchIDartist[0].name);
-  //formOC.reset();
-  modalContact.classList.add("modal-content");
-  modalContact.style.display = "block";
-  modalContact.showPopover();
-  console.log("Ouverture Contact Modal");
-  
-
-}
-
-const popoverModal =(target) => {
+const popoverModal = (target) => {
   //const formOC = document.getElementById("ocform");
   target.innerHTML = formInject(FetchIDartist[0].name);
   const formOC = document.getElementById("ocform");
@@ -215,23 +203,20 @@ const popoverModal =(target) => {
     onAirChange("last", "blur", stringRegEx);
     onAirChange("email", "blur", emailRegEx);
     onAirChange("message", "blur", messageRegEx);
-    /////
-    //disamit(submitButton.id, "change");
- 
   } catch (Error) {
     console.log("il y'a des erreurs" + Error.message);
   }
 }
-popoverModal(contact_modal);
+
 
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
 // CLOSE CLICK ================================================
 popClick(modalContact, closecontact);
-//popClick(test_modal, closecontact);
 // ============================================================
+popoverModal(contact_modal);
 // ================================= NEAH GAME ================
-//clickContact.addEventListener("click", launchModal);
+
 
 // ========================= By Nepha =================2024====
 // ============================================================
