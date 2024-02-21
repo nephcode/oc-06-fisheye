@@ -1,21 +1,40 @@
-//import { injectArtistName } from '../pages/photographer.js';
 // =================================== FISH EYE ===============
 // FORM FIELD =================================================
 // ============================= NEPHA CODE ==== 2024 =========
-
-
 let txtBtn = "Fermer";
 let classChg = "btn-submit";
 let idButton = "BtnInscriptionClozer";
 
+// ================================= NEPHA CODE ===============
+// FORM FINISH ================================================
+// ============================================= 2024 =========
 
-let injectArtistName = "artistNames";
+export function formFinish ()  {
+  let form = `<form 
+      name="reserve"
+      action="/index.html"
+      method="get" 
+      id="contactForm" 
+      novalidate>
+      <div class="form-data squareNeph">Merci pour <br/>votre inscription</div>
+      <bouton 
+        id="${idButton}" 
+        class="${classChg}"
+        type="submit">${txtBtn}</bouton>
+    </form>`;
+    return form;
+};
 
-export const contactForm = `
+// ================================= NEPHA CODE ===============
+// FORM FIELD =================================================
+// ============================================= 2024 =========
+
+export function formInject (injectArtistName) {
+let form =  `
 <div class="modal">
 <header>  
   <h2>Contactez-moi ${injectArtistName} </h2>
-  <img src="/assets/icons/close.svg" alt="fermer la fenetre" id="closecontact" class="close">
+  <div id="closecontact"><img src="/assets/icons/close.svg" alt="fermer la fenetre" class="close"></div>
 </header>
 <form
   id="ocform"
@@ -69,19 +88,6 @@ export const contactForm = `
     placeholder="Votre message ici"
     required></textarea>
   </div>
-  <!--<div
-  class="formData" 
-  aria-errormessage="false">
-    <input
-    class="checkbox-input"
-    type="checkbox"
-    id="checkboxcgu" 
-    required>
-    <label class="checkbox2-label" for="checkboxcgu">
-    <span class="checkbox-icon"></span>
-    J'ai lu et accepté les conditions d'utilisation.
-    </label>
-  </div>-->
   <div>
   <button 
   id="FinalBtn" 
@@ -92,22 +98,6 @@ export const contactForm = `
   </div>
   </form>
   </div>`;
-
-// ================================= NEPHA CODE ===============
-// FORM FINISH ================================================
-// ============================================= 2024 =========
-
-export const finishForm = `<form 
-      name="reserve"
-      action="/index.html"
-      method="get" 
-      id="contactForm" 
-      novalidate>
-      <div class="form-data squareNeph">Merci pour <br/>votre inscription</div>
-      <bouton 
-        id="${idButton}" 
-        class="${classChg}"
-        type="submit">${txtBtn}</bouton>
-    </form>`;
-
+  return form;
+}
 // ================================= NEAH GAME ================

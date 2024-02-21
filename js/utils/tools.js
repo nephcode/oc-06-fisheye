@@ -1,5 +1,5 @@
 //======= ∵ ƸӜƷ ∴ ============================================//
-//======================= ∵ NƸAH ∴  ==========================//
+//======================= ∵ NƸAH ∴ ===========================//
 //================================================ 2024 ======//
 
 
@@ -13,5 +13,51 @@ export const idCapture = (source) => {
   // amélioration possible : récupérer le paramètre de l'url avec un nom
   // faire une boucle pour récupérer tous les paramètres de l'url
 
+// FERMER ESC ================================================
+export const closeEsc = (target) => {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      target.style.display = "none";
+      target.togglePopover();
+      console.log(target);
+      console.log("Fermeture ESC");
+    }
+  });
+}
 
-  //======= ∵ ƸӜƷ ∴ ============================================//
+// FERMER CLICK ==============================================
+export const closeClick = (target, listener ) => {
+  console.log(listener);  
+  listener.addEventListener("click", () => {
+    preventDefault();
+    target.style.display = "none";
+    target.hidePopover();
+    //document.getElementById("contactForm").reset();
+    //contactForm.innerHTML = formField;
+    console.log("Fermeture Croix et Clean modale"); 
+  });
+}
+
+// COUNTER ===================================================
+export function counterLike(importMedia) {
+  let likeCounterOut = 0;
+  //---------------------//
+  importMedia.forEach((arrayMedia) => {
+    //console.log("ID: " + arrayMedia.id);
+    //console.log("LIKES: " + arrayMedia.likes);
+
+    likeCounterOut += parseInt(arrayMedia.likes);
+  });
+  //console.log(likeCounterOut);
+  //---------------------//
+  const artistLikeCount = document.getElementById("likeCount");
+  //console.log(artistLikeCount.textContent);
+  const likeCounterDisplay = `<span class="heart-btn">${likeCounterOut}
+        <i class="fas fa-heart icone__Coeur"></i></span>`;
+  artistLikeCount.innerHTML = likeCounterDisplay;
+
+  //console.log(likeCounterDisplay);
+}
+
+//======= ∵ ƸӜƷ ∴ ============================================//
