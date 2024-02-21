@@ -5,7 +5,8 @@
 import { 
   idCapture,
   closeEsc, 
-  closeClick, 
+  closeClick, popClick,
+
   counterLike
 } from "/js/utils/tools.js";
 import { formInject, formFinish } from "/js/utils/form.js";
@@ -31,7 +32,7 @@ const FetchIDmedia = medias.filter(
 // VARIABLE PROGZ
 const formData = document.querySelectorAll(".formData");
 const submitButton = document.getElementById("FinalBtn");
-const formOC = document.getElementById("ocform");
+
 // VARIABLE REGEX
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
@@ -194,12 +195,21 @@ const close = document.querySelector(".close");
 
 // OUVRIR =====================================================
 function launchModal() {
-  modalContact.innerHTML = formInject(injectArtistName);
+  //modalContact.innerHTML = formInject(FetchIDartist[0].name);
   //formOC.reset();
   modalContact.classList.add("modal-content");
   modalContact.style.display = "block";
   modalContact.showPopover();
   console.log("Ouverture Contact Modal");
+  
+
+}
+
+const popoverModal =(target) => {
+  //const formOC = document.getElementById("ocform");
+  target.innerHTML = formInject(FetchIDartist[0].name);
+  const formOC = document.getElementById("ocform");
+  formOC.reset();
   try {
     onAirChange("first", "blur", stringRegEx);
     onAirChange("last", "blur", stringRegEx);
@@ -211,16 +221,17 @@ function launchModal() {
   } catch (Error) {
     console.log("il y'a des erreurs" + Error.message);
   }
-
 }
+popoverModal(contact_modal);
 
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
 // CLOSE CLICK ================================================
-closeClick(modalContact, closer);
+popClick(modalContact, closecontact);
+//popClick(test_modal, closecontact);
 // ============================================================
 // ================================= NEAH GAME ================
-clickContact.addEventListener("click", launchModal);
+//clickContact.addEventListener("click", launchModal);
 
 // ========================= By Nepha =================2024====
 // ============================================================

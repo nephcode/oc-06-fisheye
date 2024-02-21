@@ -18,7 +18,7 @@ export const closeEsc = (target) => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       event.preventDefault();
-      target.style.display = "none";
+      //target.style.display = "none";
       target.togglePopover();
       console.log(target);
       console.log("Fermeture ESC");
@@ -31,15 +31,24 @@ export const closeClick = (target, listener ) => {
   console.log(listener);  
   listener.addEventListener("click", () => {
     preventDefault();
-    target.style.display = "none";
     target.hidePopover();
     //document.getElementById("contactForm").reset();
     //contactForm.innerHTML = formField;
     console.log("Fermeture Croix et Clean modale"); 
   });
 }
-
-// COUNTER ===================================================
+// TOGGLE POPOVER ============================================
+export const popClick = (target, listener ) => {
+  console.log(listener);  
+  listener.addEventListener("click", () => {
+    target.togglePopover();
+    //const formOC = document.getElementById("ocform");
+    //formOC.reset();
+    //contactForm.innerHTML = formField;
+    console.log("Popover HIDE"); 
+  });
+}
+// COUNTERLIKE ===================================================
 export function counterLike(importMedia) {
   let likeCounterOut = 0;
   //---------------------//
