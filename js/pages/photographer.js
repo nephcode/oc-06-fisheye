@@ -22,7 +22,7 @@ const artist = data.photographers;
 const medias = data.media;
 
 const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
-console.log(FetchIDartist);
+//console.log(FetchIDartist);
 
 const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
@@ -38,16 +38,16 @@ const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
 const messageRegEx = /^[\s\S]{30,400}$/;
 
 // DISPLAY ARTIST  ---------------------------------------------------//
-console.log(FetchIDartist[0].name);
+//console.log(FetchIDartist[0].name);
 FetchIDartist.forEach((arrayArtist) => {
   const artistName = document.getElementById("ArtistName");
+  artistName.innerHTML = arrayArtist.name;
   const artistCity = document.getElementById("ArtistCity");
   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
   const artistTagline = document.getElementById("ArtistTagline");
   artistTagline.innerHTML = arrayArtist.tagline;
   const artistImage = document.getElementById("ArtistPortrait");
-  //console.log(artistImage);
-  //console.log(arrayArtist.portrait);
+  //  
   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
   const artistPrice = document.getElementById("ArtistPrice");
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
@@ -112,7 +112,7 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
         `Votre saisie n'est pas valide`
       );
       targetMit.setAttribute("disabled", "");
-      throw new Error(`L'élément ${inputValue} spécifié n'est pas valide`);
+      throw new Error(`L'élément ${inputOnAir} ${inputValue} spécifié n'est pas valide`);
 
       const btnSuppr = document.getElementById("FinalBtn");
       btnSuppr.setAttribute("disabled", "");
@@ -207,14 +207,14 @@ const popoverModal = (target) => {
     console.log("il y'a des erreurs" + Error.message);
   }
 }
-
+popoverModal(contact_modal);
 
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
 // CLOSE CLICK ================================================
-popClick(modalContact, closecontact);
+popClick(contact_modal, closecontact);
 // ============================================================
-popoverModal(contact_modal);
+
 // ================================= NEAH GAME ================
 
 

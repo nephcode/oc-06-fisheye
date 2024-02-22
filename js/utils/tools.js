@@ -18,28 +18,21 @@ export const closeEsc = (target) => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       event.preventDefault();
-      //target.style.display = "none";
       target.togglePopover();
-      console.log(target);
       console.log("Fermeture ESC");
     }
   });
 }
-
 // FERMER CLICK ==============================================
 export const closeClick = (target, listener ) => {
-  console.log(listener);  
   listener.addEventListener("click", () => {
     preventDefault();
     target.hidePopover();
-    //document.getElementById("contactForm").reset();
-    //contactForm.innerHTML = formField;
     console.log("Fermeture Croix et Clean modale"); 
   });
 }
 // TOGGLE POPOVER ============================================
-export const popClick = (target, listener ) => {
-  console.log(listener);  
+export const popClick = (target, listener) => {
   listener.addEventListener("click", () => {
     target.togglePopover();
     //const formOC = document.getElementById("ocform");

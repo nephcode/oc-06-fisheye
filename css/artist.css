@@ -162,6 +162,8 @@ form textarea {
   width: 100%;
   height: 68px;
   border: none;
+  color: #312E2E;
+  font-size: 1.2rem;
   border-radius: 5px;
   margin-bottom: 6px;
   background-color: #fff;
@@ -491,8 +493,9 @@ main {
 #contact_modal, #test_modal {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4392156863);
+  background-color: rgba(0, 0, 0, 0.5019607843);
   border: 0px;
+  overflow: hidden;
 }
 #contact_modal .modal, #test_modal .modal {
   display: flex;
