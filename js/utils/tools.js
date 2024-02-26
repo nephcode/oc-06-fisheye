@@ -13,6 +13,7 @@ export const idCapture = (source) => {
   // amélioration possible : récupérer le paramètre de l'url avec un nom
   // faire une boucle pour récupérer tous les paramètres de l'url
 
+
 // FERMER ESC ================================================
 export const closeEsc = (target) => {
   document.addEventListener("keydown", (event) => {

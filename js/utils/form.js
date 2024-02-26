@@ -9,21 +9,18 @@ let idButton = "BtnInscriptionClozer";
 // FORM FINISH ================================================
 // ============================================= 2024 =========
 
-export function formFinish ()  {
-  let form = `<form 
+export const formFinish = `<form 
       name="reserve"
       action="/index.html"
       method="get" 
       id="contactForm" 
       novalidate>
       <div class="form-data squareNeph">Merci pour <br/>votre inscription</div>
-      <bouton 
-        id="${idButton}" 
-        class="${classChg}"
-        type="submit">${txtBtn}</bouton>
+      <button 
+        id="BtnInscriptionClozer" 
+        class="btn-submit"
+        type="submit">Fermer</button>
     </form>`;
-    return form;
-};
 
 // ================================= NEPHA CODE ===============
 // FORM FIELD =================================================

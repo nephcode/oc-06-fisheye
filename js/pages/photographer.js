@@ -6,9 +6,13 @@ import {
   idCapture,
   closeEsc, 
   popClick,
+  closeClick,
   counterLike
 } from "/js/utils/tools.js";
-import { formInject, formFinish } from "/js/utils/form.js";
+import { 
+  formInject, 
+  formFinish 
+} from "/js/utils/form.js";
 
 // ID FROM URL GET ----------------------------------------------------//
 const url = window.location.href;
@@ -38,12 +42,6 @@ const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
 const messageRegEx = /^[\s\S]{30,400}$/;
 
 // VARIABLE FIELD
-/*
-const verifList = [
-  { id: "first", regex: stringRegEx }
-];
-*/
-
 const verifList = [
   { id: "first", regex: stringRegEx },
   { id: "last", regex: stringRegEx },
@@ -163,14 +161,11 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
         onSkud(item.id, item.regex);
         console.log(`Champ: ${item.id}, Expression régulière: ${item.regex}`);
         if (!onSkud) {
-          //submitProtect.removeAttribute("disabled");
-          submitProtect.setAttribute("disabled", "");
-          //break;
+          targetMit.setAttribute("disabled", "");
+          
         }
         else {
-          submitProtect.removeAttribute("disabled");
-          //submitProtect.setAttribute("disabled", "");
-          //throw new Error(`Le bouton ${inputDisamit} des CGU n'est pas coché`);
+          targetMit.removeAttribute("disabled");
         }
       });
     }
@@ -203,7 +198,7 @@ const close = document.querySelector(".close");
 
 // OUVRIR =====================================================
 const popoverModal = (target) => {
-  //const formOC = document.getElementById("ocform");
+  
   target.innerHTML = formInject(FetchIDartist[0].name);
   const formOC = document.getElementById("ocform");
   formOC.reset();
@@ -221,11 +216,29 @@ popoverModal(contact_modal);
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
 // CLOSE CLICK ================================================
-popClick(contact_modal, closecontact);
-// ============================================================
 
+// ============================================================
+// =================== GAMe öN ============== ATHENA PRACTICE =
+// OC FORM SUBMIT ================== NEPHA CODE ===============
+// =============================================== 2023 =======
+const formOC = document.getElementById("ocform");
+formOC.addEventListener("submit", (event) => {
+  event.preventDefault();
+  formOC.innerHTML = formFinish;
+  console.log("Inscription OK");
+  // ============================================================
+  // CLOSE BUTTON ===============================================
+  // ============================================================
+  const closeFinal = document.getElementById("BtnInscriptionClozer");
+  closeFinal.addEventListener("click", () => {
+    closeClick(contact_modal, BtnInscriptionClozer);
+    formOC.reset();
+    contact_modal.innerHTML = formInject(FetchIDartist[0].name);
+    console.log("Fermeture Final et Clean modale");
+  });
+});
 // ================================= NEAH GAME ================
 
-
+popClick(contact_modal, closecontact);
 // ========================= By Nepha =================2024====
 // ============================================================
