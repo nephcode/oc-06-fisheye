@@ -34,7 +34,7 @@ let form =  `
 <div class="modal">
 <header>  
   <h2>Contactez-moi ${injectArtistName} </h2>
-  <div id="closecontact"><img src="/assets/icons/close.svg" alt="fermer la fenetre" class="close"></div>
+  <div id="closecontact"><img src="/assets/icons/close.svg" alt="fermer la fenetre" class="close" role="button"></div>
 </header>
 <form
   id="ocform"
@@ -45,7 +45,7 @@ let form =  `
     class="formData"
     aria-invalid="false" 
     aria-errormessage="Champ Prénom invalide">                
-      <label>Prénom</label>
+      <label for="first">Prénom</label>
       <input
         class="text-control"
         type="text"
@@ -57,7 +57,7 @@ let form =  `
   class="formData"
   aria-invalid="false" 
   aria-errormessage="Champ Nom invalide">
-    <label>Nom</label>
+    <label for="last">Nom</label>
     <input
     class="text-control"
     type="text"
@@ -69,7 +69,7 @@ let form =  `
   class="formData" 
   aria-invalid="false" 
   aria-errormessage="Champ Email invalide">
-    <label>E-mail</label>
+    <label for="email">E-mail</label>
     <input
     class="text-control"
     type="email"
@@ -81,7 +81,7 @@ let form =  `
   class="formData" 
   aria-invalid="false" 
   aria-errormessage="Champ Message vide">
-    <label>Votre message</label>
+    <label for="message">Votre message</label>
     <textarea
     id="message"
     name="message" 
