@@ -27,14 +27,10 @@ export const closeEsc = (target) => {
 // FERMER CLICK ==============================================
 export const closeClick = (target, listener, targetForm, form) => {
   const cleanForm = target.firstElementChild;
-  console.log(cleanForm);
+  //console.log(cleanForm);
   listener.addEventListener("click", () => {
     target.hidePopover();
-
-    targetForm.innerHTML = form;
-    targetForm.reset();
-
-    console.log("Fermeture Croix"); 
+    //console.log("Fermeture BUTTON FORM"); 
   });
 }
 // TOGGLE POPOVER ============================================

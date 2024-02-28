@@ -100,8 +100,8 @@ const onSkud = (inputSkud, regRuleSkud) => {
   const targetSkud = document.getElementById(inputSkud);
   const targetMit = document.getElementById("FinalBtn");
   const inputValue = targetSkud.value;
-  console.log("targetMit " + targetMit.id);
-  console.log("targetSkud " + targetSkud.value);
+  //console.log("targetMit " + targetMit.id);
+  //console.log("targetSkud " + targetSkud.value);
   const fieldData = targetSkud.parentElement;
   if (inputValue && regRuleSkud.test(inputValue)) {
     targetMit.removeAttribute("disabled");
@@ -111,7 +111,7 @@ const onSkud = (inputSkud, regRuleSkud) => {
       "aria-errormessage",
       `Valide`
     );
-    console.log(`L'input ${inputValue} est valide`);
+    //console.log(`L'input ${inputValue} est valide`);
     }
     else {
     fieldData.classList.remove("formDataOK");
@@ -135,7 +135,6 @@ const onSkud = (inputSkud, regRuleSkud) => {
 const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
   const targetAir = document.getElementById(inputOnAir);
   const targetMit = document.getElementById("FinalBtn");
-  console.log(targetMit);
   targetAir.addEventListener(listenerOnAir, (event) => {
     const inputValue = event.target.value;
     const fieldData = targetAir.parentElement;
@@ -146,7 +145,7 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
       "aria-errormessage",
       `Votre saisie est valide`
       );
-      console.log(`L'input ${inputValue} est valide`);
+      //console.log(`L'input ${inputValue} est valide`);
       verifList.slice().reverse().forEach((item) => {
         onSkud(item.id, item.regex);
         if (!onSkud) {
@@ -165,11 +164,7 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
         `Votre saisie n'est pas valide`
       );
       targetMit.setAttribute("disabled", "");
-      throw new Error(`L'élément ${inputOnAir} ${inputValue} spécifié n'est pas valide`);
-
-      const btnSuppr = document.getElementById("FinalBtn");
-      btnSuppr.setAttribute("disabled", "");
-      console.log("Bouton désactivé");  
+      //throw new Error(`L'élément ${inputOnAir} ${inputValue} spécifié n'est pas valide`);
     }
     
   });
@@ -188,7 +183,7 @@ const formTarget = document.getElementById("contactForm");
 h2name.innerHTML = "Contactez-moi "+FetchIDartist[0].name;
 // OUVRIR =====================================================
 const popoverModal = (target) => {
-  console.log(target);
+  //console.log(target);
   target.innerHTML = formField;
   target.reset();
   try {
