@@ -53,7 +53,7 @@ form {
   }
 
   button,
-  input[type="submit"] {
+  input[type="submit"], .btn-submit {
     width: 150px;
     height: 68px;
     border: none;
@@ -71,11 +71,18 @@ form {
   background-color: #c4c4c4;
 }
 
-/*
-MAJ 2024 ARIA 
- aria-invalid="false" data-error-visible="false"
-  aria-errormessage="" > data-error="" 
-*/
+.squareNeph{
+  display: flex;
+  color : colors.$colorTypoGreyBis;
+  font-size: 2rem;
+  width: 100%;
+  min-height: 350px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal ;
+}
+
 
 .formData[aria-errormessage]::after {
   content: attr(aria-errormessage);

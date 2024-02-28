@@ -10,7 +10,7 @@ import {
   counterLike
 } from "/js/utils/tools.js";
 import { 
-  formInject, 
+  formField, 
   formFinish 
 } from "/js/utils/form.js";
 
@@ -51,7 +51,6 @@ const verifList = [
 
 
 // DISPLAY ARTIST  ---------------------------------------------------//
-//console.log(FetchIDartist[0].name);
 FetchIDartist.forEach((arrayArtist) => {
   const artistName = document.getElementById("ArtistName");
   artistName.innerHTML = arrayArtist.name;
@@ -70,7 +69,6 @@ FetchIDartist.forEach((arrayArtist) => {
 
 // DISPLAY MEDIA -----------------------------------------------------//
 function mediaIndex(importMedia) {
-  //let article_media = `<section id="artistSection" class="photographer_section">`;
   let article_media = "";
   //---------------------//
   importMedia.forEach((arrayMedia) => {
@@ -98,14 +96,6 @@ counterLike(FetchIDmedia);
 // ================= NEPHA CODE ===========ADAPT FOR 06 =======
 // BOUCLE DE VERIF ============================================
 // ============================= 2024 PATCH 😅 ================
-/*
-const verifList = [
-  { id: "first", regex: stringRegEx },
-  { id: "last", regex: stringRegEx },
-  { id: "email", regex: emailRegEx },
-  { id: "message", regex: messageRegEx }
-];*/
-
 const onSkud = (inputSkud, regRuleSkud) => {
   const targetSkud = document.getElementById(inputSkud);
   const targetMit = document.getElementById("FinalBtn");
@@ -119,7 +109,7 @@ const onSkud = (inputSkud, regRuleSkud) => {
     fieldData.setAttribute("aria-invalid", "false");
     fieldData.setAttribute(
       "aria-errormessage",
-      `Votre saisie ${inputValue} est valide`
+      `Valide`
     );
     console.log(`L'input ${inputValue} est valide`);
     }
@@ -159,10 +149,8 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
       console.log(`L'input ${inputValue} est valide`);
       verifList.slice().reverse().forEach((item) => {
         onSkud(item.id, item.regex);
-        console.log(`Champ: ${item.id}, Expression régulière: ${item.regex}`);
         if (!onSkud) {
           targetMit.setAttribute("disabled", "");
-          
         }
         else {
           targetMit.removeAttribute("disabled");
@@ -195,13 +183,14 @@ const clickContact = document.getElementById("contactButton");
 const modalContact = document.getElementById("contact_modal");
 const closer = document.getElementById("closecontact");
 const close = document.querySelector(".close");
-
+const h2name = document.querySelector("#contact_modal header h2");
+const formTarget = document.getElementById("contactForm");
+h2name.innerHTML = "Contactez-moi "+FetchIDartist[0].name;
 // OUVRIR =====================================================
 const popoverModal = (target) => {
-  
-  target.innerHTML = formInject(FetchIDartist[0].name);
-  const formOC = document.getElementById("ocform");
-  formOC.reset();
+  console.log(target);
+  target.innerHTML = formField;
+  target.reset();
   try {
     onAirChange("first", "blur", stringRegEx);
     onAirChange("last", "blur", stringRegEx);
@@ -210,35 +199,35 @@ const popoverModal = (target) => {
   } catch (Error) {
     console.log("il y'a des erreurs" + Error.message);
   }
-}
-popoverModal(contact_modal);
 
+
+}
+clickContact.addEventListener("click", () => {
+  popoverModal(formTarget);
+});
+
+// ============================================================
+// OC FORM SUBMIT ================== NEPHA CODE ===============
+// =============================================== 2024 =======
+formTarget.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("========= Envoi du formulaire ======");
+  console.log("Prénom : "+first.value);
+  console.log("Nom : "+last.value);
+  console.log("Email : "+email.value);
+  const messageLog = message.value.substring(0, 40);
+  console.log("Message : "+messageLog);
+  console.log("========= Inscription OK ===========");
+  formTarget.innerHTML = formFinish;
+  
+  closeClick(contact_modal, BtnInscriptionClozer, formTarget, formField);
+  
+});
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
 // CLOSE CLICK ================================================
+popClick(contact_modal, closecontact);
 
 // ============================================================
-// =================== GAMe öN ============== ATHENA PRACTICE =
-// OC FORM SUBMIT ================== NEPHA CODE ===============
-// =============================================== 2023 =======
-const formOC = document.getElementById("ocform");
-formOC.addEventListener("submit", (event) => {
-  event.preventDefault();
-  formOC.innerHTML = formFinish;
-  console.log("Inscription OK");
-  // ============================================================
-  // CLOSE BUTTON ===============================================
-  // ============================================================
-  const closeFinal = document.getElementById("BtnInscriptionClozer");
-  closeFinal.addEventListener("click", () => {
-    closeClick(contact_modal, BtnInscriptionClozer);
-    formOC.reset();
-    contact_modal.innerHTML = formInject(FetchIDartist[0].name);
-    console.log("Fermeture Final et Clean modale");
-  });
-});
-// ================================= NEAH GAME ================
-
-popClick(contact_modal, closecontact);
 // ========================= By Nepha =================2024====
 // ============================================================

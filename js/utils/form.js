@@ -15,29 +15,26 @@ export const formFinish = `<form
       method="get" 
       id="contactForm" 
       novalidate>
-      <div class="form-data squareNeph">Merci pour <br/>votre inscription</div>
+      <div class="form-data squareNeph">Merci pour <br/>votre message</div>
+      <div>
       <button 
         id="BtnInscriptionClozer" 
         class="btn-submit"
-        type="submit">Fermer</button>
+        type="button">Fermer</button>
+        </div>
     </form>`;
 
 // ================================= NEPHA CODE ===============
 // FORM FIELD =================================================
 // ============================================= 2024 =========
 
-export function formInject (injectArtistName) {
-let form =  `
-<div class="modal">
-<header>  
-  <h2>Contactez-moi ${injectArtistName} </h2>
-  <div id="closecontact"><img src="/assets/icons/close.svg" alt="fermer la fenetre" class="close" role="button"></div>
-</header>
-<form
+export const formField = `<form
   id="ocform"
   name="reserve"
   action="/index.html"
-  method="get" id="contactForm" novalidate>
+  method="get" 
+  id="contactForm"
+  novalidate>
   <div
     class="formData"
     aria-invalid="false" 
@@ -93,8 +90,7 @@ let form =  `
   class="button"
   disabled>Envoyer</button>
   </div>
-  </form>
-  </div>`;
-  return form;
-}
+  </form>`;
+ 
+
 // ================================= NEAH GAME ================

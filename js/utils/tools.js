@@ -25,20 +25,22 @@ export const closeEsc = (target) => {
   });
 }
 // FERMER CLICK ==============================================
-export const closeClick = (target, listener ) => {
+export const closeClick = (target, listener, targetForm, form) => {
+  const cleanForm = target.firstElementChild;
+  console.log(cleanForm);
   listener.addEventListener("click", () => {
-    preventDefault();
     target.hidePopover();
-    console.log("Fermeture Croix et Clean modale"); 
+
+    targetForm.innerHTML = form;
+    targetForm.reset();
+
+    console.log("Fermeture Croix"); 
   });
 }
 // TOGGLE POPOVER ============================================
 export const popClick = (target, listener) => {
   listener.addEventListener("click", () => {
     target.togglePopover();
-    //const formOC = document.getElementById("ocform");
-    //formOC.reset();
-    //contactForm.innerHTML = formField;
     console.log("Popover HIDE"); 
   });
 }
@@ -47,9 +49,6 @@ export function counterLike(importMedia) {
   let likeCounterOut = 0;
   //---------------------//
   importMedia.forEach((arrayMedia) => {
-    //console.log("ID: " + arrayMedia.id);
-    //console.log("LIKES: " + arrayMedia.likes);
-
     likeCounterOut += parseInt(arrayMedia.likes);
   });
   //console.log(likeCounterOut);
