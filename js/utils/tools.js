@@ -25,7 +25,7 @@ export const closeEsc = (target) => {
   });
 }
 // FERMER CLICK ==============================================
-export const closeClick = (target, listener, targetForm, form) => {
+export const closeClick = (target, listener) => {
   const cleanForm = target.firstElementChild;
   //console.log(cleanForm);
   listener.addEventListener("click", () => {

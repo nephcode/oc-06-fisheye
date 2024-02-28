@@ -207,15 +207,16 @@ clickContact.addEventListener("click", () => {
 formTarget.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("========= Envoi du formulaire ======");
+  console.log("Artiste ID : "+id_GET_ARTIST);
   console.log("Prénom : "+first.value);
   console.log("Nom : "+last.value);
   console.log("Email : "+email.value);
   const messageLog = message.value.substring(0, 40);
   console.log("Message : "+messageLog);
-  console.log("========= Inscription OK ===========");
+  console.log("========= PUSH MESSAGE OK ==========");
   formTarget.innerHTML = formFinish;
   
-  closeClick(contact_modal, BtnInscriptionClozer, formTarget, formField);
+  closeClick(contact_modal, BtnInscriptionClozer);
   
 });
 // CLOSE ESC ==================================================
