@@ -13,6 +13,13 @@ export const idCapture = (source) => {
   // amélioration possible : récupérer le paramètre de l'url avec un nom
   // faire une boucle pour récupérer tous les paramètres de l'url
 
+// LIGHTBOX CLICK ============================================  
+  export const lightboxClick = (target, listener) => {
+    listener.addEventListener("click", () => {
+      target.togglePopover();
+      console.log("Lightbox Click"); 
+    });
+  }  
 
 // FERMER ESC ================================================
 export const closeEsc = (target) => {
