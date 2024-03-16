@@ -7,7 +7,8 @@ import {
   closeEsc, 
   popClick,
   closeClick,
-  counterLike
+  counterLike, 
+  lightboxClick
 } from "/js/utils/tools.js";
 import { 
   formField, 
@@ -92,6 +93,17 @@ mediaIndex(FetchIDmedia);
 
 // DISPLAY LIKE COUNTER ----------------------------------------//
 counterLike(FetchIDmedia);
+
+// LIGHTBOX CLICK ============================================
+const lightbox_target = document.querySelectorAll(".article_media a");
+console.log(lightbox_target);
+///const lightbox = document.getElementById("lightbox");
+const lightbox_pop = document.getElementById("lightbox");
+
+lightboxClick(lightbox_pop, lightbox_target);
+
+
+
 
 // ================= NEPHA CODE ===========ADAPT FOR 06 =======
 // BOUCLE DE VERIF ============================================
