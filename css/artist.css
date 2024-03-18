@@ -493,14 +493,14 @@ main {
   padding: 0px;
 }
 
-#contact_modal, #test_modal {
+#contact_modal, #test_modal, #lightbox {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5019607843);
   border: 0px;
   overflow: hidden;
 }
-#contact_modal .modal, #test_modal .modal {
+#contact_modal .modal, #test_modal .modal, #lightbox .modal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -513,10 +513,10 @@ main {
   animation-name: modalopen;
   animation-duration: 0.8s;
 }
-#contact_modal:popover-open, #test_modal:popover-open {
+#contact_modal:popover-open, #test_modal:popover-open, #lightbox:popover-open {
   z-index: 100;
 }
-#contact_modal header, #test_modal header {
+#contact_modal header, #test_modal header, #lightbox header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -524,14 +524,14 @@ main {
   margin: 0px auto;
   background-color: #DB8876;
 }
-#contact_modal header h2, #test_modal header h2 {
+#contact_modal header h2, #test_modal header h2, #lightbox header h2 {
   color: #312E2E;
   font-size: 2.5rem;
   font-weight: lighter;
   margin: 0px;
   padding: 0px;
 }
-#contact_modal header .close, #test_modal header .close {
+#contact_modal header .close, #test_modal header .close, #lightbox header .close {
   display: inline-flex;
 }
 
