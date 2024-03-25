@@ -243,8 +243,38 @@ form input[type=submit], form .btn-submit {
   border: 2px solid #279e7a;
 }
 
-/* Global */
-.sr-only {
+#lightbox {
+  align-content: center;
+}
+#lightbox #media {
+  width: 90%;
+  height: 100%;
+}
+#lightbox #media figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  position: relative;
+  padding: 3px;
+}
+#lightbox #media figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#lightbox #media figure figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#lightbox .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -255,36 +285,20 @@ form input[type=submit], form .btn-submit {
   white-space: nowrap;
   border: 0;
 }
-
-.carousel {
+#lightbox .carousel {
   position: relative;
   padding: 0;
   margin: 0;
 }
-
-.carousel-item {
+#lightbox .carousel-item {
   height: 200px;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
   list-style-type: none;
 }
-
-.item-0 {
-  background-color: tomato;
-}
-
-.item-1 {
-  background-color: blue;
-  display: none;
-}
-
-.item-2 {
-  background-color: green;
-  display: none;
-}
-
-.img {
+#lightbox .img {
+  z-index: 2;
   height: 40px;
   width: 40px;
   background-color: white;
@@ -297,21 +311,17 @@ form input[type=submit], form .btn-submit {
   align-items: center;
   justify-content: center;
 }
-
-.prev-image {
+#lightbox .prev-image {
   left: 20px;
 }
-
-.fa-arrow-circle-left,
-.fa-arrow-circle-right {
-  font-size: 30px;
+#lightbox .fa-arrow-circle-left,
+#lightbox .fa-arrow-circle-right {
+  font-size: 36px;
 }
-
-.next-image {
+#lightbox .next-image {
   right: 20px;
 }
-
-.caroussel-title {
+#lightbox .caroussel-title {
   height: 100%;
   width: 100%;
   display: flex;
@@ -319,36 +329,6 @@ form input[type=submit], form .btn-submit {
   justify-content: center;
 }
 
-/*
-.lightbox {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
-
-
-     header {
-        justify-content: space-between;
-        width: 100%;
-
-
-        img {
-            cursor: pointer;
-            }
-
-         h2 {
-            font-size: 64px;
-            font-weight: normal;
-            text-align: center;
-        }
-    }
-}    
-*/
 *,
 *::before,
 *::after {
