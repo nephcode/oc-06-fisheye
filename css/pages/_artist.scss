@@ -125,9 +125,6 @@ main {
 
 // SECTION  MODAL ====================================================//
 
-#lightbox {
-  //display: none;
-}
 
 // SECTION  MODAL ====================================================//
 
@@ -155,6 +152,12 @@ main {
 
   &:popover-open {
     z-index: 100;
+  }
+
+  .timato{
+  background-color: colors.$backgroundSite;
+  width: 100%;
+
   }
 
   header {

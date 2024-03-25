@@ -516,6 +516,10 @@ main {
 #contact_modal:popover-open, #test_modal:popover-open, #lightbox:popover-open {
   z-index: 100;
 }
+#contact_modal .timato, #test_modal .timato, #lightbox .timato {
+  background-color: #ffffff;
+  width: 100%;
+}
 #contact_modal header, #test_modal header, #lightbox header {
   display: flex;
   flex-direction: row;

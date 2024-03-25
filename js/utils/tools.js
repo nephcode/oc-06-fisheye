@@ -27,7 +27,7 @@ export const closeEsc = (target) => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       event.preventDefault();
-      target.togglePopover();
+      target.hidePopover();
       console.log("Fermeture ESC");
     }
   });

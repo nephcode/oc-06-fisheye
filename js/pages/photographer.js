@@ -233,6 +233,7 @@ formTarget.addEventListener("submit", (event) => {
 });
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
+closeEsc(lightbox_pop);
 // CLOSE CLICK ================================================
 popClick(contact_modal, closecontact);
 
