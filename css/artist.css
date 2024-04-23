@@ -360,7 +360,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  background-color: #901C1C;
+  background-color: #FAFAFA;
 }
 
 .logo {
@@ -540,7 +540,7 @@ footer {
   align-items: center;
   height: 90px;
   color: #fff;
-  background-color: #901C1C;
+  background-color: #353535;
   height: 40px;
   bottom: 0;
   position: fixed;

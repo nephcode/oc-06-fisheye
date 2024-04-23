@@ -80,7 +80,6 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 F
   - Track bug and issues
   - Valid code WACG
 
-
 ## EXPLAIN THE PROJECT
 
 Once upon a time, a dev girl took a new project ...6 fisheye with my best duck face xoxo
@@ -93,9 +92,7 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 - Modal load with `POPOVER HTML API`
 - Function `OnAirChange` Update for project
 
-
 LOADING ‰‰‰‰‰‰‰‰ 55%
-
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
 Since Pyramids from future road to final temple
