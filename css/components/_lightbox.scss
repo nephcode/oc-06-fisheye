@@ -1,30 +1,33 @@
 //============================================= OC-06 FiS!!EyE =======//
 // lightBox ==========================================================//
 //==================================== By Neah =================2024==//
+@use "../base/colors";
 
 // Tuto Neph 😇 AlterAngel
 // grid area : row-start / column-start / row-end / column-end
 
-.lightbox {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0px;
-    height: 100%;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    width: 90%;
-    height: 85vh;
-    background-color: colors.$colorTernary;
-    border-radius: 5px;
-    margin: 30px auto ;
-    animation-name: modalopen;
-    animation-duration: 0.8s;
+#lightbox {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0px;
+  height: 100%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 90%;
+  height: 85vh;
+  background-color: colors.$backgroundSite;
+  border-radius: 5px;
+  margin: 30px auto ;
+  animation-name: modalopen;
+  animation-duration: 0.8s;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
 
-
+  
   figure {
-    // grid area : row-start / column-start / row-end / column-end
-    grid-area: 1 / 2 / 4 / 6;
+    grid-area: 2 / 2 / 5 / 9;
 
     justify-content: center;
     align-items: center;
@@ -35,44 +38,68 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
 
+    
     figcaption {
-      position: absolute;
-      bottom: 90px;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(252, 69, 69, 0.647);
       color: white;
       padding: 10px;
       text-align: left;
     }
   }
+  
   .controls-left {
-    grid-area: 2 / 1 / 3 / 2;
-    span{
+    grid-area: 3 / 1 / 3 / 2;
+    
+    span {
       height: 100%;
       display: flex;
       justify-content: end;
       align-items: center;  
+
+      
+      img {
+        width: 72px;
+        height: 72px;
+        cursor: pointer;
+      }
     }
   }
 
+  
   .controls-right {
-    // grid area : row-start / column-start / row-end / column-end
-    grid-area: 2 / 6 / 3 / 7;
-    span{
+    grid-area: 3 / 10 / 3 / 9;
+    
+    span {
       height: 100%;
       display: flex;
       justify-content: start;
       align-items: center;  
+
+      
+      img {
+        width: 72px;
+        height: 72px;
+        cursor: pointer;
+      }
     }
   }
 
+  
   .closemedia {
-    // grid area : row-start / column-start / row-end / column-end
-    grid-area: 1 / 6 / 6 / 7;
+    grid-area: 2 / 9 / 4 / 9;
+    
+    img {
+      width: 35px;
+      height: 35px;
+      margin: 10px;
+      cursor: pointer;
+      
+    }
   }
-} // end of #lightbox 
+}
 
 //============================================= OC-06 FiS!!EyE =======//
