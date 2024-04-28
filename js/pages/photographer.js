@@ -98,7 +98,7 @@ counterLike(FetchIDmedia);
 const lightbox_target = document.querySelectorAll(".article_media a");
 console.log(lightbox_target);
 ///const lightbox = document.getElementById("lightbox");
-const lightbox_pop = document.getElementById("lightbox");
+const lightbox_pop = document.getElementById("media");
 
 lightboxClick(lightbox_pop, lightbox_target);
 
