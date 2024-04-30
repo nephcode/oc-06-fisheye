@@ -10,15 +10,15 @@ class ArtistFetcher{
 
 }
 
-class MediaFetcher{
+class FactoryMedia{
     //code
 }
 
-class MediaImage extends MediaFetcher {
+class MediaImage extends FactoryMedia {
     //code 
 }
 
-class MediaVideo extends MediaFetcher{
+class MediaVideo extends factoryMedia{
     //code
 }
 

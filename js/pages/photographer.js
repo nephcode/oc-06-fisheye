@@ -37,22 +37,24 @@ const FetchIDmedia = medias.filter(
 );
 console.log(FetchIDmedia);
 
+
 // TEST SORT ---------------------------------------------------------//
-const sortLikes = () => {
-  medias.sort((a, b) => b.likes - a.likes).filter(
+ const sortlikes = medias.sort((a, b) => b.likes - a.likes).filter(
     (media) => media.photographerId == id_GET_ARTIST
   );
-}
-console.log(sortLikes());
+console.log(sortlikes);
+//console.log(sortLikes());
 
 const sortMedia = (option) => {
-  medias.sort((a, b) => b.option - a.option).filter(
+  console.log(option);
+  console.log(medias);
+  return medias.sort((a, b) => b[option] - a[option]).filter(
     (media) => media.photographerId == id_GET_ARTIST
   );
 }
-const FetchSort = sortMedia("likes");
+const fetchSort = sortMedia("likes");
 
-console.log(FetchSort);
+console.log(fetchSort);
 
 // -----------------------------------------------------------------//  
 
