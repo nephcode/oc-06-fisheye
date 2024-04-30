@@ -13,25 +13,19 @@ export const idCapture = (source) => {
 // faire une boucle pour récupérer tous les paramètres de l'url
 
 //= TRI SELECTOR ============================================//
-export const selectSort = (selector) => {
+export const selectSort = (array, selector, target) => {
   const selectSortList = document.getElementById(selector);
   selectSortList.addEventListener("change", (event) => {
     const option = event.target.value;
-    switch (option) {
-      case 'popular':
-        //target.sort(like);
-        console.log("Affichage du tri polular"); 
-        break;
-      case 'title':
-        //target.sort(title);
-        console.log("Affichage du tri titre"); 
-        break;
-      case 'date':
-        //target.sort(date);
-        console.log("Affichage du tri date"); 
-        break;
-    }   
-    console.log("Affichage Tri FIN"); 
+    array.sort((a, b) => b.option - a.option).filter(
+      (media) => media.photographerId == id_GET_ARTIST
+    );  
+    const testSort = document.getElementById(target);
+    const testDiv = document.createElement("div");
+    testDiv.id = "test";
+    testSort.appendChild(testDiv);
+    testDiv.innerHTML = option;
+    // ca marche >> reste plus qu'a injecter le tri dans le DOM.
   });
 }
 

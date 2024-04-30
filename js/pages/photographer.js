@@ -9,7 +9,7 @@ import {
   closeClick,
   counterLike, 
   lightboxClick,
-  selectSort
+  //selectSort
 } from "/js/utils/tools.js";
 import { 
   formField, 
@@ -30,9 +30,31 @@ const medias = data.media;
 const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
 //console.log(FetchIDartist);
 
+// ID MEDIA -----------------------------------------------------------//
+
 const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
 );
+console.log(FetchIDmedia);
+
+// TEST SORT ---------------------------------------------------------//
+const sortLikes = () => {
+  medias.sort((a, b) => b.likes - a.likes).filter(
+    (media) => media.photographerId == id_GET_ARTIST
+  );
+}
+console.log(sortLikes());
+
+const sortMedia = (option) => {
+  medias.sort((a, b) => b.option - a.option).filter(
+    (media) => media.photographerId == id_GET_ARTIST
+  );
+}
+const FetchSort = sortMedia("likes");
+
+console.log(FetchSort);
+
+// -----------------------------------------------------------------//  
 
 // VARIABLE PROGZ
 const formData = document.querySelectorAll(".formData");
@@ -68,7 +90,22 @@ FetchIDartist.forEach((arrayArtist) => {
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
 // DISPLAY TRI -------------------------------------------------------//
-selectSort("filterSelect");
+const selectSort = (array, selector, target) => {
+selectSortList.addEventListener("change", (event) => {
+  const option = event.target.value;
+  console.log(option);
+  selectSortList.sort((a, b) => b.option - a.option).filter(
+    (media) => media.photographerId == id_GET_ARTIST
+  );
+  const testSort = document.getElementById("carrousel");
+  const testDiv = document.createElement("div");
+  testDiv.id = "test";
+  testSort.appendChild(testDiv);
+  testDiv.innerHTML = option;
+  // ca marche >> reste plus qu'a injecter le tri dans le DOM.
+})
+};
+selectSort("filterSelect", "carrousel");
 
 // DISPLAY MEDIA -----------------------------------------------------//
 function mediaIndex(importMedia) {
