@@ -8,7 +8,8 @@ import {
   popClick,
   closeClick,
   counterLike, 
-  lightboxClick
+  lightboxClick,
+  selectSort
 } from "/js/utils/tools.js";
 import { 
   formField, 
@@ -36,6 +37,7 @@ const FetchIDmedia = medias.filter(
 // VARIABLE PROGZ
 const formData = document.querySelectorAll(".formData");
 const submitButton = document.getElementById("FinalBtn");
+const selectSortList = document.getElementById("filterSelect");
 
 // VARIABLE REGEX
 const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -66,7 +68,7 @@ FetchIDartist.forEach((arrayArtist) => {
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
 // DISPLAY TRI -------------------------------------------------------//
-
+selectSort("filterSelect");
 
 // DISPLAY MEDIA -----------------------------------------------------//
 function mediaIndex(importMedia) {

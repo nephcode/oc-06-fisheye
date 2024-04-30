@@ -12,6 +12,29 @@ export const idCapture = (source) => {
 // amélioration possible : récupérer le paramètre de l'url avec un nom
 // faire une boucle pour récupérer tous les paramètres de l'url
 
+//= TRI SELECTOR ============================================//
+export const selectSort = (selector) => {
+  const selectSortList = document.getElementById(selector);
+  selectSortList.addEventListener("change", (event) => {
+    const option = event.target.value;
+    switch (option) {
+      case 'popular':
+        //target.sort(like);
+        console.log("Affichage du tri polular"); 
+        break;
+      case 'title':
+        //target.sort(title);
+        console.log("Affichage du tri titre"); 
+        break;
+      case 'date':
+        //target.sort(date);
+        console.log("Affichage du tri date"); 
+        break;
+    }   
+    console.log("Affichage Tri FIN"); 
+  });
+}
+
 // LIGHTBOX CLICK ============================================
 export const lightboxClick = (target, listener) => {
   listener.forEach((element) => {
