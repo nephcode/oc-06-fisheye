@@ -74,7 +74,7 @@ function mediaIndex(importMedia) {
   //---------------------//
   importMedia.forEach((arrayMedia) => {
     article_media += `<article class="article_media" aria-label="photo">
-    <figure><a href="#lightbox?id=${arrayMedia.id}" role="button" aria-label="Ouvrir l'image en grand">`;
+    <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
     if (arrayMedia.image == null) {
       article_media += `<video src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.video}" alt="${arrayMedia.title}"></video>`;
     } else {
@@ -236,6 +236,7 @@ closeEsc(modalContact);
 closeEsc(lightbox_pop);
 // CLOSE CLICK ================================================
 popClick(contact_modal, closecontact);
+popClick(media, closemedia);
 
 // ============================================================
 // ========================= By Nepha =================2024====
