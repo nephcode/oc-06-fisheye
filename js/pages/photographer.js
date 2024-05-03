@@ -51,7 +51,7 @@ const sortMedia = (source, option) => {
 const likesSort = sortMedia(FetchIDmedia, "title");
 console.log("==== LIKES ====");
 console.log(likesSort);
-/*
+*/
 
 // -----------------------------------------------------------------//
 
@@ -121,19 +121,26 @@ const asortMedia = (option) => {
     .filter((media) => media.photographerId == id_GET_ARTIST);
 };
 */
-const selectSort = (array, target) => {
-  array.addEventListener("change", (event) => {
+const selectSort = (selectorId, source, carouselId) => {
+  const selector = document.getElementById(selectorId);
+  const carousel = document.getElementById(carouselId);
+
+  const sortMedia = (source, option) => {
+    if (typeof source[0][option] === "string") {
+      return source.sort((a, b) => a[option].localeCompare(b[option]));
+    } else {
+      return source.sort((a, b) => b[option] - a[option]);
+    }
+  };
+
+  selector.addEventListener("change", (event) => {
     const option = event.target.value;
-    //console.log(option);
-    target
-      .sort((a, b) => b[option] - a[option])
-      .filter((media) => media.photographerId == id_GET_ARTIST);
-      return mediaIndex(target);
-    });
+    const sortedMedia = sortMedia(source, option);
+    mediaIndex(sortedMedia);
+  });
 };
 
-selectSort("filterSelect", "carrousel");
-*/
+selectSort("filterSelect", FetchIDmedia, "carrousel");
 
 // DISPLAY LIKE COUNTER ----------------------------------------//
 counterLike(FetchIDmedia);
