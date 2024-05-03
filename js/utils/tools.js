@@ -17,16 +17,19 @@ export const selectSort = (array, selector, target) => {
   const selectSortList = document.getElementById(selector);
   selectSortList.addEventListener("change", (event) => {
     const option = event.target.value;
-    array.sort((a, b) => b.option - a.option).filter(
+    return array.sort((a, b) => b[option] - a[option]).filter(
       (media) => media.photographerId == id_GET_ARTIST
     );  
-    const testSort = document.getElementById(target);
+    
+    // ca marche >> reste plus qu'a injecter le tri dans le DOM.
+  });
+  /*
+  const testSort = document.getElementById(target);
     const testDiv = document.createElement("div");
     testDiv.id = "test";
     testSort.appendChild(testDiv);
     testDiv.innerHTML = option;
-    // ca marche >> reste plus qu'a injecter le tri dans le DOM.
-  });
+    */
 }
 
 // LIGHTBOX CLICK ============================================

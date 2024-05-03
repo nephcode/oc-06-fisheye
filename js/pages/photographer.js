@@ -2,19 +2,15 @@
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
 //import { dataAccess } from "../factories/data.js";
-import { 
+import {
   idCapture,
-  closeEsc, 
+  closeEsc,
   popClick,
   closeClick,
-  counterLike, 
+  counterLike,
   lightboxClick,
-  //selectSort
 } from "/js/utils/tools.js";
-import { 
-  formField, 
-  formFinish 
-} from "/js/utils/form.js";
+import { formField, formFinish } from "/js/utils/form.js";
 
 // ID FROM URL GET ----------------------------------------------------//
 const url = window.location.href;
@@ -35,28 +31,29 @@ const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
 const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
 );
+console.log("==== FetchIDmedia ====");
 console.log(FetchIDmedia);
 
-
 // TEST SORT ---------------------------------------------------------//
- const sortlikes = medias.sort((a, b) => b.likes - a.likes).filter(
-    (media) => media.photographerId == id_GET_ARTIST
-  );
-console.log(sortlikes);
-//console.log(sortLikes());
 
-const sortMedia = (option) => {
-  console.log(option);
-  console.log(medias);
-  return medias.sort((a, b) => b[option] - a[option]).filter(
-    (media) => media.photographerId == id_GET_ARTIST
-  );
-}
-const fetchSort = sortMedia("likes");
+/* FONCTIONNE 
+const sortMedia = (source, option) => {
+  // Vérifiez le type de l'option
+  if (typeof source[0][option] === 'string') {
+      // Si l'option est une chaîne de caractères
+      return source.sort((a, b) => a[option].localeCompare(b[option]));
+  } else {
+      // Si l'option est un nombre ou une date
+      return source.sort((a, b) => b[option] - a[option]);
+  }
+};
 
-console.log(fetchSort);
+const likesSort = sortMedia(FetchIDmedia, "title");
+console.log("==== LIKES ====");
+console.log(likesSort);
+/*
 
-// -----------------------------------------------------------------//  
+// -----------------------------------------------------------------//
 
 // VARIABLE PROGZ
 const formData = document.querySelectorAll(".formData");
@@ -73,9 +70,8 @@ const verifList = [
   { id: "first", regex: stringRegEx },
   { id: "last", regex: stringRegEx },
   { id: "email", regex: emailRegEx },
-  { id: "message", regex: messageRegEx }
+  { id: "message", regex: messageRegEx },
 ];
-
 
 // DISPLAY ARTIST  ---------------------------------------------------//
 FetchIDartist.forEach((arrayArtist) => {
@@ -86,28 +82,11 @@ FetchIDartist.forEach((arrayArtist) => {
   const artistTagline = document.getElementById("ArtistTagline");
   artistTagline.innerHTML = arrayArtist.tagline;
   const artistImage = document.getElementById("ArtistPortrait");
-  //  
+  //
   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
   const artistPrice = document.getElementById("ArtistPrice");
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
-// DISPLAY TRI -------------------------------------------------------//
-const selectSort = (array, selector, target) => {
-selectSortList.addEventListener("change", (event) => {
-  const option = event.target.value;
-  console.log(option);
-  selectSortList.sort((a, b) => b.option - a.option).filter(
-    (media) => media.photographerId == id_GET_ARTIST
-  );
-  const testSort = document.getElementById("carrousel");
-  const testDiv = document.createElement("div");
-  testDiv.id = "test";
-  testSort.appendChild(testDiv);
-  testDiv.innerHTML = option;
-  // ca marche >> reste plus qu'a injecter le tri dans le DOM.
-})
-};
-selectSort("filterSelect", "carrousel");
 
 // DISPLAY MEDIA -----------------------------------------------------//
 function mediaIndex(importMedia) {
@@ -132,6 +111,30 @@ function mediaIndex(importMedia) {
 }
 mediaIndex(FetchIDmedia);
 
+// DISPLAY TRI -------------------------------------------------------//
+/*
+const asortMedia = (option) => {
+  //console.log(option);
+  //console.log(medias);
+  return medias
+    .sort((a, b) => b[option] - a[option])
+    .filter((media) => media.photographerId == id_GET_ARTIST);
+};
+*/
+const selectSort = (array, target) => {
+  array.addEventListener("change", (event) => {
+    const option = event.target.value;
+    //console.log(option);
+    target
+      .sort((a, b) => b[option] - a[option])
+      .filter((media) => media.photographerId == id_GET_ARTIST);
+      return mediaIndex(target);
+    });
+};
+
+selectSort("filterSelect", "carrousel");
+*/
+
 // DISPLAY LIKE COUNTER ----------------------------------------//
 counterLike(FetchIDmedia);
 
@@ -142,9 +145,6 @@ console.log(lightbox_target);
 const lightbox_pop = document.getElementById("media");
 
 lightboxClick(lightbox_pop, lightbox_target);
-
-
-
 
 // ================= NEPHA CODE ===========ADAPT FOR 06 =======
 // BOUCLE DE VERIF ============================================
@@ -160,13 +160,9 @@ const onSkud = (inputSkud, regRuleSkud) => {
     targetMit.removeAttribute("disabled");
     fieldData.classList.add("formDataOK");
     fieldData.setAttribute("aria-invalid", "false");
-    fieldData.setAttribute(
-      "aria-errormessage",
-      `Valide`
-    );
+    fieldData.setAttribute("aria-errormessage", `Valide`);
     //console.log(`L'input ${inputValue} est valide`);
-    }
-    else {
+  } else {
     fieldData.classList.remove("formDataOK");
     fieldData.setAttribute("aria-invalid", "true");
     fieldData.setAttribute(
@@ -174,7 +170,7 @@ const onSkud = (inputSkud, regRuleSkud) => {
       `Votre saisie ${inputValue} n'est pas valide`
     );
     targetMit.setAttribute("disabled", "");
-  
+
     throw new Error(`L'élément ${inputValue} spécifié n'est pas valide`);
   }
 };
@@ -194,22 +190,20 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
     if (inputValue && regRuleOnAir.test(inputValue)) {
       fieldData.classList.add("formDataOK");
       fieldData.setAttribute("aria-invalid", "false");
-      fieldData.setAttribute(
-      "aria-errormessage",
-      `Votre saisie est valide`
-      );
+      fieldData.setAttribute("aria-errormessage", `Votre saisie est valide`);
       //console.log(`L'input ${inputValue} est valide`);
-      verifList.slice().reverse().forEach((item) => {
-        onSkud(item.id, item.regex);
-        if (!onSkud) {
-          targetMit.setAttribute("disabled", "");
-        }
-        else {
-          targetMit.removeAttribute("disabled");
-        }
-      });
-    }
-    else {
+      verifList
+        .slice()
+        .reverse()
+        .forEach((item) => {
+          onSkud(item.id, item.regex);
+          if (!onSkud) {
+            targetMit.setAttribute("disabled", "");
+          } else {
+            targetMit.removeAttribute("disabled");
+          }
+        });
+    } else {
       fieldData.classList.remove("formDataOK");
       fieldData.setAttribute("aria-invalid", "true");
       fieldData.setAttribute(
@@ -219,10 +213,8 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
       targetMit.setAttribute("disabled", "");
       //throw new Error(`L'élément ${inputOnAir} ${inputValue} spécifié n'est pas valide`);
     }
-    
   });
 };
-
 
 // CONTACT MODAL ==============================================
 // =============== NEAH GAME =================== 2024 =========
@@ -233,7 +225,7 @@ const closer = document.getElementById("closecontact");
 const close = document.querySelector(".close");
 const h2name = document.querySelector("#contact_modal header h2");
 const formTarget = document.getElementById("contactForm");
-h2name.innerHTML = "Contactez-moi "+FetchIDartist[0].name;
+h2name.innerHTML = "Contactez-moi " + FetchIDartist[0].name;
 // OUVRIR =====================================================
 const popoverModal = (target) => {
   //console.log(target);
@@ -247,9 +239,7 @@ const popoverModal = (target) => {
   } catch (Error) {
     console.log("il y'a des erreurs" + Error.message);
   }
-
-
-}
+};
 clickContact.addEventListener("click", () => {
   popoverModal(formTarget);
 });
@@ -260,17 +250,16 @@ clickContact.addEventListener("click", () => {
 formTarget.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("========= Envoi du formulaire ======");
-  console.log("Artiste ID : "+id_GET_ARTIST);
-  console.log("Prénom : "+first.value);
-  console.log("Nom : "+last.value);
-  console.log("Email : "+email.value);
+  console.log("Artiste ID : " + id_GET_ARTIST);
+  console.log("Prénom : " + first.value);
+  console.log("Nom : " + last.value);
+  console.log("Email : " + email.value);
   const messageLog = message.value.substring(0, 40);
-  console.log("Message : "+messageLog);
+  console.log("Message : " + messageLog);
   console.log("========= PUSH MESSAGE OK ==========");
   formTarget.innerHTML = formFinish;
-  
+
   closeClick(contact_modal, BtnInscriptionClozer);
-  
 });
 // CLOSE ESC ==================================================
 closeEsc(modalContact);
