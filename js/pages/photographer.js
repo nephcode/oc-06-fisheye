@@ -65,7 +65,7 @@ const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
 const messageRegEx = /^[\s\S]{30,400}$/;
 
-// VARIABLE FIELD
+// VARIABLE FIELD FORM
 const verifList = [
   { id: "first", regex: stringRegEx },
   { id: "last", regex: stringRegEx },
@@ -89,7 +89,7 @@ FetchIDartist.forEach((arrayArtist) => {
 });
 
 // DISPLAY MEDIA -----------------------------------------------------//
-function mediaIndex(importMedia) {
+function mediaIndex(cibleID, importMedia) {
   let article_media = "";
   //---------------------//
   importMedia.forEach((arrayMedia) => {
@@ -106,24 +106,19 @@ function mediaIndex(importMedia) {
     </figure></article>`;
   });
   //---------------------//
-  const cible = document.getElementById("carrousel");
+  const cible = document.getElementById(cibleID);
   cible.innerHTML = article_media;
 }
-mediaIndex(FetchIDmedia);
+mediaIndex("carrousel", FetchIDmedia);
+// LIGHTBOX CLICK ============================================
+const lightbox_target = document.querySelectorAll(".article_media a");
+const lightbox_pop = document.getElementById("media");
+
 
 // DISPLAY TRI -------------------------------------------------------//
-/*
-const asortMedia = (option) => {
-  //console.log(option);
-  //console.log(medias);
-  return medias
-    .sort((a, b) => b[option] - a[option])
-    .filter((media) => media.photographerId == id_GET_ARTIST);
-};
-*/
-const selectSort = (selectorId, source, carouselId) => {
+const selectSort = (selectorId, source, carrouselId, callback) => {
   const selector = document.getElementById(selectorId);
-  const carousel = document.getElementById(carouselId);
+  const carrousel = document.getElementById(carrouselId);
 
   const sortMedia = (source, option) => {
     if (typeof source[0][option] === "string") {
@@ -136,22 +131,25 @@ const selectSort = (selectorId, source, carouselId) => {
   selector.addEventListener("change", (event) => {
     const option = event.target.value;
     const sortedMedia = sortMedia(source, option);
-    mediaIndex(sortedMedia);
+    mediaIndex(carrouselId, sortedMedia);
+    lightboxClick(lightbox_pop, lightbox_target);
+    // Réinitialisation du carousel sur le EventListener
+    //const lightbox_target = document.querySelectorAll(".article_media a");
+    //const lightbox_pop = document.getElementById("media");
+    if (typeof callback === "function") {
+      callback();
+    }
   });
 };
 
-selectSort("filterSelect", FetchIDmedia, "carrousel");
-
+selectSort("filterSelect", FetchIDmedia, "carrousel", () => {
+  lightboxClick(lightbox_pop, lightbox_target);
+});
+console.log(selectSort);
 // DISPLAY LIKE COUNTER ----------------------------------------//
 counterLike(FetchIDmedia);
 
-// LIGHTBOX CLICK ============================================
-const lightbox_target = document.querySelectorAll(".article_media a");
-console.log(lightbox_target);
-///const lightbox = document.getElementById("lightbox");
-const lightbox_pop = document.getElementById("media");
 
-lightboxClick(lightbox_pop, lightbox_target);
 
 // ================= NEPHA CODE ===========ADAPT FOR 06 =======
 // BOUCLE DE VERIF ============================================
