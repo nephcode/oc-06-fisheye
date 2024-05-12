@@ -9,10 +9,7 @@ class FactoryArtist{
       }
 }
 
-class ArtistProfil extends FactoryArtist{
-    constructor()
 
-}
 
 class FactoryMedia{
     constructor(data){
@@ -25,6 +22,7 @@ class FactoryMedia{
 		// IMAGE ou VIDEO
 		this.image = data.image;
         this.video = data.video;
+	}
 		
 	play() {
         // Méthode simplifiée pour simuler la lecture
