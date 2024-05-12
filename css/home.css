@@ -1,17 +1,150 @@
-@import url("https://fonts.googleapis.com/css?family=DM+Sans&display=swap");
-p {
-  font-family: 1rem;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+  margin-top: 50px;
+  align-items: stretch;
+  justify-content: center;
+}
+.photographer_section article {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: stretch;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.15);
+  margin: 0 10px;
+  padding: 15px;
+  min-width: 270px;
+  transition: all 0.3s ease-in-out;
+}
+.photographer_section article:hover {
+  transform: scale(1.05);
+}
+.photographer_section article p {
+  justify-self: center;
+}
+.photographer_section article a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  text-decoration: none;
+}
+.photographer_section article a h2 {
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+  color: #D3573C;
+  font-size: 36px;
+  font-weight: lighter;
+  margin: 0px;
+}
+.photographer_section article a img {
+  display: block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 2px;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.15);
+}
+
+#carrousel article {
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  padding: 15px;
+  max-width: 270px;
+  transition: all 0.3s cubic-bezier(0.49, -0.07, 0.36, 0.92);
+}
+#carrousel article:hover {
+  transform: scale(1.05);
+  /*z-index: 30;*/
+}
+#carrousel figure {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(9fr, 3fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0px;
+}
+#carrousel figure a {
+  grid-column: 1/-1;
+  grid-row: 1;
+  margin: 0px;
+}
+#carrousel figure a img,
+#carrousel figure a video {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  width: 100%;
+  padding: 0;
+}
+#carrousel figure figcaption {
+  color: #901C1C;
+  grid-column: 1;
+  grid-row: 3fr;
+  min-height: 45px;
+}
+#carrousel figure .heartMedia {
+  grid-column: 2;
+  grid-row: 3fr;
+  display: block;
+  justify-self: end;
+  color: #901C1C;
+}
+#carrousel figure .heartMedia:active {
+  animation: circle 0.6s ease-out forwards;
+}
+
+.artist--city {
+  margin: 0px;
+  justify-self: center;
+  color: #901C1C;
+  font-size: 13px;
+}
+.artist--tagline {
+  justify-self: center;
+  color: #000;
+  font-size: 10px;
+}
+.artist--price {
+  margin: 0px;
+  justify-self: center;
+  color: #757575;
+  font-size: 9px;
+}
+
+.heartCount {
+  display: block;
+  position: relative;
+  right: 0;
+  color: #901C1C;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "DM Sans";
   margin: 0;
+  min-height: 100vh;
   background: #ffffff;
 }
 
-h1 {
-  color: #901C1C;
-  margin-right: 100px;
+main {
+  margin-bottom: 50px;
 }
 
 header {
@@ -20,35 +153,34 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
+  background-color: #FAFAFA;
 }
 
 .logo {
   height: 50px;
   margin-left: 100px;
+  color: #fff;
 }
 
-.photographer_section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
-  margin-top: 100px;
+h1 {
+  color: #fff;
+  margin-right: 100px;
 }
 
-.photographer_section article {
-  justify-self: center;
+main {
+  flex-grow: 1;
+}
+
+footer {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  border: 1px solid #D3573C;
-}
-
-.photographer_section article h2 {
-  color: #D3573C;
-  font-size: 36px;
-}
-
-.photographer_section article img {
-  height: 200px;
-  width: 200px;
+  height: 90px;
+  color: #fff;
+  background-color: #353535;
+  height: 40px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }/*# sourceMappingURL=home.css.map */

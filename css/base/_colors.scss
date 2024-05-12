@@ -2,11 +2,19 @@
 // COLORS ============================================================//
 //==================================== By Neah =================2024==//
 
-// Variable Colors ---------------------------------------------------//
+// Colors Global -- --------------------------------------------------//
 $backgroundSite: #ffffff !default;
 $backgroundFooter: #353535 !default;
 $backgroundGlobalElement: #9356dc !default;
-// Variable Main ------------------------------------------------------//
+$colorGreyBackground : #FAFAFA;
+
+// Colors Components ------------------------------------------------//
 $colorMain : #901C1C;
-$colorSecondary : #901C1C;
-$colorTernary : #901C1C;
+$colorSecondary : #D3573C;
+$colorTernary : #DB8876;
+
+// Colors Typo ------------------------------------------------------//
+$colorTypoGrey : #757575;
+$colorTypoGreyBis :#312E2E;
+$colorTypoBlack : #000;
+$colorTypoWhite : #fff;

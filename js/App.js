@@ -1,3 +1,7 @@
+//============================================= OC-06 FiS!!EyE =======//
+// GLOBAL APP ========================================================//
+//==================================== By Neah =================2024==//
+
 const photographer = fetch(/data/photographer.json);
 try {
     const response = await fetch('/data/photographer.json');

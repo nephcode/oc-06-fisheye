@@ -6,7 +6,7 @@
 
 # FISH EYE
 
-A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 GAME ON
+A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 FISHEYE
 
 | -       | URL                                                                                                   |
 | ------- | ----------------------------------------------------------------------------------------------------- |
@@ -55,7 +55,7 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 G
   - Achecker
   - Documentation [searchParams](https://developer.mozilla.org/fr/docs/Web/API/URL/searchParams)
 - Step 5 (45%)
-  - diplay static content
+  - display static content
   - Use PhotographerCard (Class)
   - Factory media and Assets
   - Need spec for media image|video
@@ -66,10 +66,33 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 4 G
   - Console.log(data)
   - manage `focus` on page, aria-label...
 - Step 7 (65%) lightbox media
+  - Class Extend media
+  - Lightbox Close Event.key === 'Escape'
+- Step 8 (80%)
+  - Like Button (LocalStorage)
+  - First clic += / Second -=
+  - Heart from Project 02 > Sass
+- Step 9 (90%)
+  - SortByFilter (eventListener)
+  - Design Pattern
+- Step 10 (100%)
+  - Use linter
+  - Track bug and issues
+  - Valid code WACG
 
 ## EXPLAIN THE PROJECT
 
 Once upon a time, a dev girl took a new project ...6 fisheye with my best duck face xoxo
+
+- `SUPPR` CSS and replace with `SASS`
+- `SASS` system 5-1 by NEPHA (not import only use)
+- Update `HEADER` & `FOOTER` Personal Design
+- `CARD` homePage OK with transition/Animation
+- Fetch Data `Photographer`
+- Modal load with `POPOVER HTML API`
+- Function `OnAirChange` Update for project
+
+LOADING ‰‰‰‰‰‰‰‰ 55%
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
 Since Pyramids from future road to final temple

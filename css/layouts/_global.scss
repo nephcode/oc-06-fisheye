@@ -4,13 +4,24 @@
 @use "../base/colors";
 @use "../base/typo";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: typo.$fontDefault;
     margin: 0;
+    min-height:100vh;
     background: colors.$backgroundSite;
 }
 
-h1 {
-    color: colors.$colorMain;
-    margin-right: 100px;
+main    {
+ margin-bottom: 50px;
 }

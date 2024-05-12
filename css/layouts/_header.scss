@@ -1,6 +1,7 @@
 //============================================= OC-06 FiS!!EyE =======//
-// HEADER ============================================================//
+// _HEADER ===========================================================//
 //==================================== By Neah =================2024==//
+@use "../base/colors";
 
 header {
     display: flex;
@@ -8,9 +9,11 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    background-color: colors.$colorGreyBackground;    
 }
 
 .logo {
     height: 50px;
     margin-left: 100px;
+    color: #fff;
 }
