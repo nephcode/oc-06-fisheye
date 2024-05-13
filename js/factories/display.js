@@ -2,7 +2,7 @@
 //======================= ∵ NPƸӜƷL1M ∴ =======================//
 //================================================ 2024 ======//
 
-class FactoryArtist{
+export class FactoryArtist{
     constructor(artistId, artistName){
         this._artistId = artistId;
         this._artistName = artistName;
@@ -11,7 +11,7 @@ class FactoryArtist{
 
 
 
-class FactoryMedia{
+export class FactoryMedia{
     constructor(data){
         this.id = data.id;
         this.photographerId = data.photographerId;
@@ -23,7 +23,7 @@ class FactoryMedia{
 		this.image = data.image;
         this.video = data.video;
 	}
-		
+
 	play() {
         // Méthode simplifiée pour simuler la lecture
         const mediaType = this.image ? "Image" : "Video";
@@ -45,7 +45,7 @@ class FactoryMedia{
     }
 }
 
-class MediaImage extends FactoryMedia {
+export class MediaImage extends FactoryMedia {
     constructor(data) {
         super(data);
         this.image = data.image;
@@ -57,7 +57,7 @@ class MediaImage extends FactoryMedia {
     }
 }
 
-class MediaVideo extends factoryMedia{
+export class MediaVideo extends factoryMedia{
         constructor(data) {
         super(data);
         this.video = data.video;
