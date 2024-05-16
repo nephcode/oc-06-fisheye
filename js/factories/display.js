@@ -31,17 +31,24 @@ export class FactoryMedia{
     }
 
 	render() {
-        // Méthode pour le rendu basé sur le type de média
+		// Méthode pour le rendu basé sur le type de média
+		let article_media = "";
+		article_media += `<article class="article_media" aria-label="photo">
+			  <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
         if (this.image) {
-            return `<img src="/path/to/images/${this.image}" alt="${this.title}" title="${this.title}" />`;
+            article_media += `<img src="/path/to/images/${this.image}" alt="${this.title}" title="${this.title}" />`;
         } else if (this.video) {
-            return `<video controls>
+            article_media += `<video controls>
                         <source src="/path/to/videos/${this.video}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>`;
         } else {
             return `<p>No media found for ${this.title}</p>`;
         }
+		article_media += `</a><figcaption aria-labelledby="media-${this.photographerId}">${this.title}</figcaption>
+			  <span class="heartMedia">${this.likes}
+			  <i class="fas fa-heart icone__Coeur"></i></span>
+			  </figure></article>`;
     }
 }
 
@@ -57,7 +64,7 @@ export class MediaImage extends FactoryMedia {
     }
 }
 
-export class MediaVideo extends factoryMedia{
+export class MediaVideo extends FactoryMedia{
         constructor(data) {
         super(data);
         this.video = data.video;

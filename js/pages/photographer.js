@@ -2,6 +2,9 @@
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
 //import { dataAccess } from "../factories/data.js";
+
+import {FactoryMedia} from "/js/factories/display.js";
+
 import {
   idCapture,
   closeEsc,
@@ -11,6 +14,7 @@ import {
   lightboxClick,
 } from "/js/utils/tools.js";
 import { formField, formFinish } from "/js/utils/form.js";
+//import { MediaFactory } from "/js/factories/media.js";
 
 // ID FROM URL GET ----------------------------------------------------//
 const url = window.location.href;
@@ -87,6 +91,18 @@ FetchIDartist.forEach((arrayArtist) => {
   const artistPrice = document.getElementById("ArtistPrice");
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
+// DISPLAY CLASS MEDIA -----------------------------------------------------//
+const galerie = new FactoryMedia(id_GET_ARTIST);
+console.log(id_GET_ARTIST);
+console.log(galerie);
+/*
+galerie.forEach((arrayMedia) => {
+  const galerie = mediaFactory.createMedia(arrayMedia);
+  // Render the media
+});
+
+*/
+
 
 // DISPLAY MEDIA -----------------------------------------------------//
 function mediaIndex(cibleID, importMedia) {
