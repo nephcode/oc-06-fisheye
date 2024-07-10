@@ -1,0 +1,24 @@
+//============================================= OC-06 FiS!!EyE =======//
+// _FOOTER ===========================================================//
+//==================================== By Neah =================2024==//
+
+@use "../base/colors";
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    color: colors.$colorTypoWhite;
+    background-color: light-dark(colors.$backgroundSiteDark, colors.$colorMain);
+    height: 40px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+
+}
+
+#likeCount{
+    color : colors.$colorTypoBlack;
+}

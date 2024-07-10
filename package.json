@@ -17,6 +17,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
     "vite": "^5.3.3"
   }
 }

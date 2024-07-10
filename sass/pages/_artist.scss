@@ -1,0 +1,190 @@
+//============================================= OC-06 FiS!!EyE =======//
+// _ARTIST ===========================================================//
+//==================================== By Neah =================2024==//
+@use "../base/colors";
+
+main {
+  align-items: self-start;
+  flex-grow: 1;
+}
+
+// SECTION PROFIL ====================================================//
+
+#profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: colors.$colorGreyBackground;
+  height: 200px;
+  margin: 0;
+  padding: 10px 70px;
+  z-index: 10;
+
+  &:first-child {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    display: block;
+    height: 270px;
+    width: 270px;
+    border-radius: 50%;
+    border: 3px solid colors.$colorGreyBackground;
+    object-fit: cover;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+#ArtistName {
+  color: colors.$colorSecondary;
+  font-size: 3rem;
+  font-weight: lighter;
+  margin: 0px;
+}
+
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: colors.$colorTypoWhite;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: colors.$colorMain;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// SECTION FILTRE ====================================================//
+
+#filter {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 20px;
+  align-items: baseline;
+
+  p {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    font-weight: bold;
+  }
+}
+// SECTION CARROUSEL =================================================//
+#carrousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3vh 1vw;
+  margin-top: 50px;
+  align-items: stretch;
+  justify-content: center;
+  margin: 50px 10px 50px;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 20px auto;
+}
+
+// SECTION INFO ======================================================//
+
+#info {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  min-width: 215px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 70px;
+  padding: 15px;
+  background-color: colors.$colorTernary;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  right: -40px;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+  }
+  .artist--price {
+    color: colors.$colorTypoBlack;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+// SECTION  MODAL ====================================================//
+
+#contact_modal, #test_modal, #media {
+    //display: flex;
+    //align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: darken($color: #00000080, $amount: 1.0);
+    border: 0px;
+    overflow: hidden;
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: colors.$colorTernary;
+    width: 670px;
+    border: 0px;
+    border-radius: 5px;
+    margin: 30px auto ;
+    animation-name: modalopen;
+    animation-duration: 0.8s;
+  }
+
+  &:popover-open {
+    z-index: 100;
+  }
+
+  .timato{
+  background-color: colors.$backgroundSite;
+  width: 100%;
+
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0px auto;
+    background-color: colors.$colorTernary;
+
+    h2 {
+      color: colors.$colorTypoGreyBis;
+      font-size: 2.5rem;
+      font-weight: lighter;
+      margin: 0px;
+      padding: 0px;
+    }
+    .close {
+      display: inline-flex;
+    }
+  }
+}
+
+@keyframes modalopen {
+    from {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
