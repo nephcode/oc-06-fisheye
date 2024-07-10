@@ -91,8 +91,12 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 - Fetch Data `Photographer`
 - Modal load with `POPOVER HTML API`
 - Function `OnAirChange` Update for project
+- Install `VITE` on `BUN`
+- CI/CD on github pages *CNAME* with `Github Action`
+- Add State and Domlinker
 
-LOADING ‰‰‰‰‰‰‰‰ 55%
+LOADING ‰‰‰‰‰‰‰‰ 90%
+
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
 Since Pyramids from future road to final temple

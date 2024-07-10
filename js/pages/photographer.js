@@ -1,7 +1,10 @@
 //============================================= OC-06 FiS!!EyE =======//
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
-//import { dataAccess } from "../factories/data.js";
+
+// IMPORTS ===========================================================//
+import {artistName } from "../utils/domlinker";
+//import {FactoryMedia} from "../utils/display";
 import {
   idCapture,
   closeEsc,
@@ -9,8 +12,9 @@ import {
   closeClick,
   counterLike,
   lightboxClick,
-} from "/js/utils/tools.js";
+} from "../utils/tools";
 import { formField, formFinish } from "/js/utils/form.js";
+import { FactoryMedia } from "../factories/display";
 
 // ID FROM URL GET ----------------------------------------------------//
 const url = window.location.href;
@@ -87,6 +91,18 @@ FetchIDartist.forEach((arrayArtist) => {
   const artistPrice = document.getElementById("ArtistPrice");
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
+// DISPLAY CLASS MEDIA -----------------------------------------------------//
+const galerie = new FactoryMedia(id_GET_ARTIST);
+console.log(id_GET_ARTIST);
+console.log(galerie);
+/*
+galerie.forEach((arrayMedia) => {
+  const galerie = mediaFactory.createMedia(arrayMedia);
+  // Render the media
+});
+
+*/
+
 
 // DISPLAY MEDIA -----------------------------------------------------//
 function mediaIndex(cibleID, importMedia) {
