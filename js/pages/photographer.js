@@ -16,6 +16,7 @@ import {
   closeClick,
   counterLike,
   lightboxClick,
+  colorg
 } from "../utils/tools";
 import { formField, formFinish } from "/js/utils/form.js";
 import { FactoryMedia } from "../factories/display";
@@ -24,8 +25,8 @@ import { FactoryMedia } from "../factories/display";
 const url = window.location.href;
 const id_GET_ARTIST = idCapture(url);
 
-console.log(id_GET_ARTIST);
-
+//console.log(id_GET_ARTIST);
+colorg(id_GET_ARTIST, "yellow");
 const response = await fetch("/data/photographers.json");
 const data = await response.json();
 const artist = data.photographers;
@@ -40,7 +41,7 @@ const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
 );
 console.log("==== FetchIDmedia ====");
-console.log(FetchIDmedia);
+console.table(FetchIDmedia);
 
 // TEST SORT ---------------------------------------------------------//
 
@@ -98,7 +99,8 @@ FetchIDartist.forEach((arrayArtist) => {
 // DISPLAY CLASS MEDIA -----------------------------------------------------//
 const galerie = new FactoryMedia(id_GET_ARTIST);
 console.log(id_GET_ARTIST);
-console.log(galerie);
+colorg(id_GET_ARTIST, "red");
+console.table(galerie);
 /*
 galerie.forEach((arrayMedia) => {
   const galerie = mediaFactory.createMedia(arrayMedia);
