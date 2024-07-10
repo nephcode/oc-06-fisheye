@@ -10,8 +10,9 @@ class FactoryArtist{
 }
 
 class ArtistProfil extends FactoryArtist{
-    constructor()
-
+    constructor(artistId, artistName) {
+        super(artistId, artistName);
+    }
 }
 
 class FactoryMedia{
@@ -25,12 +26,14 @@ class FactoryMedia{
 		// IMAGE ou VIDEO
 		this.image = data.image;
         this.video = data.video;
-		
-	play() {
+    }
+
+    play() {
         // Méthode simplifiée pour simuler la lecture
         const mediaType = this.image ? "Image" : "Video";
         console.log(`Playing ${mediaType}: ${this.image || this.video}`);
     }
+
 
 	render() {
         // Méthode pour le rendu basé sur le type de média
@@ -45,8 +48,8 @@ class FactoryMedia{
             return `<p>No media found for ${this.title}</p>`;
         }
     }
-}
 
+}
 class MediaImage extends FactoryMedia {
     constructor(data) {
         super(data);
