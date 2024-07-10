@@ -98,7 +98,7 @@ FetchIDartist.forEach((arrayArtist) => {
 });
 // DISPLAY CLASS MEDIA -----------------------------------------------------//
 const galerie = new FactoryMedia(id_GET_ARTIST);
-console.log(id_GET_ARTIST);
+//console.log(id_GET_ARTIST);
 colorg(id_GET_ARTIST, "red");
 console.table(galerie);
 /*
