@@ -2,9 +2,9 @@
 // GLOBAL APP ========================================================//
 //==================================== By Neah =================2024==//
 
-const photographer = fetch(/data/photographer.json);
+const photographer = fetch(/assets/data/photographers.json);
 try {
-    const response = await fetch('/data/photographer.json');
+    const response = await fetch('/assets/data/photographers.json');
     const photographer = await response.json();
     // Utilisez l'objet photographer ici
     console.log(photographer);

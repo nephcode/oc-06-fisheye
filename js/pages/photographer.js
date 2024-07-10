@@ -2,6 +2,9 @@
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
 
+// SASS ==============================================================//
+import '../../sass/artist.scss';
+
 // IMPORTS ===========================================================//
 import {artistName } from "../utils/domlinker";
 //import {FactoryMedia} from "../utils/display";
@@ -13,7 +16,7 @@ import {
   counterLike,
   lightboxClick,
 } from "../utils/tools";
-import { formField, formFinish } from "/js/utils/form.js";
+import { formField, formFinish } from "/js/utils/form";
 import { FactoryMedia } from "../factories/display";
 
 // ID FROM URL GET ----------------------------------------------------//
@@ -22,13 +25,28 @@ const id_GET_ARTIST = idCapture(url);
 
 console.log(id_GET_ARTIST);
 
-const response = await fetch("/data/photographers.json");
-const data = await response.json();
+const uriData = await fetch("assets/data/photographers.json");
+const data = await uriData.json();
 const artist = data.photographers;
-const medias = data.media;
+console.log('artist', artist);
+
+const fetchData = async() => {
+  try {
+    const url = await fetch("assets/data/photographers.json");
+    const data = await url.json();
+    const artist = data.photographers;
+    console.log(artist);
+    return artist;
+  } catch (error){
+    console.error('Erreur:', error );
+  }
+} 
+fetchData();
+console.log(fetchData);
 
 const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
-//console.log(FetchIDartist);
+console.log("==FetchIDartist==");
+console.log(FetchIDartist);
 
 // ID MEDIA -----------------------------------------------------------//
 

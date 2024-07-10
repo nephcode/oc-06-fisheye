@@ -2,7 +2,11 @@
 // INDEX APP =========================================================//
 //==================================== By Neah =================2024==//
 
-const url = await fetch("/data/photographers.json");
+// SASS ===========================================================//
+import '../../sass/home.scss';
+
+// DATA ===========================================================//
+const url = await fetch("assets/data/photographers.json");
 const data = await url.json();
 const photographers = data.photographers;
 console.log(photographers);
