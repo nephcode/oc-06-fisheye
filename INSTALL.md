@@ -14,15 +14,15 @@ Local machine, Dev, build & Deploy
 
 Use the python script (MACOS)
 
-````
+```
 brew install python
 ```
+
 Next upgrade package
-````
 
+```
 pip3 install --upgrade pip --break-system-packages
-
-````
+```
 
 ### RUN IMAGESIZE.PY
 python3 imageSize.py
@@ -30,22 +30,21 @@ python3 imageSize.py
 - `argument2[TARGET FOLDER]`
 - `argument3[QUALITE INT[0-100]]`
 - `argument4[SIZE%[0-100]]`
+
 ```
 python3 imageSize.py /sourceFolder/ /targetFolder 90 30
 ```
 
 ## INSTALL RUNTIME
 Install `Bun` with Homebrew on Mac (By Nepha Code) For Neah
-````
 
+```
 brew tap oven-sh/bun
 brew install bun
-
 ```
 
 Create a new file
 ```
-
 {
 "name": "oc-06-fisheye",
 "module": "index.ts",
@@ -68,33 +67,23 @@ Create a new file
 "vite": "^5.3.3"
 }
 }
-
-````
+```
 
 Install with `Bun`
+
 ```
 bun init
 bun add vite
 ```
-
 ```
 bun create vite fisheyes --template vanilla
 ```
-
-
-````
-
+```
 bun install
-
 ```
-
-
 ```
-
 bun run dev
-
 ```
-
 ## PRODUCTION
 This project manage with **BUN** and **Github Action**
 *No Release auto iteration*
@@ -104,13 +93,6 @@ Default config  `bun.lockb`, `.nojekyll`, `.gitignore`
 
 ### GENERATE FILE
 ```
-
 bun vite build
-
 ```
-
-
-
-
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
-```
