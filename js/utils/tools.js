@@ -12,6 +12,35 @@ export const idCapture = (source) => {
 // amélioration possible : récupérer le paramètre de l'url avec un nom
 // faire une boucle pour récupérer tous les paramètres de l'url
 
+
+// DISPLAY TRI -------------------------------------------------------//
+export const selectSort = (selectorId, source, carrouselId, callback) => {
+  const selector = document.getElementById(selectorId);
+  const carrousel = document.getElementById(carrouselId);
+
+  const sortMedia = (source, option) => {
+    if (typeof source[0][option] === "string") {
+      return source.sort((a, b) => a[option].localeCompare(b[option]));
+    } else {
+      return source.sort((a, b) => b[option] - a[option]);
+    }
+  };
+
+  selector.addEventListener("change", (event) => {
+    const option = event.target.value;
+    const sortedMedia = sortMedia(source, option);
+    mediaIndex(carrouselId, sortedMedia);
+    lightboxClick(lightbox_pop, lightbox_target);
+    // Réinitialisation du carousel sur le EventListener
+    //const lightbox_target = document.querySelectorAll(".article_media a");
+    //const lightbox_pop = document.getElementById("media");
+    if (typeof callback === "function") {
+      callback();
+    }
+  });
+};
+
+/*
 //= TRI SELECTOR ============================================//
 export const selectSort = (array, selector, target) => {
   const selectSortList = document.getElementById(selector);
@@ -29,9 +58,9 @@ export const selectSort = (array, selector, target) => {
     testDiv.id = "test";
     testSort.appendChild(testDiv);
     testDiv.innerHTML = option;
-    */
+    
 }
-
+*/
 // LIGHTBOX CLICK ============================================
 export const lightboxClick = (target, listener) => {
   listener.forEach((element) => {
@@ -84,6 +113,13 @@ export const counterLike = (importMedia) => {
   artistLikeCount.innerHTML = likeCounterDisplay;
 
   //console.log(likeCounterDisplay);
+}
+
+// COUNTERLIKE ===================================================
+export const counterBack = (LikeMedia, LikeUser) => {
+  const total = LikeMedia+LikeUser;
+
+  return total;
 }
 
 // COLORG ====================================================//

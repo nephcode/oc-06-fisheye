@@ -10,7 +10,7 @@ import {
   formData, submitButton, selectSortList,
   verifList,
   clickContact, modalContact, closer, h2name, close, formTarget,
-  artistName, artistCity, artistTagline, artistImage
+  artistName, artistCity, artistTagline, artistImage, artistPrice
 }
 from "../utils/domlinker";
 
@@ -24,11 +24,11 @@ import { state } from "../factories/state";
 import {
   idCapture, closeEsc, popClick,
   closeClick, counterLike, lightboxClick,
-  colorg
+  colorg, selectSort
 } from "../utils/tools";
 
 // FACTORY ===========================================================//
-//import { FactoryMedia } from "../factories/display";
+import { mediaIndex } from "../factories/display";
 
 // ID FROM URL GET ---------------------------------------------------//
 const id_GET_ARTIST = idCapture(window.location.href);
@@ -48,7 +48,7 @@ console.table(FetchIDmedia);
 // LIKE MEDIA ---------------------------------------------------------//
 console.table(state)
 // Callback en dernier lieu 
-const userlike = (likeTarget) => {
+const userlike = (likeTarget, mediaCounter) => {
   //cibler le media
   const idMedia = document.getElementById(likeTarget);
   const idMediaInt = parseInt(idMedia.id.match(/media-(\d+)/)[1], 10);
@@ -58,106 +58,44 @@ const userlike = (likeTarget) => {
   //colorg ("Ciblage du coeur "+idMediaInt, "orange");
   const heartElement = idMedia.querySelector('[data-idheart]');
   const countElement = idMedia.querySelector('[data-idmediacount]');
-  console.log(heartElement);
+  //console.log(heartElement);
   const heartTarget = heartElement.dataset.idheart;
-  heartElement.addEventListener("click", () => {
-      console.log("blablabla");
+  const countTarget = countElement.dataset.idmediacount;
 
+  colorg(countTarget, "blue");
+  heartElement.addEventListener("click", () => {
+      // Add idMediaInt + Calculer compteur media + compteur artist
+      const index = state.userlike.state_idMedia.indexOf(idMediaInt);
+      if (index > -1) {
+        // Si idMediaInt est déjà dans le tableau, le retirer
+        state.userlike.state_idMedia.splice(index, 1);
+        colorg(`Retiré : ${idMediaInt}`, "Red");
+      } else {
+        // Sinon, l'ajouter
+        state.userlike.state_idMedia.push(idMediaInt);
+        colorg(`Ajouté : ${idMediaInt}`, "Lime");
+      }
+      colorg(`État mis à jour : ${state.userlike.state_idMedia}`, "Gold");
   });
   colorg ("Ciblage du coeur "+heartTarget, "pink");
-  console.log(heartTarget);
+  //console.log(heartTarget);
   //callback 
   //morale de l'histoire stocker les likes dans la table du média n'a aucun sens ni aucune utilité.
   // Mieux vaut avoir une table de liaison et ensuite d'appeler un index ou de faire un "sum" 
 }
 
-
-
-
-/* 
-const verifLikeUser = () =>{
-    state.userlike.forEach((like) => {
-      // Your code inside the callback function
-    });
-    console.table(like);
- }
-
- verifLikeUser();
-/* FONCTIONNE 
-const sortMedia = (source, option) => {
-  // Vérifiez le type de l'option
-  if (typeof source[0][option] === 'string') {
-      // Si l'option est une chaîne de caractères
-      return source.sort((a, b) => a[option].localeCompare(b[option]));
-  } else {
-      // Si l'option est un nombre ou une date
-      return source.sort((a, b) => b[option] - a[option]);
-  }
-};
-
-const likesSort = sortMedia(FetchIDmedia, "title");
-console.log("==== LIKES ====");
-console.log(likesSort);
-*/
-
-
-
-// DISPLAY ARTIST  ---------------------------------------------------//
+// DISPLAY ARTIST  ---------------------------------------------//
 FetchIDartist.forEach((arrayArtist) => {
-  //const artistName = document.getElementById("ArtistName");
   artistName.innerHTML = arrayArtist.name;
-  //const artistCity = document.getElementById("ArtistCity");
   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
-  //const artistTagline = document.getElementById("ArtistTagline");
   artistTagline.innerHTML = arrayArtist.tagline;
-  const artistImage = document.getElementById("ArtistPortrait");
-  //
   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
-  const artistPrice = document.getElementById("ArtistPrice");
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
-// DISPLAY CLASS MEDIA -----------------------------------------------------//
-//const galerie = new FactoryMedia(id_GET_ARTIST);
-//console.log(id_GET_ARTIST);
-colorg(id_GET_ARTIST, "red");
-//console.table(galerie);
-/*
-galerie.forEach((arrayMedia) => {
-  const galerie = mediaFactory.createMedia(arrayMedia);
-  // Render the media
-});
 
-*/
-
-
-// DISPLAY MEDIA -----------------------------------------------------//
-function mediaIndex(cibleID, importMedia) {
-  let article_media = "";
-  //---------------------//
-  importMedia.forEach((arrayMedia) => {
-    article_media += `<article id="media-${arrayMedia.id}" class="article_media" aria-label="photo">
-    <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
-    if (arrayMedia.image == null) {
-      article_media += `<video src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.video}" alt="${arrayMedia.title}"></video>`;
-    } else {
-      article_media += `<img src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.image}" alt="${arrayMedia.title}">`;
-    }
-    article_media += `</a><figcaption aria-labelledby="media-${arrayMedia.photographerId}">${arrayMedia.title}</figcaption>
-    <div class="heartMedia">
-      <div data-idmediacount="${arrayMedia.id}" class="heartMediaCount">${arrayMedia.likes}</div>
-      <div><i data-idheart="${arrayMedia.id}" class="fas fa-heart icone__Coeur"></i></div>
-    </div>
-    </figure>
-    </article>`; // END TILD
-    //colorg(arrayMedia.id, "pink")
-    //userlike(arrayMedia.id);
-  });
-  //---------------------//
-  
-  const cible = document.getElementById(cibleID);
-  cible.innerHTML = article_media;
-}
+/* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
 mediaIndex("carrousel", FetchIDmedia);
+/* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
 
 // TEST SUR LA BOUCLE //
 colorg(FetchIDmedia[0].likes, "violet");
@@ -168,41 +106,14 @@ userlike("media-623534343");
 const lightbox_target = document.querySelectorAll(".article_media a");
 const lightbox_pop = document.getElementById("media");
 
+//console.log(selectSort);
+// DISPLAY LIKE COUNTER -------------------------------------//
+counterLike(FetchIDmedia);
 
-// DISPLAY TRI -------------------------------------------------------//
-const selectSort = (selectorId, source, carrouselId, callback) => {
-  const selector = document.getElementById(selectorId);
-  const carrousel = document.getElementById(carrouselId);
-
-  const sortMedia = (source, option) => {
-    if (typeof source[0][option] === "string") {
-      return source.sort((a, b) => a[option].localeCompare(b[option]));
-    } else {
-      return source.sort((a, b) => b[option] - a[option]);
-    }
-  };
-
-  selector.addEventListener("change", (event) => {
-    const option = event.target.value;
-    const sortedMedia = sortMedia(source, option);
-    mediaIndex(carrouselId, sortedMedia);
-    lightboxClick(lightbox_pop, lightbox_target);
-    // Réinitialisation du carousel sur le EventListener
-    //const lightbox_target = document.querySelectorAll(".article_media a");
-    //const lightbox_pop = document.getElementById("media");
-    if (typeof callback === "function") {
-      callback();
-    }
-  });
-};
-
+// DISPLAY SORT ---------------------------------------------//
 selectSort("filterSelect", FetchIDmedia, "carrousel", () => {
   lightboxClick(lightbox_pop, lightbox_target);
 });
-console.log(selectSort);
-// DISPLAY LIKE COUNTER ----------------------------------------//
-counterLike(FetchIDmedia);
-
 
 // ================= NEPHA CODE ===========ADAPT FOR 06 =======
 // BOUCLE DE VERIF ============================================

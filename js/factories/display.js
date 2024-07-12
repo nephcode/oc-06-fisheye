@@ -2,6 +2,38 @@
 //======================= ∵ NPƸӜƷL1M ∴ =======================//
 //================================================ 2024 ======//
 
+
+// DISPLAY MEDIA -----------------------------------------------------//
+export const mediaIndex = (cibleID, importMedia) => {
+    let article_media = "";
+    //---------------------//
+    importMedia.forEach((arrayMedia) => {
+      article_media += `<article id="media-${arrayMedia.id}" class="article_media" aria-label="photo">
+      <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
+      if (arrayMedia.image == null) {
+        article_media += `<video src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.video}" alt="${arrayMedia.title}"></video>`;
+      } else {
+        article_media += `<img src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.image}" alt="${arrayMedia.title}">`;
+      }
+      article_media += `</a><figcaption aria-labelledby="media-${arrayMedia.photographerId}">${arrayMedia.title}</figcaption>
+      <div class="heartMedia">
+        <div data-idmediacount="${arrayMedia.id}" class="heartMediaCount">${arrayMedia.likes}</div>
+        <div><i data-idheart="${arrayMedia.id}" class="fas fa-heart icone__Coeur"></i></div>
+      </div>
+      </figure>
+      </article>`; // END TILD
+      //sortir du commentaire quand le test est OK :) 
+      //userlike(arrayMedia.id);
+    });
+    //---------------------//
+    const cible = document.getElementById(cibleID);
+    cible.innerHTML = article_media;
+}
+
+
+// DISPLAY MEDIA CLASS ---------------------------------------------//
+
+
 export class FactoryArtist{
     constructor(artistId, artistName){
         this._artistId = artistId;

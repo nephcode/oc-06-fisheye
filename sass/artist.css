@@ -11050,6 +11050,7 @@ main {
   align-items: baseline;
 }
 #filter p {
+  color: #000000;
   display: flex;
   align-items: center;
   width: 100px;

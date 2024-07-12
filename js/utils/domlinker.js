@@ -27,6 +27,7 @@ export const artistName = document.getElementById("ArtistName");
 export const artistCity = document.getElementById("ArtistCity");
 export const artistTagline = document.getElementById("ArtistTagline");
 export const artistImage = document.getElementById("ArtistPortrait");
+export const artistPrice = document.getElementById("ArtistPrice");
 
 // MODAL CONTACT
 export const clickContact = document.getElementById("contactButton");
@@ -36,3 +37,4 @@ export const close = document.querySelector(".close");
 export const h2name = document.querySelector("#contact_modal header h2");
 export const formTarget = document.getElementById("contactForm");
 
+//==================================== By Neah =================2024==//
