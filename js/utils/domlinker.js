@@ -19,6 +19,9 @@ export const verifList = [
   { id: "message", regex: messageRegEx },
 ];
 
+// DISPLAY CARD
+//export const heartElement = idMedia.querySelector('[data-idheart]');
+
 // DISPLAY ARTIST
 export const artistName = document.getElementById("ArtistName");
 export const artistCity = document.getElementById("ArtistCity");
@@ -32,3 +35,4 @@ export const closer = document.getElementById("closecontact");
 export const close = document.querySelector(".close");
 export const h2name = document.querySelector("#contact_modal header h2");
 export const formTarget = document.getElementById("contactForm");
+

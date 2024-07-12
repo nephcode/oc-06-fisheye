@@ -10692,7 +10692,7 @@ readers do not read off random characters that represent icons */
 }
 #carrousel figure {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 80% 20%;
   grid-template-rows: repeat(9fr, 3fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -10719,9 +10719,13 @@ readers do not read off random characters that represent icons */
 #carrousel figure .heartMedia {
   grid-column: 2;
   grid-row: 3fr;
-  display: block;
+  display: flex;
+  flex-direction: row;
   justify-self: end;
   color: #901C1C;
+}
+#carrousel figure .heartMedia .heartMediaCount {
+  margin-right: 5px;
 }
 #carrousel figure .heartMedia:active {
   animation: circle 0.6s ease-out forwards;

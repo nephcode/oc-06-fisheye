@@ -63,7 +63,7 @@
     }
   }
 }
-
+// CARD ========================= By Neah =================2024==//
 #carrousel {
 
 
@@ -84,7 +84,8 @@
 
   figure {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    //grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 80% 20%;
     grid-template-rows: repeat(9fr, 3fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -112,9 +113,14 @@
     .heartMedia {
       grid-column: 2;
       grid-row: 3fr;
-      display: block;
+      display: flex;
+      flex-direction: row;
       justify-self: end;
       color: colors.$colorMain;
+      
+      .heartMediaCount {
+        margin-right:5px ;
+      }
 
       &:active {
         //color: colors.$colorSecondary;

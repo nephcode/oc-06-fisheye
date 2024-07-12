@@ -28,7 +28,7 @@ import {
 } from "../utils/tools";
 
 // FACTORY ===========================================================//
-import { FactoryMedia } from "../factories/display";
+//import { FactoryMedia } from "../factories/display";
 
 // ID FROM URL GET ---------------------------------------------------//
 const id_GET_ARTIST = idCapture(window.location.href);
@@ -48,8 +48,27 @@ console.table(FetchIDmedia);
 // LIKE MEDIA ---------------------------------------------------------//
 console.table(state)
 // Callback en dernier lieu 
-const userlike = (likeTarget, likeEvent) => {
-//
+const userlike = (likeTarget) => {
+  //cibler le media
+  const idMedia = document.getElementById(likeTarget);
+  const idMediaInt = parseInt(idMedia.id.match(/media-(\d+)/)[1], 10);
+  // VERIF 
+  console.log(idMediaInt)
+  //Ciblage du coeur data-idmediacount="${arrayMedia.id}" / data-idheart="${arrayMedia.id}"
+  //colorg ("Ciblage du coeur "+idMediaInt, "orange");
+  const heartElement = idMedia.querySelector('[data-idheart]');
+  const countElement = idMedia.querySelector('[data-idmediacount]');
+  console.log(heartElement);
+  const heartTarget = heartElement.dataset.idheart;
+  heartElement.addEventListener("click", () => {
+      console.log("blablabla");
+
+  });
+  colorg ("Ciblage du coeur "+heartTarget, "pink");
+  console.log(heartTarget);
+  //callback 
+  //morale de l'histoire stocker les likes dans la table du média n'a aucun sens ni aucune utilité.
+  // Mieux vaut avoir une table de liaison et ensuite d'appeler un index ou de faire un "sum" 
 }
 
 
@@ -116,7 +135,7 @@ function mediaIndex(cibleID, importMedia) {
   let article_media = "";
   //---------------------//
   importMedia.forEach((arrayMedia) => {
-    article_media += `<article id=${arrayMedia.id} class="article_media" aria-label="photo">
+    article_media += `<article id="media-${arrayMedia.id}" class="article_media" aria-label="photo">
     <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
     if (arrayMedia.image == null) {
       article_media += `<video src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.video}" alt="${arrayMedia.title}"></video>`;
@@ -124,15 +143,27 @@ function mediaIndex(cibleID, importMedia) {
       article_media += `<img src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.image}" alt="${arrayMedia.title}">`;
     }
     article_media += `</a><figcaption aria-labelledby="media-${arrayMedia.photographerId}">${arrayMedia.title}</figcaption>
-    <span class="heartMedia">${arrayMedia.likes}
-    <i class="fas fa-heart icone__Coeur"></i></span>
-    </figure></article>`;
+    <div class="heartMedia">
+      <div data-idmediacount="${arrayMedia.id}" class="heartMediaCount">${arrayMedia.likes}</div>
+      <div><i data-idheart="${arrayMedia.id}" class="fas fa-heart icone__Coeur"></i></div>
+    </div>
+    </figure>
+    </article>`; // END TILD
+    //colorg(arrayMedia.id, "pink")
+    //userlike(arrayMedia.id);
   });
   //---------------------//
+  
   const cible = document.getElementById(cibleID);
   cible.innerHTML = article_media;
 }
 mediaIndex("carrousel", FetchIDmedia);
+
+// TEST SUR LA BOUCLE //
+colorg(FetchIDmedia[0].likes, "violet");
+userlike("media-623534343");
+
+
 // LIGHTBOX CLICK ============================================
 const lightbox_target = document.querySelectorAll(".article_media a");
 const lightbox_pop = document.getElementById("media");
