@@ -65,11 +65,11 @@ export const closeClick = (target, listener) => {
 export const popClick = (target, listener) => {
   listener.addEventListener("click", () => {
     target.togglePopover();
-    console.log("Popover HIDE");
+    colorg("Popover TOGGLE", "cyan");
   });
 };
 // COUNTERLIKE ===================================================
-export function counterLike(importMedia) {
+export const counterLike = (importMedia) => {
   let likeCounterOut = 0;
   //---------------------//
   importMedia.forEach((arrayMedia) => {

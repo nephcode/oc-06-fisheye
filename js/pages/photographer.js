@@ -5,46 +5,65 @@
 // SASS ==============================================================//
 import '../../sass/artist.scss';
 
+// DOMLINKER =========================================================//
+import {
+  formData, submitButton, selectSortList,
+  verifList,
+  clickContact, modalContact, closer, h2name, close, formTarget,
+  artistName, artistCity, artistTagline, artistImage
+}
+from "../utils/domlinker";
+
+// FORM ==============================================================//
+import { formField, formFinish } from "/js/utils/form";
+
+// STATE LIKE ========================================================//
+import { state } from "../factories/state";
 
 // IMPORTS ===========================================================//
-import {artistName } from "../utils/domlinker";
-//import {FactoryMedia} from "../utils/display";
 import {
-  idCapture,
-  closeEsc,
-  popClick,
-  closeClick,
-  counterLike,
-  lightboxClick,
+  idCapture, closeEsc, popClick,
+  closeClick, counterLike, lightboxClick,
   colorg
 } from "../utils/tools";
-import { formField, formFinish } from "/js/utils/form.js";
+
+// FACTORY ===========================================================//
 import { FactoryMedia } from "../factories/display";
 
-// ID FROM URL GET ----------------------------------------------------//
-const url = window.location.href;
-const id_GET_ARTIST = idCapture(url);
-
-//console.log(id_GET_ARTIST);
+// ID FROM URL GET ---------------------------------------------------//
+const id_GET_ARTIST = idCapture(window.location.href);
 colorg(id_GET_ARTIST, "yellow");
 const response = await fetch("/data/photographers.json");
 const data = await response.json();
 const artist = data.photographers;
 const medias = data.media;
-
 const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
-//console.log(FetchIDartist);
 
 // ID MEDIA -----------------------------------------------------------//
-
 const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
 );
-console.log("==== FetchIDmedia ====");
 console.table(FetchIDmedia);
 
-// TEST SORT ---------------------------------------------------------//
+// LIKE MEDIA ---------------------------------------------------------//
+console.table(state)
+// Callback en dernier lieu 
+const userlike = (likeTarget, likeEvent) => {
+//
+}
 
+
+
+
+/* 
+const verifLikeUser = () =>{
+    state.userlike.forEach((like) => {
+      // Your code inside the callback function
+    });
+    console.table(like);
+ }
+
+ verifLikeUser();
 /* FONCTIONNE 
 const sortMedia = (source, option) => {
   // Vérifiez le type de l'option
@@ -62,33 +81,15 @@ console.log("==== LIKES ====");
 console.log(likesSort);
 */
 
-// -----------------------------------------------------------------//
 
-// VARIABLE PROGZ
-const formData = document.querySelectorAll(".formData");
-const submitButton = document.getElementById("FinalBtn");
-const selectSortList = document.getElementById("filterSelect");
-
-// VARIABLE REGEX
-const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
-const messageRegEx = /^[\s\S]{30,400}$/;
-
-// VARIABLE FIELD FORM
-const verifList = [
-  { id: "first", regex: stringRegEx },
-  { id: "last", regex: stringRegEx },
-  { id: "email", regex: emailRegEx },
-  { id: "message", regex: messageRegEx },
-];
 
 // DISPLAY ARTIST  ---------------------------------------------------//
 FetchIDartist.forEach((arrayArtist) => {
-  const artistName = document.getElementById("ArtistName");
+  //const artistName = document.getElementById("ArtistName");
   artistName.innerHTML = arrayArtist.name;
-  const artistCity = document.getElementById("ArtistCity");
+  //const artistCity = document.getElementById("ArtistCity");
   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
-  const artistTagline = document.getElementById("ArtistTagline");
+  //const artistTagline = document.getElementById("ArtistTagline");
   artistTagline.innerHTML = arrayArtist.tagline;
   const artistImage = document.getElementById("ArtistPortrait");
   //
@@ -97,10 +98,10 @@ FetchIDartist.forEach((arrayArtist) => {
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
 // DISPLAY CLASS MEDIA -----------------------------------------------------//
-const galerie = new FactoryMedia(id_GET_ARTIST);
+//const galerie = new FactoryMedia(id_GET_ARTIST);
 //console.log(id_GET_ARTIST);
 colorg(id_GET_ARTIST, "red");
-console.table(galerie);
+//console.table(galerie);
 /*
 galerie.forEach((arrayMedia) => {
   const galerie = mediaFactory.createMedia(arrayMedia);
@@ -115,7 +116,7 @@ function mediaIndex(cibleID, importMedia) {
   let article_media = "";
   //---------------------//
   importMedia.forEach((arrayMedia) => {
-    article_media += `<article class="article_media" aria-label="photo">
+    article_media += `<article id=${arrayMedia.id} class="article_media" aria-label="photo">
     <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
     if (arrayMedia.image == null) {
       article_media += `<video src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.video}" alt="${arrayMedia.title}"></video>`;
@@ -170,7 +171,6 @@ selectSort("filterSelect", FetchIDmedia, "carrousel", () => {
 console.log(selectSort);
 // DISPLAY LIKE COUNTER ----------------------------------------//
 counterLike(FetchIDmedia);
-
 
 
 // ================= NEPHA CODE ===========ADAPT FOR 06 =======
@@ -246,12 +246,14 @@ const onAirChange = (inputOnAir, listenerOnAir, regRuleOnAir) => {
 // CONTACT MODAL ==============================================
 // =============== NEAH GAME =================== 2024 =========
 // ============================================================
+/*
 const clickContact = document.getElementById("contactButton");
 const modalContact = document.getElementById("contact_modal");
 const closer = document.getElementById("closecontact");
 const close = document.querySelector(".close");
 const h2name = document.querySelector("#contact_modal header h2");
 const formTarget = document.getElementById("contactForm");
+*/
 h2name.innerHTML = "Contactez-moi " + FetchIDartist[0].name;
 // OUVRIR =====================================================
 const popoverModal = (target) => {
@@ -285,7 +287,6 @@ formTarget.addEventListener("submit", (event) => {
   console.log("Message : " + messageLog);
   console.log("========= PUSH MESSAGE OK ==========");
   formTarget.innerHTML = formFinish;
-
   closeClick(contact_modal, BtnInscriptionClozer);
 });
 // CLOSE ESC ==================================================
