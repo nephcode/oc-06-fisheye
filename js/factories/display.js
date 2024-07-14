@@ -1,10 +1,10 @@
 //======= ∵ ƸӜƷ ∴ ============================ NEPHA =========//
 //======================= ∵ NPƸӜƷL1M ∴ =======================//
 //================================================ 2024 ======//
-
+import {counterLike} from "../utils/tools";
 
 // DISPLAY MEDIA -----------------------------------------------------//
-export const mediaIndex = (cibleID, importMedia) => {
+export const mediaIndex = (cibleID, importMedia, counterBack) => {
     let article_media = "";
     //---------------------//
     importMedia.forEach((arrayMedia) => {

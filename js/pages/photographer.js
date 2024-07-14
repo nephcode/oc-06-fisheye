@@ -69,6 +69,10 @@ const userlike = (likeTarget, mediaCounter) => {
       if (index > -1) {
         // Si idMediaInt est déjà dans le tableau, le retirer
         state.userlike.state_idMedia.splice(index, 1);
+        
+        
+        mediaCounter++
+        
         colorg(`Retiré : ${idMediaInt}`, "Red");
       } else {
         // Sinon, l'ajouter

@@ -6,7 +6,7 @@ State for heart
 */
 export const state = {
     userlike: {
-        state_idMedia: [],
+       state_idMedia: [],
     }
 }
 // ========================================= NEAH 2024 ============//
