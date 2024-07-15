@@ -98,7 +98,6 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 LOADING ‰‰‰‰‰‰‰‰ 90%
 
 
-![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
-Since Pyramids from future road to final temple
+![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/oc-react/readme-footer-oc-react-06.png)
 
 <!-- ∵ ƸӜƷ ∴∵ ƸӜƷ ∴∵ ƸӜƷ ∴∵ ƸӜƷ ∴∵∴∵  ∵ NPƸӜƷL1M ∴ ∴∵∴∵ ƸӜƷ ∴∵ ƸӜƷ ∴∵ ƸӜƷ ∴∵ ƸӜƷ ∴∵ ƸӜƷ ∴ -->

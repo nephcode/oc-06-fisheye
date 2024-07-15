@@ -95,4 +95,4 @@ Default config  `bun.lockb`, `.nojekyll`, `.gitignore`
 ```
 bun vite build
 ```
-![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/nephcode-public/githubReadmeSkills.png)
+![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/oc-react/readme-footer-oc-react-06.png)
