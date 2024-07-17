@@ -1,35 +1,30 @@
 //======= ∵ ƸӜƷ ∴ ============================ NEPHA =========//
 //======================= ∵ NPƸӜƷL1M ∴ =======================//
 //================================================ 2024 ======//
-import {userlike} from "../utils/tools";
+//import {userlike} from "../utils/tools";
 
-// DISPLAY MEDIA -----------------------------------------------------//
-export const mediaIndex = (cibleID, importMedia) => {
+// DISPLAY ARTICLE ---------------------------------------------------//
+export const articleDisplay = (tabledata) => {
     let article_media = "";
-    //---------------------//
-    importMedia.forEach((arrayMedia) => {
-      article_media += `<article id="media-${arrayMedia.id}" class="article_media" aria-label="photo">
+    article_media += `
+    <article id="article-${tabledata.id}" data-article-media="${tabledata.id}" class="article_media" aria-label="photo">
       <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
-      if (arrayMedia.image == null) {
-        article_media += `<video src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.video}" alt="${arrayMedia.title}"></video>`;
-      } else {
-        article_media += `<img src="/assets/artist-assets/${arrayMedia.photographerId}/${arrayMedia.image}" alt="${arrayMedia.title}">`;
-      }
-      article_media += `</a><figcaption aria-labelledby="media-${arrayMedia.photographerId}">${arrayMedia.title}</figcaption>
-      <div class="heartMedia">
-        <div data-idmediacount="${arrayMedia.id}" data-count="${arrayMedia.likes}" class="heartMediaCount">${arrayMedia.likes}</div>
-        <div><i data-idheart="${arrayMedia.id}" class="fa-classic fa-heart icone__Coeur"></i></div>
-      </div>
-      </figure>
-      </article>`; // END TILD
-      //sortir du commentaire quand le test est OK :)
-      console.log(`media-${arrayMedia.id}`); 
-      userlike(`media-${arrayMedia.id}`);
-    });
-    //---------------------//
-    const cible = document.getElementById(cibleID);
-    cible.innerHTML = article_media;
+        if (tabledata.image == null) {
+            article_media += `<video src="/assets/artist-assets/${tabledata.photographerId}/${tabledata.video}" alt="${tabledata.title}"></video>`;
+        } else {
+            article_media += `<img src="/assets/artist-assets/${tabledata.photographerId}/${tabledata.image}" alt="${tabledata.title}">`;
+        }
+            article_media += `</a><figcaption aria-labelledby="media-${tabledata.photographerId}">${tabledata.title}</figcaption>
+        <div class="heartMedia">
+        <div data-idmediacount="${tabledata.id}" data-count="${tabledata.likes}" class="heartMediaCount">${tabledata.likes}</div>
+        <div><i data-idheart="${tabledata.id}" class="fa-classic fa-heart icone__Coeur"></i></div>
+        </div>
+    </figure>
+    </article>`; // END TILD
+    return article_media;  
 }
+
+
 
 
 // DISPLAY MEDIA CLASS ---------------------------------------------//

@@ -112,7 +112,6 @@ export const counterLike = (importMedia) => {
         <i class="fas fa-heart icone__Coeur"></i></span>`;
   artistLikeCount.innerHTML = likeCounterDisplay;
 
-  //console.log(likeCounterDisplay);
 }
 
 // COUNTERLIKE ===================================================
@@ -130,20 +129,14 @@ export const colorg = (argument, color) =>{
 // LIKE ======================================================//
 
 export const userlike = (likeTarget) => {
-  console.log(likeTarget);
   // Cibler le media
-  const domMedia = document.getElementById(likeTarget);
-  if (domMedia === null) {
-    console.error(`Element with id '${likeTarget}' does not exist.`);
-    return;
-  }
-  console.dir(domMedia);
-  console.dir(domMedia.id);
-  //const idMedia = parseInt(likeTarget.match(/media-(\d+)/)[1], 10);
-  const idMedia = parseInt(domMedia.id.match(/media-(\d+)/)[1], 10);
-  //const idMedia = parseInt(likeTarget, 10);
-  console.log(`line 138 ${idMedia}`);
+  const ido = parseInt(likeTarget.match(/article-(\d+)/)[1], 10);
+  //const domMedia = document.getElementById(likeTarget);
+  colorg(`Ciblage du media ${ido}`, "purple");
   
+  const idMedia = ido
+  //const idMedia = parseInt(domMedia.id.match(/article-(\d+)/)[1], 10);
+  const domMedia = document.getElementById(likeTarget);
       
   // Cibler le coeur et le compteur 
   const heartElement = domMedia.querySelector('[data-idheart]');

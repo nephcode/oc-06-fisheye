@@ -28,7 +28,7 @@ import {
 } from "../utils/tools";
 
 // FACTORY ===========================================================//
-import { mediaIndex } from "../factories/display";
+import { articleDisplay } from "../factories/display";
 
 // ID FROM URL GET ---------------------------------------------------//
 const id_GET_ARTIST = idCapture(window.location.href);
@@ -121,6 +121,29 @@ FetchIDartist.forEach((arrayArtist) => {
 // DISPLAY ARTIST HEADER ----------------------------------------END--//
 
 /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
+// DISPLAY MEDIA -----------------------------------------------------//
+const mediaIndex = (cibleID, importMedia) => {
+  //---------------------//
+  const forTwo = importMedia; 
+  let article_media =+ "";
+  importMedia.forEach((item) => {
+    //console.log(item);
+    articleDisplay(item);
+    console.log(articleDisplay(item));
+    let article_media =+ articleDisplay(item);
+    return article_media;
+  });
+  //---------------------//
+  const cible = document.getElementById(cibleID);
+  cible.innerHTML = article_media;
+  //---------------------//
+  /*
+  forTwo.forEach((item) => {
+      userlike(`article-${item.id}`);
+  });
+  */
+  
+}
 mediaIndex("carrousel", FetchIDmedia);
 /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
 
