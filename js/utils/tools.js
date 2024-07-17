@@ -127,6 +127,74 @@ export const colorg = (argument, color) =>{
   const style = `color:${color};font-weight:bold`;
   console.log(`%c%s${argument}`,`${style}`); 
 }
+// LIKE ======================================================//
+
+export const userlike = (likeTarget) => {
+  console.log(likeTarget);
+  // Cibler le media
+  const domMedia = document.getElementById(likeTarget);
+  if (domMedia === null) {
+    console.error(`Element with id '${likeTarget}' does not exist.`);
+    return;
+  }
+  console.dir(domMedia);
+  console.dir(domMedia.id);
+  //const idMedia = parseInt(likeTarget.match(/media-(\d+)/)[1], 10);
+  const idMedia = parseInt(domMedia.id.match(/media-(\d+)/)[1], 10);
+  //const idMedia = parseInt(likeTarget, 10);
+  console.log(`line 138 ${idMedia}`);
+  
+      
+  // Cibler le coeur et le compteur 
+  const heartElement = domMedia.querySelector('[data-idheart]');
+  const countElement = domMedia.querySelector('[data-idmediacount]');
+  //const count = parseInt(domMedia.querySelector('[data-count]'), 10);
+  console.dir(heartElement);
+  //console.log(count);
+  //
+  const heartTarget = heartElement.dataset.idheart;
+  let iCount = parseInt(countElement.dataset.count, 10);
+
+  colorg(`${iCount}`, "blue");
+  let count = iCount;
+  const id = idMedia;
+  heartElement.addEventListener("click", () => {
+      // Add id + Calculer compteur media + compteur artist
+      const index = state.userlike.state_idMedia.indexOf(id);
+      if (index > -1) {
+        // Si id est déjà dans le tableau, le retirer
+        state.userlike.state_idMedia.splice(index, 1);
+        count--; // Je retire mon like
+        countElement.setAttribute('data-count', count);
+        countElement.textContent = count;
+        heartElement.classList.remove("fas");
+        heartElement.classList.add("fa-classic");
+        colorg(`Retiré un like : ${icount}`, "Red");
+        
+
+      } else {
+        // Sinon, l'ajouter
+        state.userlike.state_idMedia.push(id);
+        count++;
+        heartElement.classList.remove("fa-classic");
+        heartElement.classList.add("fas");
+        countElement.setAttribute('data-count', count);
+        countElement.textContent = count;
+        colorg(`Ajouté  un like : ${count}`, "#c0392b");
+        colorg(`Ajouté : ${id}`, "Lime");
+      }
+      colorg(`État mis à jour : ${state.userlike.state_idMedia}`, "Gold");
+      //localStorage.setItem
+      localStorage.setItem('iCount', count);
+      return count;
+  });
+  colorg(`Ajout de like ${iCount} au LocalStorage`, "green");
+  colorg (`Ciblage du coeur ${heartTarget}`, "pink");
+  
+}
+
+
+
 
 
 //======= ∵ ƸӜƷ ∴ ============================================//

@@ -1,10 +1,10 @@
 //======= ∵ ƸӜƷ ∴ ============================ NEPHA =========//
 //======================= ∵ NPƸӜƷL1M ∴ =======================//
 //================================================ 2024 ======//
-import {counterLike} from "../utils/tools";
+import {userlike} from "../utils/tools";
 
 // DISPLAY MEDIA -----------------------------------------------------//
-export const mediaIndex = (cibleID, importMedia, counterBack) => {
+export const mediaIndex = (cibleID, importMedia) => {
     let article_media = "";
     //---------------------//
     importMedia.forEach((arrayMedia) => {
@@ -17,13 +17,14 @@ export const mediaIndex = (cibleID, importMedia, counterBack) => {
       }
       article_media += `</a><figcaption aria-labelledby="media-${arrayMedia.photographerId}">${arrayMedia.title}</figcaption>
       <div class="heartMedia">
-        <div data-idmediacount="${arrayMedia.id}" class="heartMediaCount">${arrayMedia.likes}</div>
-        <div><i data-idheart="${arrayMedia.id}" class="fas fa-heart icone__Coeur"></i></div>
+        <div data-idmediacount="${arrayMedia.id}" data-count="${arrayMedia.likes}" class="heartMediaCount">${arrayMedia.likes}</div>
+        <div><i data-idheart="${arrayMedia.id}" class="fa-classic fa-heart icone__Coeur"></i></div>
       </div>
       </figure>
       </article>`; // END TILD
-      //sortir du commentaire quand le test est OK :) 
-      //userlike(arrayMedia.id);
+      //sortir du commentaire quand le test est OK :)
+      console.log(`media-${arrayMedia.id}`); 
+      userlike(`media-${arrayMedia.id}`);
     });
     //---------------------//
     const cible = document.getElementById(cibleID);

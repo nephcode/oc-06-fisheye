@@ -24,7 +24,7 @@ import { state } from "../factories/state";
 import {
   idCapture, closeEsc, popClick,
   closeClick, counterLike, lightboxClick,
-  colorg, selectSort
+  colorg, selectSort, userlike
 } from "../utils/tools";
 
 // FACTORY ===========================================================//
@@ -45,50 +45,72 @@ const FetchIDmedia = medias.filter(
 );
 console.table(FetchIDmedia);
 
+// LOCAL STORAGE ------------------------------------------------------//
+//et iCount = localStorage.getItem('iCount') ? parseInt(localStorage.getItem('iCount'), 10) : 0;
+//console.log(iCount);
+
+
 // LIKE MEDIA ---------------------------------------------------------//
 console.table(state)
 // Callback en dernier lieu 
-const userlike = (likeTarget, mediaCounter) => {
-  //cibler le media
-  const idMedia = document.getElementById(likeTarget);
-  const idMediaInt = parseInt(idMedia.id.match(/media-(\d+)/)[1], 10);
-  // VERIF 
-  console.log(idMediaInt)
-  //Ciblage du coeur data-idmediacount="${arrayMedia.id}" / data-idheart="${arrayMedia.id}"
-  //colorg ("Ciblage du coeur "+idMediaInt, "orange");
-  const heartElement = idMedia.querySelector('[data-idheart]');
-  const countElement = idMedia.querySelector('[data-idmediacount]');
-  //console.log(heartElement);
+/*
+const userlike = (likeTarget) => {
+  console.log(likeTarget);
+  // Cibler le media
+  const domMedia = document.getElementById(likeTarget);
+  const idMedia = parseInt(domMedia.id.match(/media-(\d+)/)[1], 10);
+  console.log(`${idMedia}`);
+  console.log(`${domMedia}`);
+      
+  // Cibler le coeur et le compteur 
+  const heartElement = domMedia.querySelector('[data-idheart]');
+  const countElement = domMedia.querySelector('[data-idmediacount]');
+  //const count = parseInt(domMedia.querySelector('[data-count]'), 10);
+  console.log(heartElement);
+  //console.log(count);
+  //
   const heartTarget = heartElement.dataset.idheart;
-  const countTarget = countElement.dataset.idmediacount;
+  let iCount = parseInt(countElement.dataset.count, 10);
 
-  colorg(countTarget, "blue");
+  colorg(`${iCount}`, "blue");
+  let count = iCount;
+  const id = idMedia;
   heartElement.addEventListener("click", () => {
-      // Add idMediaInt + Calculer compteur media + compteur artist
-      const index = state.userlike.state_idMedia.indexOf(idMediaInt);
+      // Add id + Calculer compteur media + compteur artist
+      const index = state.userlike.state_idMedia.indexOf(id);
       if (index > -1) {
-        // Si idMediaInt est déjà dans le tableau, le retirer
+        // Si id est déjà dans le tableau, le retirer
         state.userlike.state_idMedia.splice(index, 1);
+        count--; // Je retire mon like
+        countElement.setAttribute('data-count', count);
+        countElement.textContent = count;
+        heartElement.classList.remove("fas");
+        heartElement.classList.add("fa-classic");
+        colorg(`Retiré un like : ${icount}`, "Red");
         
-        
-        mediaCounter++
-        
-        colorg(`Retiré : ${idMediaInt}`, "Red");
+
       } else {
         // Sinon, l'ajouter
-        state.userlike.state_idMedia.push(idMediaInt);
-        colorg(`Ajouté : ${idMediaInt}`, "Lime");
+        state.userlike.state_idMedia.push(id);
+        count++;
+        heartElement.classList.remove("fa-classic");
+        heartElement.classList.add("fas");
+        countElement.setAttribute('data-count', count);
+        countElement.textContent = count;
+        colorg(`Ajouté  un like : ${count}`, "#c0392b");
+        colorg(`Ajouté : ${id}`, "Lime");
       }
       colorg(`État mis à jour : ${state.userlike.state_idMedia}`, "Gold");
+      //localStorage.setItem
+      localStorage.setItem('iCount', count);
+      return count;
   });
-  colorg ("Ciblage du coeur "+heartTarget, "pink");
-  //console.log(heartTarget);
-  //callback 
-  //morale de l'histoire stocker les likes dans la table du média n'a aucun sens ni aucune utilité.
-  // Mieux vaut avoir une table de liaison et ensuite d'appeler un index ou de faire un "sum" 
+  colorg(`Ajout de like ${iCount} au LocalStorage`, "green");
+  colorg (`Ciblage du coeur ${heartTarget}`, "pink");
+  
 }
-
-// DISPLAY ARTIST  ---------------------------------------------//
+*/
+// DISPLAY ARTIST HEADER ---------------------------------------------//
 FetchIDartist.forEach((arrayArtist) => {
   artistName.innerHTML = arrayArtist.name;
   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
@@ -96,14 +118,16 @@ FetchIDartist.forEach((arrayArtist) => {
   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
+// DISPLAY ARTIST HEADER ----------------------------------------END--//
 
 /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
 mediaIndex("carrousel", FetchIDmedia);
 /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
 
 // TEST SUR LA BOUCLE //
-colorg(FetchIDmedia[0].likes, "violet");
-userlike("media-623534343");
+//colorg(`Ciblage MEDIA TEST ${FetchIDmedia[0].id}`, "violet");
+//userlike("media-623534343");
+//userlike(`media-${FetchIDmedia[0].id}`);
 
 
 // LIGHTBOX CLICK ============================================
