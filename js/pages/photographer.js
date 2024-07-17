@@ -124,26 +124,23 @@ FetchIDartist.forEach((arrayArtist) => {
 // DISPLAY MEDIA -----------------------------------------------------//
 const mediaIndex = (cibleID, importMedia) => {
   //---------------------//
-  const forTwo = importMedia; 
-  let article_media =+ "";
+  //const forTwo = importMedia; 
+  let article_media = "";
   importMedia.forEach((item) => {
-    //console.log(item);
-    articleDisplay(item);
-    console.log(articleDisplay(item));
-    let article_media =+ articleDisplay(item);
-    return article_media;
+    //console.log(articleDisplay(item));
+    article_media += articleDisplay(item);
+    //return article_media;
+    //return articleDisplay(item);
   });
   //---------------------//
   const cible = document.getElementById(cibleID);
   cible.innerHTML = article_media;
   //---------------------//
-  /*
-  forTwo.forEach((item) => {
+    importMedia.forEach((item) => {
       userlike(`article-${item.id}`);
   });
-  */
   
-}
+  }
 mediaIndex("carrousel", FetchIDmedia);
 /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS */
 
