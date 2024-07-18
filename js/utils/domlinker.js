@@ -11,6 +11,7 @@ export const selectSortList = document.getElementById("filterSelect");
 export const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 export const stringRegEx = /^[a-zA-Z0-9._-\u000-\u00FF]{2,32}$/;
 export const messageRegEx = /^[\s\S]{30,400}$/;
+
 // VARIABLE FIELD FORM
 export const verifList = [
   { id: "first", regex: stringRegEx },
@@ -19,15 +20,13 @@ export const verifList = [
   { id: "message", regex: messageRegEx },
 ];
 
-// DISPLAY CARD
-//export const heartElement = idMedia.querySelector('[data-idheart]');
-
 // DISPLAY ARTIST
 export const artistName = document.getElementById("ArtistName");
 export const artistCity = document.getElementById("ArtistCity");
 export const artistTagline = document.getElementById("ArtistTagline");
 export const artistImage = document.getElementById("ArtistPortrait");
 export const artistPrice = document.getElementById("ArtistPrice");
+export const artistLikeCount = document.getElementById("likeCount");
 
 // MODAL CONTACT
 export const clickContact = document.getElementById("contactButton");
@@ -36,5 +35,8 @@ export const closer = document.getElementById("closecontact");
 export const close = document.querySelector(".close");
 export const h2name = document.querySelector("#contact_modal header h2");
 export const formTarget = document.getElementById("contactForm");
+
+export const lightbox_target = document.querySelectorAll(".article_media a");
+export const lightbox_pop = document.getElementById("media");
 
 //==================================== By Neah =================2024==//

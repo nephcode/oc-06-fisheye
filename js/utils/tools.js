@@ -2,7 +2,8 @@
 //======================= ∵ NƸAH ∴ ===========================//
 //================================================ 2024 ======//
 import { state } from "../factories/state";
-
+import { artistLikeCount } from "./domlinker";
+import { likeCounterDisplay } from "../factories/display";
 
 //= CAPTURE GET V1.0 =========================================//
 export const idCapture = (source) => {
@@ -106,14 +107,10 @@ export const counterLike = (importMedia) => {
   importMedia.forEach((arrayMedia) => {
     likeCounterOut += parseInt(arrayMedia.likes);
   });
-  //console.log(likeCounterOut);
-  //---------------------//
-  const artistLikeCount = document.getElementById("likeCount");
-  //console.log(artistLikeCount.textContent);
-  const likeCounterDisplay = `<span class="heart-btn">${likeCounterOut}
-        <i class="fas fa-heart icone__Coeur"></i></span>`;
-  artistLikeCount.innerHTML = likeCounterDisplay;
-
+  //localStorage.setItem('iCountGlobal', likeCounterOut);
+  //colorg(`Total des likes en LocalStorage : ${likeCounterOut}`, "orange");
+  return likeCounterOut;
+  
 }
 
 // COUNTERLIKE ===================================================
@@ -144,7 +141,7 @@ export const userlike = (likeTarget) => {
   const heartElement = domMedia.querySelector('[data-idheart]');
   const countElement = domMedia.querySelector('[data-idmediacount]');
   //const count = parseInt(domMedia.querySelector('[data-count]'), 10);
-  console.dir(heartElement);
+  //console.dir(heartElement);
   //console.log(count);
   //
   const heartTarget = heartElement.dataset.idheart;
@@ -156,6 +153,7 @@ export const userlike = (likeTarget) => {
   heartElement.addEventListener("click", () => {
       // Add id + Calculer compteur media + compteur artist
       const index = state.userlike.state_idMedia.indexOf(id);
+      console.table(state.userlike);
       if (index > -1) {
         // Si id est déjà dans le tableau, le retirer
         state.userlike.state_idMedia.splice(index, 1);
@@ -164,8 +162,11 @@ export const userlike = (likeTarget) => {
         countElement.textContent = count;
         heartElement.classList.remove("fas");
         heartElement.classList.add("fa-classic");
-        colorg(`Retiré un like : ${icount}`, "Red");
-        
+        let iCountGlobal = localStorage.getItem("iCountGlobal") ? parseInt(localStorage.getItem("iCountGlobal"), 10) : 0;
+        iCountGlobal--;
+        localStorage.setItem('iCountGlobal', iCountGlobal);
+        likeCounterDisplay(iCountGlobal, artistLikeCount); 
+        colorg (`Ajouté du LocalStorage : ${iCountGlobal}`, "grey");      
 
       } else {
         // Sinon, l'ajouter
@@ -177,19 +178,19 @@ export const userlike = (likeTarget) => {
         countElement.textContent = count;
         colorg(`Ajouté  un like : ${count}`, "#c0392b");
         colorg(`Ajouté : ${id}`, "Lime");
+        let iCountGlobal = localStorage.getItem("iCountGlobal") ? parseInt(localStorage.getItem("iCountGlobal"), 10) : 0;
+        iCountGlobal++;
+        localStorage.setItem('iCountGlobal', iCountGlobal);
+        likeCounterDisplay(iCountGlobal, artistLikeCount); 
+        colorg (`Ajouté du LocalStorage : ${iCountGlobal}`, "grey"); 
       }
       colorg(`État mis à jour : ${state.userlike.state_idMedia}`, "Gold");
       //localStorage.setItem
-      localStorage.setItem('iCount', count);
+      //localStorage.setItem('iCount', count);
       return count;
   });
-  colorg(`Ajout de like ${iCount} au LocalStorage`, "green");
-  colorg (`Ciblage du coeur ${heartTarget}`, "pink");
+  //colorg(`Ajout de like ${iCount} au LocalStorage`, "green");
+  //colorg (`Ciblage du coeur ${heartTarget}`, "pink");
   
 }
-
-
-
-
-
 //======= ∵ ƸӜƷ ∴ ============================================//

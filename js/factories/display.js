@@ -23,13 +23,19 @@ export const articleDisplay = (tabledata) => {
     </article>`; // END TILD
     return article_media;  
 }
-
-
+// DISPLAY COUNTER -------------------------------------------------//
+export const likeCounterDisplay = (totalLikes, targetDom) => {
+    const display = `
+        <span class="heart-btn">${totalLikes}
+            <i class="fas fa-heart icone__Coeur"></i>
+        </span>`;
+    targetDom.innerHTML = display;
+};    
 
 
 // DISPLAY MEDIA CLASS ---------------------------------------------//
 
-
+/*
 export class FactoryArtist{
     constructor(artistId, artistName){
         this._artistId = artistId;
@@ -111,7 +117,7 @@ export class MediaVideo extends FactoryMedia{
                 </video>`;
     }
 }
-
+*/
 //======= ∵ ƸӜƷ ∴ ============================================//
 //======================= ∵ NPƸӜƷL1M ∴ =======================//
 //=== SINCE PYRAMIDS ============================= 2024 ======//
