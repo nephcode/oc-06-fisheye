@@ -32,7 +32,7 @@ export const selectSort = (selectorId, source, carrouselId, callback) => {
   selector.addEventListener("change", (event) => {
     const option = event.target.value;
     const sortedMedia = sortMedia(source, option);
-    mediaIndex(carrouselId, sortedMedia);
+    callback(carrouselId, sortedMedia);
     lightboxClick(lightbox_pop, lightbox_target);
     // Réinitialisation du carousel sur le EventListener
     //const lightbox_target = document.querySelectorAll(".article_media a");
@@ -166,7 +166,7 @@ export const userlike = (likeTarget) => {
         iCountGlobal--;
         localStorage.setItem('iCountGlobal', iCountGlobal);
         likeCounterDisplay(iCountGlobal, artistLikeCount); 
-        colorg (`Ajouté du LocalStorage : ${iCountGlobal}`, "grey");      
+        colorg (`Retiré du LocalStorage : ${iCountGlobal}`, "#99b3ff");      
 
       } else {
         // Sinon, l'ajouter
@@ -182,7 +182,7 @@ export const userlike = (likeTarget) => {
         iCountGlobal++;
         localStorage.setItem('iCountGlobal', iCountGlobal);
         likeCounterDisplay(iCountGlobal, artistLikeCount); 
-        colorg (`Ajouté du LocalStorage : ${iCountGlobal}`, "grey"); 
+        colorg (`Ajouté du LocalStorage : ${iCountGlobal}`, "#99b3ff"); 
       }
       colorg(`État mis à jour : ${state.userlike.state_idMedia}`, "Gold");
       //localStorage.setItem
