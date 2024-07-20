@@ -46,6 +46,7 @@ const FetchIDmedia = medias.filter(
   (media) => media.photographerId == id_GET_ARTIST
 );
 console.table(FetchIDmedia);
+// ID MEDIA ----------------------------------------------------END---//
 
 // DISPLAY ARTIST HEADER ---------------------------------------------//
 FetchIDartist.forEach((arrayArtist) => {
@@ -55,22 +56,19 @@ FetchIDartist.forEach((arrayArtist) => {
   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
 });
-// DISPLAY ARTIST HEADER ----------------------------------------END--//
+// DISPLAY ARTIST HEADER ---------------------------------------END---//
 
 // DISPLAY COUNTER ---------------------------------------------------//
 //counterLike(FetchIDmedia);
 likeCounterDisplay(counterLike(FetchIDmedia), artistLikeCount);
 localStorage.setItem('iCountGlobal', counterLike(FetchIDmedia));
-let testLocalStorage = localStorage.getItem("iCountGlobal");
-console.log("Local Storage : " + testLocalStorage);
-localStorage.setItem("iCountGlobal", testLocalStorage++);
-console.log("Local Storage UPDATE : " + testLocalStorage);
+// DISPLAY COUNTER ---------------------------------------------END---//
+
 
 // DISPLAY MEDIA -----------------------------------------------------//
 /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS ---------------------------*/
 const mediaIndex = (cibleID, importMedia) => {
   //---------------------//
-  //const forTwo = importMedia; 
   let article_media = "";
   importMedia.forEach((item) => {
     article_media += articleDisplay(item);
@@ -79,8 +77,8 @@ const mediaIndex = (cibleID, importMedia) => {
   const cible = document.getElementById(cibleID);
   cible.innerHTML = article_media;
   //---------------------//
-    importMedia.forEach((item) => {
-      userlike(`article-${item.id}`);
+  importMedia.forEach((item) => {
+    userlike(`article-${item.id}`);
   });
 }
 mediaIndex("carrousel", FetchIDmedia);
@@ -96,7 +94,7 @@ mediaIndex("carrousel", FetchIDmedia);
 //counterLike(FetchIDmedia);
 
 // DISPLAY SORT ---------------------------------------------//
-selectSort("filterSelect", FetchIDmedia, "carrousel");
+selectSort("filterSelect", FetchIDmedia, "carrousel", mediaIndex("carrousel", FetchIDmedia));
 
 
 

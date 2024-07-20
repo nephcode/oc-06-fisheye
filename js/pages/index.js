@@ -5,13 +5,19 @@
 // SASS ===========================================================//
 import '../../sass/home.scss';
 
+import { getPhotographers } from '../utils/api';
+import { photographerTemplate } from '../templates/photographer';
+import { artistSection } from '../utils/domlinker';
+
+/*
 const url = await fetch("/data/photographers.json");
 const data = await url.json();
 const photographers = data.photographers;
 console.log(photographers);
-
+*/
 //const artist = photographers[0];
 //console.log(artist);
+/*
 function artistIndex(artist) {
   let article_artist = `<section id="artistSection" class="photographer_section">`;
   for (let i = 0; i < photographers.length; i++) {
@@ -31,5 +37,31 @@ function artistIndex(artist) {
   cible.innerHTML = article_artist;
 }
 artistIndex(photographers);
+*/
 
+getPhotographers().then(data => {
+
+  data.forEach(item => {
+    const article = photographerTemplate(item).getUserCardDOM()
+
+    artistSection.appendChild(article)
+  });
+
+})
+/*
+// Version avec async/await et fonction fléchée
+const displayPhotographers = async () => {
+  try {
+    const data = await getPhotographers();
+    data.forEach(item => {
+      const article = photographerTemplate(item).getUserCardDOM();
+      artistSection.appendChild(article);
+    });
+  } catch (error) {
+    console.error("Erreur lors de la récupération des photographes:", error);
+  }
+}
+*/
+// Appel de la fonction
+// == > displayPhotographers();
 
