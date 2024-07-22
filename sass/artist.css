@@ -10741,24 +10741,6 @@ readers do not read off random characters that represent icons */
   border-radius: 100%;
 }
 
-.artist--city {
-  margin: 0px;
-  justify-self: center;
-  color: #901C1C;
-  font-size: 13px;
-}
-.artist--tagline {
-  justify-self: center;
-  color: #000000;
-  font-size: 10px;
-}
-.artist--price {
-  margin: 0px;
-  justify-self: center;
-  color: #757575;
-  font-size: 9px;
-}
-
 .heartCount {
   display: block;
   position: relative;
@@ -10990,7 +10972,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  background-color: light-dark(#FAFAFA, #901C1C);
+  background-color: #901C1C;
 }
 
 .logo {
@@ -11008,7 +10990,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #FAFAFA;
+  background-color: #DB8876;
   height: 200px;
   margin: 0;
   padding: 10px 70px;
@@ -11029,10 +11011,13 @@ main {
 }
 
 #ArtistName {
-  color: #D3573C;
+  color: #ffffff;
   font-size: 3rem;
   font-weight: lighter;
   margin: 0px;
+}
+#ArtistName h1 {
+  color: #ffffff;
 }
 
 .contact_button {

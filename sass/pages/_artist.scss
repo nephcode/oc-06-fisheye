@@ -14,7 +14,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: colors.$colorGreyBackground;
+  background-color: colors.$colorTernary;
   height: 200px;
   margin: 0;
   padding: 10px 70px;
@@ -37,10 +37,14 @@ main {
 }
 
 #ArtistName {
-  color: colors.$colorSecondary;
+  color: colors.$colorTypoWhite;
   font-size: 3rem;
   font-weight: lighter;
   margin: 0px;
+
+  h1 {
+    color : colors.$colorTypoWhite;
+  }
 }
 
 .contact_button {

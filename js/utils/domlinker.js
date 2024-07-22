@@ -21,12 +21,16 @@ export const verifList = [
 ];
 
 // DISPLAY ARTIST
+export const artistSection = document.getElementById('artistSection')
 export const artistName = document.getElementById("ArtistName");
 export const artistCity = document.getElementById("ArtistCity");
 export const artistTagline = document.getElementById("ArtistTagline");
 export const artistImage = document.getElementById("ArtistPortrait");
 export const artistPrice = document.getElementById("ArtistPrice");
 export const artistLikeCount = document.getElementById("likeCount");
+
+// MEDIAS
+export const mediaContainer = document.getElementById('carrousel')
 
 // MODAL CONTACT
 export const clickContact = document.getElementById("contactButton");
@@ -36,7 +40,16 @@ export const close = document.querySelector(".close");
 export const h2name = document.querySelector("#contact_modal header h2");
 export const formTarget = document.getElementById("contactForm");
 
+// LIGHTBOX
 export const lightbox_target = document.querySelectorAll(".article_media a");
 export const lightbox_pop = document.getElementById("media");
+export const imgLightbox = document.querySelector('#lightbox img')
+export const videoLightbox = document.querySelector('#lightbox video')
+export const titleLightbox = document.querySelector('#lightbox figcaption')
+export const btnPrevLightbox = document.querySelector('.prev-image img')
+export const btnNextLightbox = document.querySelector('.next-image img')
+
+// SORT MEDIAS
+export const selectSortMedias = document.getElementById('filterSelect')
 
 //==================================== By Neah =================2024==//

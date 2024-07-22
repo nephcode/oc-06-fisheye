@@ -1,9 +1,9 @@
+import { artistName, artistCity, artistTagline, artistImage, artistPrice, artistLikeCount } from "../utils/domlinker";
+
 export const photographerTemplate = data => {
     const { id, name, portrait, city, country, tagline, price } = data;
 
     const picture = `/assets/photographers/${portrait}`;
-
-    console.log(data)
 
     const getUserCardDOM = () => {
         const article = document.createElement('article');
@@ -43,5 +43,13 @@ export const photographerTemplate = data => {
         return (article);
     }
 
-    return { name, picture, getUserCardDOM }
+    const setProfileDOM = () => {
+        artistName.innerHTML = name;
+        artistCity.innerHTML = city + ", " + country;
+        artistTagline.innerHTML = tagline;
+        artistImage.src = `/assets/photographers/${portrait}`;
+        artistPrice.innerHTML = price + "€/Jour";
+    }
+
+    return { name, picture, getUserCardDOM, setProfileDOM }
 }

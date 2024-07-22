@@ -4,25 +4,26 @@
 //import {userlike} from "../utils/tools";
 
 // DISPLAY ARTICLE ---------------------------------------------------//
-export const articleDisplay = (tabledata) => {
-    let article_media = "";
-    article_media += `
-    <article id="article-${tabledata.id}" data-article-media="${tabledata.id}" class="article_media" aria-label="photo">
-      <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
-        if (tabledata.image == null) {
-            article_media += `<video src="/assets/artist-assets/${tabledata.photographerId}/${tabledata.video}" alt="${tabledata.title}"></video>`;
-        } else {
-            article_media += `<img src="/assets/artist-assets/${tabledata.photographerId}/${tabledata.image}" alt="${tabledata.title}">`;
-        }
-            article_media += `</a><figcaption aria-labelledby="media-${tabledata.photographerId}">${tabledata.title}</figcaption>
-        <div class="heartMedia">
-        <div data-idmediacount="${tabledata.id}" data-count="${tabledata.likes}" class="heartMediaCount">${tabledata.likes}</div>
-        <div><i data-idheart="${tabledata.id}" class="fa-classic fa-heart icone__Coeur"></i></div>
-        </div>
-    </figure>
-    </article>`; // END TILD
-    return article_media;  
-}
+// export const articleDisplay = (tabledata) => {
+//     let article_media = "";
+//     article_media += `
+//     <article id="article-${tabledata.id}" data-article-media="${tabledata.id}" class="article_media" aria-label="photo">
+//       <figure><a role="button" aria-label="Ouvrir l'image en grand">`;
+//         if (tabledata.image == null) {
+//             article_media += `<video src="/assets/artist-assets/${tabledata.photographerId}/${tabledata.video}" alt="${tabledata.title}"></video>`;
+//         } else {
+//             article_media += `<img src="/assets/artist-assets/${tabledata.photographerId}/${tabledata.image}" alt="${tabledata.title}">`;
+//         }
+//             article_media += `</a><figcaption aria-labelledby="media-${tabledata.photographerId}">${tabledata.title}</figcaption>
+//         <div class="heartMedia">
+//         <div data-idmediacount="${tabledata.id}" data-count="${tabledata.likes}" class="heartMediaCount">${tabledata.likes}</div>
+//         <div><i data-idheart="${tabledata.id}" class="fa-classic fa-heart icone__Coeur"></i></div>
+//         </div>
+//     </figure>
+//     </article>`; // END TILD
+//     return article_media;  
+// }
+
 // DISPLAY COUNTER -------------------------------------------------//
 export const likeCounterDisplay = (totalLikes, targetDom) => {
     const display = `

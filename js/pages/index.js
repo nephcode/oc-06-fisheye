@@ -2,9 +2,10 @@
 // INDEX APP =========================================================//
 //==================================== By Neah =================2024==//
 
-// SASS ===========================================================//
+// SASS ==============================================================//
 import '../../sass/home.scss';
 
+// IMPORT ============================================================//
 import { getPhotographers } from '../utils/api';
 import { photographerTemplate } from '../templates/photographer';
 import { artistSection } from '../utils/domlinker';
