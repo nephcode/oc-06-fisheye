@@ -56,10 +56,11 @@ const updateMedias = data => {
 
     userlike(`article-${item.id}`)
 
+    const button = article.querySelector('a[role="button"]');
     // Display lightbox
-    a.addEventListener('click', () => {
+    button.addEventListener('click', () => {
+      //stopPropagation();
       lightbox_pop.togglePopover()
-
       // set current slide index
       slideIndex = state.medias.indexOf(item)
 
