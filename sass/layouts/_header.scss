@@ -9,12 +9,13 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
-    background-color: colors.$colorMain;    
+    background-color: colors.$colorMain; 
+    //padding: 0px 90px;   
     //background-color: light-dark(colors.$colorGreyBackground, colors.$colorMain);
 }
 
 .logo {
     height: 50px;
-    margin-left: 100px;
+    margin-left: 40px;
     color: #fff;
 }

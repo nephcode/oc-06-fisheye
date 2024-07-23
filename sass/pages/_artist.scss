@@ -25,6 +25,29 @@ main {
     align-items: center;
   }
 
+  .artist {
+    &--name {
+      color : colors.$colorTypoWhite;
+    }
+    &--city {
+      margin: 0px;
+      justify-self: center;
+      color: colors.$colorMain;
+      font-size: 13px;
+    }
+    &--tagline {
+      justify-self: center;
+      color: colors.$colorTypoBlack;
+      font-size: 10px;
+    }
+    &--price {
+      margin: 0px;
+      justify-self: center;
+      color: colors.$colorTypoGrey;
+      font-size: 9px;
+    }
+  }
+
   img {
     display: block;
     height: 270px;

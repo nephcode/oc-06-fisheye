@@ -41,6 +41,7 @@ export const h2name = document.querySelector("#contact_modal header h2");
 export const formTarget = document.getElementById("contactForm");
 
 // LIGHTBOX
+export const modalBodyFix = document.body;
 export const lightbox_target = document.querySelectorAll(".article_media a");
 export const lightbox_pop = document.getElementById("media");
 export const imgLightbox = document.querySelector('#lightbox img')

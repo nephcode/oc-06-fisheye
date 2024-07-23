@@ -57,7 +57,7 @@ const updateMedias = data => {
     userlike(`article-${item.id}`)
 
     // Display lightbox
-    article.addEventListener('click', () => {
+    a.addEventListener('click', () => {
       lightbox_pop.togglePopover()
 
       // set current slide index
@@ -86,9 +86,7 @@ getMediasByPhotographerId(id).then(data => {
 
 getPhotographerById(id).then(data => {
   console.table(data)
-
   h2name.innerHTML = "Contactez-moi " + data.name;
-
   // DISPLAY ARTIST HEADER ---------------------------------------------//
   photographerTemplate(data).setProfileDOM()
 })

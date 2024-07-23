@@ -2,7 +2,7 @@
 //======================= ∵ NƸAH ∴ ===========================//
 //================================================ 2024 ======//
 import { state } from "../factories/state";
-import { artistLikeCount } from "./domlinker";
+import { artistLikeCount, modalBodyFix } from "./domlinker";
 import { likeCounterDisplay } from "../factories/display";
 
 //= CAPTURE GET V1.0 =========================================//
@@ -69,6 +69,7 @@ export const lightboxClick = (target, listener) => {
   listener.forEach((element) => {
     element.addEventListener("click", () => {
       target.togglePopover();
+      //lightbox_silent.classList.remove("modal-silent");
       console.log("Lightbox Click");
     });
   });
@@ -80,6 +81,7 @@ export const closeEsc = (target) => {
     if (event.key === "Escape") {
       event.preventDefault();
       target.hidePopover();
+      modalBodyFix.classList.remove("modal-silent");
       console.log("Fermeture ESC");
     }
   });
@@ -90,6 +92,7 @@ export const closeClick = (target, listener) => {
   //console.log(cleanForm);
   listener.addEventListener("click", () => {
     target.hidePopover();
+    modalBodyFix.classList.remove("modal-silent");
     //console.log("Fermeture BUTTON FORM");
   });
 };
@@ -97,7 +100,13 @@ export const closeClick = (target, listener) => {
 export const popClick = (target, listener) => {
   listener.addEventListener("click", () => {
     target.togglePopover();
-    colorg("Popover TOGGLE", "cyan");
+    if (False) {
+      modalBodyFix.classList.add("modal-silent");
+      colorg("Popover OPENED", "cyan");
+    } else {
+      modalBodyFix.classList.remove("modal-silent");
+      colorg("Popover CLOSED", "cyan");
+    }
   });
 };
 // COUNTERLIKE ===================================================
