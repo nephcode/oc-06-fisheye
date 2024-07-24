@@ -18,6 +18,12 @@ getPhotographers().then(data => {
   });
 
 })
+
+// NEPHELIM CODE ==================================================//
+// ======= INDEX ============================//====================//
+// ========================================= NEAH 2024 ============//
+
+
 /*
 // Version avec async/await et fonction fléchée
 const displayPhotographers = async () => {
