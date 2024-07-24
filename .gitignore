@@ -1,2 +1,5 @@
+.local/
 .vscode/
+dist/
 node_modules/
+vite.config.js

@@ -1,102 +1,96 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <title>Fisheye - photographe</title>
-    <script type="module" src="/js/pages/photographer.js" defer></script>
-    <script type="module" src="/js/utils/tools.js" defer></script>
-    <script type="module" src="/js/factories/display.js" defer></script>
-    <script type="module" src="/js/utils/form.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <a href="/" aria-label="Retour Accueil"
-        ><img src="assets/images/logoBrique.svg" class="logo" alt="fisheye logo"
-      /></a>
-    </header>
-    <main id="main">
-      <section id="profil" aria-label="Profil de l'artiste">
-        <div>
-          <h1 id="ArtistName" class="artist--" aria-label="Nom"></h1>
-          <p id="ArtistCity" class="artist--city" aria-label="Localisation"></p>
-          <p
-            id="ArtistTagline"
-            class="artist--tagline"
-            aria-label="Signature"
-          ></p>
-        </div>
-        <div>
-          <button id="contactButton" popovertarget="contact_modal" class="contact_button" aria-label="Formulaire de contact">
-            Contactez-moi
-          </button>
-          <!--<button id="popoverButton" popovertarget="test_modal" class="contact_button" aria-label="Formulaire de contact">
-            test popover
-          </button>-->
-        </div>
-        <div>
-          <img id="ArtistPortrait" aria-label="" />
-        </div>
-      </section>
-      <section id="filter" aria-label="Filtrez les médias" role="filter">
-        <p>Triez par :</p>   
-        <form>
-          <select id="filterSelect" aria-label="Filtre">
-            <option value="likes">Popularité</option>
-            <option value="date">Date</option>
-            <option value="title">Titre</option>
-          </select>
-        </form>
-      </section>
 
-      <section id="carrousel" aria-label="Carroussel des médias"></section>
-      <section id="info" aria-label="information">
-        <p id="likeCount"></p>
-        <p id="ArtistPrice" class="artist--price" aria-label="Tarif"></p>
-      </section>
-    </main>
-    <footer>
-      <p>© 2024 Fisheye — OC 06 - JS</p>
-    </footer>
-    <!-- DEBUT MODAL CONTACT  -->
-    <div id="contact_modal" popover="manual">
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="/assets/icons/close.svg" id="closecontact" class="close"/>
-        </header>
-        <form id="contactForm">
-          <div>
-            <label>Prénom</label>
-            <input />
-          </div>
-          <button class="contact_button">Envoyer</button>
-        </form>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <title>Fisheye - photographe</title>
+  <script type="module" src="/js/pages/photographer.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a href="/" aria-label="Retour Accueil"><img src="assets/images/logo.svg" class="logo" alt="fisheye logo" /></a>
+  </header>
+  <main id="main">
+    <section id="profil" aria-label="Profil de l'artiste">
+      <div>
+        <h1 id="ArtistName" class="artist--" aria-label="Nom"></h1>
+        <p id="ArtistCity" class="artist--city" aria-label="Localisation"></p>
+        <p id="ArtistTagline" class="artist--tagline" aria-label="Signature"></p>
+      </div>
+      <div>
+        <button id="contactButton" popovertarget="contact_modal" class="contact_button"
+          aria-label="Formulaire de contact">
+          Contactez-moi
+        </button>
+   
+      </div>
+      <div>
+        <img id="ArtistPortrait" aria-label="" />
+      </div>
+    </section>
+    <section id="filter" aria-label="Filtrez les médias" role="filter">
+      <p>Triez par :</p>
+      <form>
+        <select id="filterSelect" aria-label="Filtre">
+          <option value="likes">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+        </select>
+      </form>
+    </section>
+
+    <section id="carrousel" aria-label="Carroussel des médias"></section>
+    <section id="info" aria-label="information">
+      <p id="likeCount"></p>
+      <p id="ArtistPrice" class="artist--price" aria-label="Tarif"></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Fisheye — OC 06 - JS</p>
+  </footer>
+  <!-- DEBUT MODAL CONTACT  -->
+  <div id="contact_modal" popover="manual">
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi</h2>
+        <img src="/assets/icons/close.svg" id="closecontact" class="close" tabindex="0" />
+      </header>
+      <form id="contactForm">
+        <div>
+          <label>Prénom</label>
+          <input />
+        </div>
+        <button class="contact_button" tabindex="0">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <!-- FIN MODAL CONTACT  -->
+  <!-- START MODAL LIGHTBOX  -->
+  <div id="media" popover="auto">
+    <div id="lightbox">
+      <figure>
+        <img src="/assets/artist-assets/243/Travel_Lonesome.jpg" alt="generate content neah">
+        <video type="video/mp4"></video>
+        <figcaption aria-labelledby="media xxxxx">text génératif</figcaption>
+      </figure>
+      <div class="closemedia">
+        <img src="/assets/icons/closelight.svg" id="closemedia" class="close" tabindex="0" />
+      </div>
+      <div role="button" class="controls controls-left">
+        <span class="img prev-image">
+          <img src="/assets/icons/arrow-left.svg" aria-hidden="true" tabindex="0">
+        </span>
+      </div>
+      <div role="button" class="controls controls-right">
+        <span class="img next-image">
+          <img src="/assets/icons/arrow-right.svg" aria-hidden="true" tabindex="0">
+        </span>
       </div>
     </div>
-    <!-- FIN MODAL CONTACT  -->
-    <!-- START MODAL LIGHTBOX  -->
-    <div id="media" popover="auto">
-      <div id="lightbox">
-        <figure>
-          <img src="/assets/artist-assets/243/Travel_Lonesome.jpg" alt="generate content neah">
-          <figcaption aria-labelledby="media xxxxx">text génératif</figcaption>
-        </figure>   
-        <div role="button" class="controls controls-left">
-          <span class="img prev-image">
-            <img src="/assets/icons/arrow-left.svg" aria-hidden="true">
-          </span>
-        </div>
-        <div role="button" class="controls controls-right">
-          <span class="img next-image">
-            <img src="/assets/icons/arrow-right.svg" aria-hidden="true">
-          </span>
-        </div>
-        <div class="closemedia">
-          <img src="/assets/icons/closelight.svg" id="closemedia" class="close"/>
-        </div>
-      </div>  
-    </div>
-    <!-- FIN MODAL LIGHTBOX  -->
-  </body>
+  </div>
+  <!-- FIN MODAL LIGHTBOX  -->
+</body>
+
 </html>
