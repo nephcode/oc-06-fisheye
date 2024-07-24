@@ -43,7 +43,7 @@ brew tap oven-sh/bun
 brew install bun
 ```
 
-Create a new file
+Create a new file **package.json**
 ```
 {
 "name": "oc-06-fisheye",
@@ -57,14 +57,14 @@ Create a new file
 },
 "devDependencies": {
 "@types/bun": "latest",
-"sass": "^1.77.4",
-"vite": "^5.2.12"
+"sass": "latest",
+"vite": "latest"
 },
 "peerDependencies": {
-"typescript": "^5.0.0"
+"typescript": "latest"
 },
 "dependencies": {
-"vite": "^5.3.3"
+"vite": "latest"
 }
 }
 ```
