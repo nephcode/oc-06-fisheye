@@ -4,7 +4,7 @@
 
 export class dataAccess {
     async LoadData() {
-      let url = "data/Photographers.json";
+      let url = "assets/data/Photographers.json";
       let response = await fetch(url);
       let data = await response.json();
   
