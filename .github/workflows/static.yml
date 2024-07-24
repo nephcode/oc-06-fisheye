@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Bun
       uses: oven-sh/setup-bun@v2
@@ -27,4 +27,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist  # Vérifiez que c'est le répertoire de sortie de votre projet Vite.js
+        publish_dir: /dist  # Vérifiez que c'est le répertoire de sortie de votre projet Vite.js
