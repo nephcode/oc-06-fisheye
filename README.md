@@ -8,6 +8,8 @@
 
 A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 FISHEYE
 
+[![06 Fisheye Deploy to GitHubPages](https://github.com/nephcode/oc-06-fisheye/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/nephcode/oc-06-fisheye/actions/workflows/main.yml)
+
 | -       | URL                                                                                                   |
 | ------- | ----------------------------------------------------------------------------------------------------- |
 | DEMO    | [https://oc06.youcodeuse.com](https://oc06.youcodeuse.com)                                            |
