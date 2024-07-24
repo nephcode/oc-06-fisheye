@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 @font-face {
   font-family: "Font Awesome 6 Free";
@@ -10711,26 +10710,6 @@ readers do not read off random characters that represent icons */
   width: 100%;
   padding: 0;
 }
-#carrousel figure a video {
-  position: relative;
-}
-#carrousel figure a video::before {
-  content: "▶";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
 #carrousel figure figcaption {
   color: #901C1C;
   grid-column: 1;
@@ -10760,6 +10739,24 @@ readers do not read off random characters that represent icons */
   opacity: 1;
   background-color: #901C1C;
   border-radius: 100%;
+}
+
+.artist--city {
+  margin: 0px;
+  justify-self: center;
+  color: #901C1C;
+  font-size: 13px;
+}
+.artist--tagline {
+  justify-self: center;
+  color: #000000;
+  font-size: 10px;
+}
+.artist--price {
+  margin: 0px;
+  justify-self: center;
+  color: #757575;
+  font-size: 9px;
 }
 
 .heartCount {
@@ -10983,10 +10980,6 @@ body {
   background: #ffffff;
 }
 
-.modal-silent {
-  overflow: hidden;
-}
-
 main {
   margin-bottom: 50px;
 }
@@ -10997,12 +10990,12 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
-  background-color: #901C1C;
+  background-color: light-dark(#FAFAFA, #901C1C);
 }
 
 .logo {
   height: 50px;
-  margin-left: 40px;
+  margin-left: 100px;
   color: #fff;
 }
 
@@ -11015,7 +11008,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #DB8876;
+  background-color: #FAFAFA;
   height: 200px;
   margin: 0;
   padding: 10px 70px;
@@ -11024,26 +11017,6 @@ main {
 #profil:first-child {
   display: flex;
   align-items: center;
-}
-#profil .artist--name {
-  color: #ffffff;
-}
-#profil .artist--city {
-  margin: 0px;
-  justify-self: center;
-  color: #901C1C;
-  font-size: 13px;
-}
-#profil .artist--tagline {
-  justify-self: center;
-  color: #000000;
-  font-size: 10px;
-}
-#profil .artist--price {
-  margin: 0px;
-  justify-self: center;
-  color: #757575;
-  font-size: 9px;
 }
 #profil img {
   display: block;
@@ -11056,13 +11029,10 @@ main {
 }
 
 #ArtistName {
-  color: #ffffff;
+  color: #D3573C;
   font-size: 3rem;
   font-weight: lighter;
   margin: 0px;
-}
-#ArtistName h1 {
-  color: #ffffff;
 }
 
 .contact_button {

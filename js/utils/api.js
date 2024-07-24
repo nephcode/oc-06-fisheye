@@ -3,7 +3,6 @@
 //==================================== By Neah =================2024==//
 const URL = "/data/photographers.json"
 
-
 const get = () => fetch(URL).then(response => response.json())
 
 export const getPhotographers = () => get().then(data => data.photographers)
@@ -15,6 +14,7 @@ export const getMedias = () => get().then(data => data.media)
 export const getMediasByPhotographerId = id => getMedias().then(data => data.filter(media => media.photographerId === id))
 
 export const getMediaById = id => getMedias().then(data => data.find(media => media.id === id))
+
 /*
 // Version avec Async/Await (plus lisible)
 const URL_ASYNC = "/data/photographers.json";

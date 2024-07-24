@@ -20,21 +20,7 @@ const dateRegEx = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 const tourRegEx = /^\d{1,4}$/;
 // CLOSER
 const formOC = document.getElementById("ocform");
-//const resetForm = document.getElementById("ocform");
 
-// ================================= NEPHA CODE ===============
-// NAV RESPONSIVE =============================================
-// ================================  SPARROW ==================
-/*
-const navMobile = document.getElementById("myTopnav");
-navMobile.addEventListener("click", () => {
-  if (navMobile.className === "topnav") {
-    navMobile.className += " responsive";
-  } else {
-    navMobile.className = "topnav";
-  }
-});
-*/
 // ============================================================
 // CLOSE CROIX ================================================
 // ============================================================

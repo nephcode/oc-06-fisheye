@@ -41,7 +41,6 @@ export const h2name = document.querySelector("#contact_modal header h2");
 export const formTarget = document.getElementById("contactForm");
 
 // LIGHTBOX
-export const modalBodyFix = document.body;
 export const lightbox_target = document.querySelectorAll(".article_media a");
 export const lightbox_pop = document.getElementById("media");
 export const imgLightbox = document.querySelector('#lightbox img')
@@ -49,6 +48,7 @@ export const videoLightbox = document.querySelector('#lightbox video')
 export const titleLightbox = document.querySelector('#lightbox figcaption')
 export const btnPrevLightbox = document.querySelector('.prev-image img')
 export const btnNextLightbox = document.querySelector('.next-image img')
+export const btnCloseLightbox = document.getElementById('closemedia')
 
 // SORT MEDIAS
 export const selectSortMedias = document.getElementById('filterSelect')

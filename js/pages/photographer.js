@@ -7,19 +7,15 @@ import '../../sass/artist.scss';
 
 // DOMLINKER =========================================================//
 import {
-  clickContact, modalContact, h2name, formTarget,
-  artistName, artistCity, artistTagline, artistImage, artistPrice, artistLikeCount,
-  lightbox_pop, imgLightbox, videoLightbox, titleLightbox, btnPrevLightbox, btnNextLightbox,
+  clickContact, modalContact, h2name, formTarget, artistLikeCount, closer,
+  lightbox_pop, imgLightbox, videoLightbox, titleLightbox, btnPrevLightbox, btnNextLightbox, btnCloseLightbox,
   mediaContainer, selectSortMedias
 }
-from "../utils/domlinker";
+  from "../utils/domlinker";
 
 // FORM ==============================================================//
 import { formField, formFinish } from "../utils/form";
 import { popoverModal } from "../utils/formfiller";
-
-// STATE LIKE ========================================================//
-//import { state } from "../factories/state";
 
 // IMPORTS ===========================================================//
 import {
@@ -29,21 +25,18 @@ import {
 } from "../utils/tools";
 
 // FACTORY ===========================================================//
-//import { articleDisplay, likeCounterDisplay } from "../factories/display";
-
 import { likeCounterDisplay } from "../factories/display";
-
 import { getPhotographerById, getMediasByPhotographerId } from '../utils/api';
-
 import { mediaTemplate } from '../templates/media';
 import { photographerTemplate } from '../templates/photographer';
 import { state } from '../factories/state';
 
+// ID TARGET ========================================================//
 let slideIndex = 0 // current position index of lightbox media
 const url = new URL(window.location.href)
 const id = parseInt(url.searchParams.get('id'))
 console.log('id:', id)
-
+const id_GET_ARTIST = id;
 const updateMedias = data => {
   mediaContainer.innerHTML = ''
 
@@ -56,11 +49,12 @@ const updateMedias = data => {
 
     userlike(`article-${item.id}`)
 
-    const button = article.querySelector('a[role="button"]');
     // Display lightbox
-    button.addEventListener('click', () => {
-      //stopPropagation();
+    article.addEventListener('click', () => {
       lightbox_pop.togglePopover()
+      btnCloseLightbox.focus()
+
+
       // set current slide index
       slideIndex = state.medias.indexOf(item)
 
@@ -84,16 +78,17 @@ getMediasByPhotographerId(id).then(data => {
   localStorage.setItem('iCountGlobal', counterLike(data));
 
 })
-
 getPhotographerById(id).then(data => {
   console.table(data)
+
   h2name.innerHTML = "Contactez-moi " + data.name;
+
   // DISPLAY ARTIST HEADER ---------------------------------------------//
   photographerTemplate(data).setProfileDOM()
 })
 
 
-//// LIGHTBOX /////
+// LIGHTBOX NAVIGATION  =============================================//
 
 const updateSlide = () => {
   const data = state.medias[slideIndex]
@@ -123,7 +118,7 @@ btnPrevLightbox.addEventListener('click', () => navigate(-1))
 btnNextLightbox.addEventListener('click', () => navigate(1))
 
 
-///// SORT MEDIAS //////
+// SORT MEDIA ======
 
 export const sortMedia = (data, sortBy) => {
   switch (sortBy) {
@@ -145,90 +140,59 @@ selectSortMedias.addEventListener('change', () => {
 })
 
 
-// // ID FROM URL GET ---------------------------------------------------//
-// const id_GET_ARTIST = idCapture(window.location.href);
-// //colorg(id_GET_ARTIST, "yellow");
-// const response = await fetch("/data/photographers.json");
-// const data = await response.json();
-// const artist = data.photographers;
-// const medias = data.media;
-// const FetchIDartist = artist.filter((artist) => artist.id == id_GET_ARTIST);
+// KEYS NAV =====================================================
+const keyPress = (event) => {
+  const key = event.key || event.keyCode
 
-// // ID MEDIA -----------------------------------------------------------//
-// const FetchIDmedia = medias.filter(
-//   (media) => media.photographerId == id_GET_ARTIST
-// );
-// console.table(FetchIDmedia);
-// // ID MEDIA ----------------------------------------------------END---//
+  if (key === 'ArrowLeft' || key === 37) {
+    navigate(-1)
+  }
+  if (key === 'ArrowRight' || key === 39) {
+    navigate(1)
+  }
 
-// // DISPLAY ARTIST HEADER ---------------------------------------------//
-// FetchIDartist.forEach((arrayArtist) => {
-//   artistName.innerHTML = arrayArtist.name;
-//   artistCity.innerHTML = arrayArtist.city + ", " + arrayArtist.country;
-//   artistTagline.innerHTML = arrayArtist.tagline;
-//   artistImage.src = `/assets/photographers/${arrayArtist.portrait}`;
-//   artistPrice.innerHTML = arrayArtist.price + "€/Jour";
-// });
-// // DISPLAY ARTIST HEADER ---------------------------------------END---//
+  // press Escape ------------------------------------- //
+  if (key === 'Escape' || key === 'Esc' || key === 27) {
+    lightbox_pop.togglePopover()
+    modalContact.togglePopover()
+  }
 
-// // DISPLAY COUNTER ---------------------------------------------------//
-// //counterLike(FetchIDmedia);
-// likeCounterDisplay(counterLike(FetchIDmedia), artistLikeCount);
-// localStorage.setItem('iCountGlobal', counterLike(FetchIDmedia));
-// // DISPLAY COUNTER ---------------------------------------------END---//
+  if (key === 'Enter') {
+    console.log('enter pressed', event.target)
 
+    if (event.target === btnCloseLightbox) {
+      lightbox_pop.togglePopover()
+    }
 
+    if (event.target === closer) {
+      modalContact.togglePopover()
+    }
 
-// // DISPLAY MEDIA -----------------------------------------------------//
-// /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS ---------------------------*/
-// const mediaIndex = (cibleID, importMedia) => {
-//   //---------------------//
-//   let article_media = "";
-//   importMedia.forEach((item) => {
-//     article_media += articleDisplay(item);
-//   });
-//   //---------------------//
-//   const cible = document.getElementById(cibleID);
-//   cible.innerHTML = article_media;
-//   //---------------------//
-//   importMedia.forEach((item) => {
-//     userlike(`article-${item.id}`);
-//   });
-// }
-// mediaIndex("carrousel", FetchIDmedia);
-// /* ICI EST LA BOUCLE D'AFFICHAGE DES CARDS ---------------------------*/
-// // DISPLAY MEDIA -----------------------------------------------END---//
+    if (event.target === btnPrevLightbox) {
+      navigate(-1)
+    }
+
+    if (event.target === btnNextLightbox) {
+      navigate(1)
+    }
+
+    if (event.target.classList.contains('icone__Coeur')) {
+      event.stopPropagation()
+      event.preventDefault()
+      event.target.click()
+    }
+
+    if (event.target.classList.contains('article_media')) {
+      event.target.click()
+    }
+
+  }
+}
+
+document.addEventListener('keydown', keyPress)
 
 
-// // LIGHTBOX CLICK ============================================
-
-
-// //console.log(selectSort);
-// // DISPLAY LIKE COUNTER -------------------------------------//
-// //counterLike(FetchIDmedia);
-
-// // DISPLAY SORT ---------------------------------------------//
-// selectSort("filterSelect", FetchIDmedia, "carrousel", mediaIndex("carrousel", FetchIDmedia));
-
-
-
-
-
-// // CONTACT MODAL ==============================================
-// // =============== NEAH GAME =================== 2024 =========
-// // ============================================================
-// /*
-// const clickContact = document.getElementById("contactButton");
-// const modalContact = document.getElementById("contact_modal");
-// const closer = document.getElementById("closecontact");
-// const close = document.querySelector(".close");
-// const h2name = document.querySelector("#contact_modal header h2");
-// const formTarget = document.getElementById("contactForm");
-// */
-// h2name.innerHTML = "Contactez-moi " + FetchIDartist[0].name;
-// // OUVRIR =====================================================
-
-
+// CONTACT MODAL ==============================================
 clickContact.addEventListener("click", () => {
   popoverModal(formTarget);
 });

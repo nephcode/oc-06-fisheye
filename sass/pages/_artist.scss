@@ -14,7 +14,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: colors.$colorTernary;
+  background-color: colors.$colorGreyBackground;
   height: 200px;
   margin: 0;
   padding: 10px 70px;
@@ -23,29 +23,6 @@ main {
   &:first-child {
     display: flex;
     align-items: center;
-  }
-
-  .artist {
-    &--name {
-      color : colors.$colorTypoWhite;
-    }
-    &--city {
-      margin: 0px;
-      justify-self: center;
-      color: colors.$colorMain;
-      font-size: 13px;
-    }
-    &--tagline {
-      justify-self: center;
-      color: colors.$colorTypoBlack;
-      font-size: 10px;
-    }
-    &--price {
-      margin: 0px;
-      justify-self: center;
-      color: colors.$colorTypoGrey;
-      font-size: 9px;
-    }
   }
 
   img {
@@ -60,14 +37,10 @@ main {
 }
 
 #ArtistName {
-  color: colors.$colorTypoWhite;
+  color: colors.$colorSecondary;
   font-size: 3rem;
   font-weight: lighter;
   margin: 0px;
-
-  h1 {
-    color : colors.$colorTypoWhite;
-  }
 }
 
 .contact_button {

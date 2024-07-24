@@ -1,7 +1,3 @@
-//============================================= OC-06 FiS!!EyE =======//
-// MEDIA =============================================================//
-//==================================== By Neah =================2024==//
-
 export const mediaTemplate = data => {
     const { id, photographerId, title, image, video, likes, date, price } = data
 
@@ -11,8 +7,9 @@ export const mediaTemplate = data => {
         const article = document.createElement('article');
         article.id = `article-${id}`
         article.setAttribute('data-article-media', id)
-        article.classList.add('article_media')
+        article.setAttribute('class', 'article_media')
         article.setAttribute('aria-label', 'photo')
+        article.setAttribute('tabindex', 0)
 
         const figure = document.createElement('figure')
 
@@ -28,18 +25,19 @@ export const mediaTemplate = data => {
         figcaption.textContent = title
 
         const divHeartMedia = document.createElement('div')
-        divHeartMedia.classList.add('heartMedia')
+        divHeartMedia.setAttribute('class', 'heartMedia')
 
         const divHeartMediaCount = document.createElement('div')
         divHeartMediaCount.setAttribute('data-idmediacount', id)
         divHeartMediaCount.setAttribute('data-count', likes)
-        divHeartMediaCount.classList.add('heartMediaCount')
+        divHeartMediaCount.setAttribute('class', 'heartMediaCount')
         divHeartMediaCount.textContent = likes
 
         const div = document.createElement('div')
         const i = document.createElement('i')
         i.setAttribute('data-idheart', id)
-        i.classList.add('fa-classic', 'fa-heart', 'icone__Coeur')
+        i.setAttribute('class', 'fa-classic fa-heart icone__Coeur')
+        i.setAttribute('tabindex', 0)
 
         article.appendChild(figure)
         figure.appendChild(a)
@@ -57,5 +55,3 @@ export const mediaTemplate = data => {
 
     return { getMediaCardDOM }
 }
-
-// MEDIA =============================================================//
