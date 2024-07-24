@@ -27,4 +27,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: /dist  # Vérifiez que c'est le répertoire de sortie de votre projet Vite.js
+        publish_dir: ./dist  # Vérifiez que c'est le répertoire de sortie de votre projet Vite.js
