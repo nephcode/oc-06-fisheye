@@ -2,8 +2,8 @@ name: 06 Fisheye Deploy to GitHubPages
 
 on:
   push:
-    branches:
-      - release  # Branch de production 
+    tags:
+      - 'v*'  # Déclencheur sur les tags qui commencent par 'v'
 
 jobs:
   build-and-deploy:
