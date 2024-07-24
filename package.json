@@ -17,7 +17,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "latest",
+    //"@fortawesome/fontawesome-svg-core": "latest",
     "vite": "latest"
   }
 }
