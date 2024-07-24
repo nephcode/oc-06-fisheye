@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: 06 Fisheye Deploy to GitHubPages
 
 on:
   push:
     branches:
-      - release  # Assurez-vous que cela correspond à votre branche de production
+      - release  # Branch de production 
 
 jobs:
   build-and-deploy:
