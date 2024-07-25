@@ -1,9 +1,9 @@
 {
   "name": "oc-06-fisheye",
-  "module": "index.ts",
+  "module": "index.html",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "BROWSER='firefox-developer-edition' vite --open",
     "build": "vite build",
     "preview": "vite preview",
     "serve": "vite preview"
