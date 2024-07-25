@@ -84,7 +84,7 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 F
 
 ## EXPLAIN THE PROJECT
 
-Once upon a time, a dev girl took a new project ...6 fisheye with my best duck face xoxo
+👩🏼‍💻 Once upon a time, a dev girl took a new project ...6 fisheye with my best duck face xoxo 💋
 
 - `SUPPR` CSS and replace with `SASS`
 - `SASS` system 5-1 by NEPHA (not import only use)
@@ -96,8 +96,13 @@ Once upon a time, a dev girl took a new project ...6 fisheye with my best duck f
 - Install `VITE` on `BUN`
 - CI/CD on github pages *CNAME* with `Github Action`
 - Add State and Domlinker
-
-LOADING ‰‰‰‰‰‰‰‰ 90%
+- Update CI/CD with `<TAG>` release version 
+- `UserLike()` to count likes on media (social network friendly) 
+- Global count simulated (with localStorage)
+- Using **attr** `data-**` or `aria-**` behavior with **DOM**
+- Factory updated with refactoring 
+- Contact form with `Onair()` validation  
+- `colorg()` function add color with **console.log**
 
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/oc-react/readme-footer-oc-react-06.png)

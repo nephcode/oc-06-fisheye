@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <title>Fisheye - photographe</title>
-  <script type="module" src="/js/pages/photographer.js" defer></script>
+  <title>Fisheye</title>
+  <!-- // META   // -->
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <!-- // LINK   // -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- // SCRIPT // -->
+  <script type="module" src="../js/pages/photographer.js" defer></script>
 </head>
 
 <body>
   <header>
-    <a href="/" aria-label="Retour Accueil"><img src="assets/images/logo.svg" class="logo" alt="fisheye logo" /></a>
+    <a href="/" aria-label="Retour Accueil"><img src="assets/images/logo.svg" class="logo" alt="fisheye logo"></a>
   </header>
   <main id="main">
     <section id="profil" aria-label="Profil de l'artiste">
       <div>
-        <h1 id="ArtistName" class="artist--" aria-label="Nom"></h1>
+        <h1 id="ArtistName" class="artist--name" aria-label="Nom"></h1>
         <p id="ArtistCity" class="artist--city" aria-label="Localisation"></p>
         <p id="ArtistTagline" class="artist--tagline" aria-label="Signature"></p>
       </div>
@@ -27,7 +31,7 @@
    
       </div>
       <div>
-        <img id="ArtistPortrait" aria-label="" />
+        <img id="ArtistPortrait" aria-label="">
       </div>
     </section>
     <section id="filter" aria-label="Filtrez les médias" role="filter">
@@ -55,7 +59,7 @@
     <div class="modal">
       <header>
         <h2>Contactez-moi</h2>
-        <img src="/assets/icons/close.svg" id="closecontact" class="close" tabindex="0" />
+        <img src="/assets/icons/close.svg" id="closecontact" class="close" tabindex="0">
       </header>
       <form id="contactForm">
         <div>
@@ -76,7 +80,7 @@
         <figcaption aria-labelledby="media xxxxx">text génératif</figcaption>
       </figure>
       <div class="closemedia">
-        <img src="/assets/icons/closelight.svg" id="closemedia" class="close" tabindex="0" />
+        <img src="/assets/icons/closelight.svg" id="closemedia" class="close" tabindex="0">
       </div>
       <div role="button" class="controls controls-left">
         <span class="img prev-image">

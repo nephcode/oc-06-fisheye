@@ -22,7 +22,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "vite": "latest"
+    "vite": "^5.3.5"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "latest"

@@ -46,30 +46,38 @@ brew install bun
 Create a new file **package.json**
 ```
 {
-"name": "oc-06-fisheye",
-"module": "index.ts",
-"type": "module",
-"scripts": {
-"dev": "vite",
-"build": "vite build",
-"preview": "vite preview",
-"serve": "vite preview"
-},
-"devDependencies": {
-"@types/bun": "latest",
-"sass": "latest",
-"vite": "latest"
-},
-"peerDependencies": {
-"typescript": "latest"
-},
-"dependencies": {
-"vite": "latest"
-}
+  "name": "oc-06-fisheye",
+  "module": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "BROWSER='firefox-developer-edition' vite --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vite": "latest",
+    "sass": "latest",
+    "eslint": "latest",
+    "prettier": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "latest"
+  }
 }
 ```
 
-Install with `Bun`
+## INSTALL WITH BUN
 
 ```
 bun init
@@ -95,4 +103,18 @@ Default config  `bun.lockb`, `.nojekyll`, `.gitignore`
 ```
 bun vite build
 ```
+### CI/CD WITH RELEASE
+
+When you commit, add tag `v0.x.x` or `v1.x.x` 
+Add the yaml configuration with push tag 
+
+````
+on:
+  push:
+    tags:
+      - 'v*'  # Déclencheur sur les tags qui commencent par 'v'
+````
+With my best 
+
+
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/oc-react/readme-footer-oc-react-06.png)

@@ -11,6 +11,7 @@ export default defineConfig({
     https: false,
   },
   preview: {
+    host: 'oc06-fisheye.local',
     port: 5106,
   },
 });
