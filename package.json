@@ -8,15 +8,23 @@
     "preview": "vite preview",
     "serve": "vite preview"
   },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node"
+  },
   "devDependencies": {
     "@types/bun": "latest",
+    "vite": "latest",
     "sass": "latest",
-    "vite": "latest"
+    "eslint": "latest",
+    "prettier": "latest"
   },
   "peerDependencies": {
     "typescript": "latest"
   },
   "dependencies": {
     "vite": "latest"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "latest"
   }
 }
