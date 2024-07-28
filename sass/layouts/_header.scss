@@ -9,8 +9,8 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
-    //background-color: colors.$colorGreyBackground;    
-    background-color: light-dark(colors.$colorGreyBackground, colors.$colorMain);
+    background-color: colors.$colorMain   
+    //background-color: light-dark(colors.$colorGreyBackground, colors.$colorMain );
 }
 
 .logo {

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "BROWSER='firefox-developer-edition' vite --open",
-    "build": "vite build",
+    "build": "vite build src",
     "preview": "vite preview",
     "serve": "vite preview"
   },
@@ -12,11 +12,13 @@
     "rollup": "npm:@rollup/wasm-node"
   },
   "devDependencies": {
+    "@eslint/js": "^9.7.0",
     "@types/bun": "latest",
-    "vite": "latest",
+    "eslint": "9.x",
+    "globals": "^15.8.0",
+    "prettier": "latest",
     "sass": "latest",
-    "eslint": "latest",
-    "prettier": "latest"
+    "vite": "latest"
   },
   "peerDependencies": {
     "typescript": "latest"

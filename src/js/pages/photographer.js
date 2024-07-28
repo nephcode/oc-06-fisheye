@@ -1,9 +1,10 @@
+/* eslint-disable no-undef */
 //============================================= OC-06 FiS!!EyE =======//
 // ARTIST APP ========================================================//
 //==================================== By Neah =================2024==//
 
 // SASS ==============================================================//
-import '../../sass/artist.scss';
+import '../../../sass/artist.scss';
 
 // DOMLINKER =========================================================//
 import {
@@ -14,14 +15,14 @@ import {
   from "../utils/domlinker";
 
 // FORM ==============================================================//
-import { formField, formFinish } from "../utils/form";
+import { formFinish } from "../utils/form";
 import { popoverModal } from "../utils/formfiller";
 
 // IMPORTS ===========================================================//
 import {
-  idCapture, closeEsc, popClick,
-  closeClick, counterLike, lightboxClick,
-  colorg, selectSort, userlike
+  closeEsc, popClick,
+  closeClick, counterLike,
+  userlike
 } from "../utils/tools";
 
 // FACTORY ===========================================================//

@@ -3,7 +3,7 @@
 //==================================== By Neah =================2024==//
 
 // SASS ===========================================================//
-import '../../sass/home.scss';
+import '../../../sass/home.scss';
 
 import { getPhotographers } from '../utils/api';
 import { photographerTemplate } from '../templates/photographer';
