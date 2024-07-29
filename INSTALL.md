@@ -167,6 +167,6 @@ Settings.json
 
 Vite > restart
 
-With my best
+With my best my girl
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/oc-react/readme-footer-oc-react-06.png)
