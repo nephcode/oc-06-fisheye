@@ -108,7 +108,7 @@ A _JS FORM_ validator animated project for OpenClassrooms course AKA Project 6 F
 - `colorg()` function add color with **console.log**
 - HOME [W3C Validation HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Foc06.youcodeuse.com%2F)
 -ESLINT OK
-
+- Reload weak week
 
 ![cover](https://kpkfzczpavanzocxzyta.supabase.co/storage/v1/object/public/oc-react/readme-footer-oc-react-06.png)
 
