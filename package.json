@@ -3,7 +3,7 @@
   "module": "index.html",
   "type": "module",
   "scripts": {
-    "dev": "BROWSER='firefox-developer-edition' vite --open",
+    "dev": "vite --open",
     "build": "vite build src",
     "preview": "vite preview",
     "serve": "vite preview"
@@ -12,9 +12,9 @@
     "rollup": "npm:@rollup/wasm-node"
   },
   "devDependencies": {
-    "@eslint/js": "^9.7.0",
+    "@eslint/js": "latest",
     "@types/bun": "latest",
-    "eslint": "9.x",
+    "eslint": "latest",
     "globals": "^15.8.0",
     "prettier": "latest",
     "sass": "latest",
