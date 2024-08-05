@@ -6,7 +6,8 @@
     "dev": "vite --open",
     "build": "vite build src",
     "preview": "vite preview",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint ./src/js"
   },
   "overrides": {
     "rollup": "npm:@rollup/wasm-node"
