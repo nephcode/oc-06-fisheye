@@ -1,4 +1,4 @@
-import { artistName, artistCity, artistTagline, artistImage, artistPrice, artistLikeCount } from "../utils/domlinker";
+import { artistName, artistCity, artistTagline, artistImage, artistPrice } from "../utils/domlinker";
 
 export const photographerTemplate = data => {
     const { id, name, portrait, city, country, tagline, price } = data;
@@ -48,6 +48,7 @@ export const photographerTemplate = data => {
         artistCity.innerHTML = city + ", " + country;
         artistTagline.innerHTML = tagline;
         artistImage.src = `/assets/photographers/${portrait}`;
+        artistImage.alt = `Portrait de ${name}`;
         artistPrice.innerHTML = price + "€/Jour";
     }
 

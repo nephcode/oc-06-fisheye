@@ -96,8 +96,10 @@ const updateSlide = () => {
   const source = `/assets/artist-assets/${data.photographerId}/${data.image || data.video}`
   imgLightbox.style.display = data.image ? 'block' : 'none'
   imgLightbox.src = source
+  imgLightbox.alt = data.title
   videoLightbox.style.display = data.image ? 'none' : 'block'
   videoLightbox.src = source
+  videoLightbox.alt = data.title
   videoLightbox.style.width = "100%"
   videoLightbox.controls = true
   titleLightbox.textContent = data.title
@@ -117,6 +119,8 @@ const navigate = sens => {
 
 btnPrevLightbox.addEventListener('click', () => navigate(-1))
 btnNextLightbox.addEventListener('click', () => navigate(1))
+
+btnCloseLightbox.alt = "Fermer";
 
 
 // SORT MEDIA ======

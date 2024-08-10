@@ -1,5 +1,5 @@
 export const mediaTemplate = data => {
-    const { id, photographerId, title, image, video, likes, date, price } = data
+    const { id, photographerId, title, image, video, likes } = data
 
     const source = `/assets/artist-assets/${photographerId}/${image || video}`
 
@@ -19,9 +19,10 @@ export const mediaTemplate = data => {
 
         const media = document.createElement(image ? 'img' : 'video')
         media.src = source
+        media.alt = title
 
         const figcaption = document.createElement('figcaption')
-        figcaption.setAttribute('aria-labelledby', `media-${photographerId}`)
+        figcaption.setAttribute('aria-labelledby', `article-${id}`)
         figcaption.textContent = title
 
         const divHeartMedia = document.createElement('div')
