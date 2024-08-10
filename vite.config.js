@@ -1,31 +1,25 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 
-export default defineConfig(({ mode }) => {
-  console.log(`vite running in mode ${mode}`)
+export default defineConfig({
+  // Configurations générales pour le développement
+  server: {
+    port: 3000,  // Port sur lequel le serveur de développement va tourner
+    open: true,  // Ouvrir automatiquement le navigateur
+  },
 
-  const prod = {
-    esbuild: {
-      target: 'esnext' // Change this to an environment that supports top-level await
+  // Configurations pour la construction
+  build: {
+    outDir: 'dist',  // Répertoire de sortie pour les fichiers construits
+    sourcemap: true, // Générer une source map pour le débogage
+    rollupOptions: {
+      input: 'index.html',  // Point d'entrée principal
     },
-    server: {
-      host: 'oc06-fisheye.local',
-      port: 5006,
-      https: false,
+  },
+
+  // Résolution de modules
+  resolve: {
+    alias: {
+      '@': '/src',  // Exemple d'alias pour accéder plus facilement aux fichiers sources
     },
-    preview: {
-      host: 'oc06-fisheye.local',
-      port: 5106,
-    },
-  }
-
-  const dev = {
-    esbuild: {
-      target: 'esnext' // Change this to an environment that supports top-level await
-    }
-  }
-
-  return mode === 'development' ? dev : prod
-
-
+  },
 });
