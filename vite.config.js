@@ -5,4 +5,7 @@ export default defineConfig({
   build: {
     outDir: '../dist', // Spécifie le répertoire de sortie
   },
+    server: {
+        port: 3000, // Spécifie le port du serveur de développement
+    },
 });
